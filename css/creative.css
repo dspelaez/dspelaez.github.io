@@ -9744,3 +9744,13 @@ header.masthead h1 {
 .logo {
   width: 40px;
 }
+
+.post-preview {
+  padding-bottom: 15px;
+}
+.post-preview p {
+  text-align: justify;
+}
+.post-preview a {
+  text-decoration: none;
+}

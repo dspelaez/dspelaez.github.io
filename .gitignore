@@ -9,6 +9,7 @@ _site/
 
 # Sass garbage
 .sass-cache
+.jekyll-cache
 
 # Bundler
 .bundle/

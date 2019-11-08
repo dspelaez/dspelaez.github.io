@@ -2,20 +2,18 @@
 layout: default
 ---
 
-<!-- About Section -->
-<section class="page-section bg-primary" id="about">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
-        <h2 class="text-white mt-0">Blog</h2>
-        <hr class="divider light my-4">
-        <p class="text-white-50 mb-4">
-          Start Bootstrap has everything you need to get your new website up
-          and running in no time! Choose one of our open source, free to
-          download, and easy to use themes! No strings attached!
-        </p>
-      </div>
-    </div>
+<!-- Call to Action Section -->
+<section class="page-section bg-primary text-white">
+  <div class="container text-center">
+    <h2 class="mb-4">{{ page.title }}</h2>
+    <!--<a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>-->
   </div>
 </section>
 
+<div class="container">
+
+  <div class="blog-body">
+    {{ content }}
+  </div>
+
+</div>
