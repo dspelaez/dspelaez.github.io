@@ -1,0 +1,36 @@
+<!-- Blog Section -->
+<section class="page-section" id="blog">
+
+  <div class="container post-preview">
+
+    <h2 class="mb-4 text-center">Blog</h2>
+    <hr class="divider my-4">
+      
+    <div class="row">
+      
+      {% for post in site.posts %}
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            {% if post.thumbnail %}
+              <img class="card-img-top" src="{{ post.thumbnail }}" alt="">
+            {% else %}
+            <img class="card-img-top" src="{{ site.baseurl }}/img/bg-masthead.jpg" alt="">
+            {% endif %}
+          </a>
+          <div class="card-body">
+            <p><small class="text-muted">{{ post.date | date: '%B %d, %Y'}}</small></p>
+            <h4 class="card-title">
+              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h4>
+            <p class="card-text">{{ post.content | strip_html | truncatewords: 18 }}</p>
+          </div>
+            <a href="{{ post.url | prepend: site.baseurl }}"
+            class="btn btn-light">Read more...</a>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

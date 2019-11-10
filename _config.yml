@@ -1,3 +1,13 @@
+name: D.S. Peláez-Zapata
+email: dspelaez@gmail.com
+twitter: https://twitter.com/dnlsntg09
+github: https://github.com/dspelaez
+description: >
+  Physical oceanographer studying ocean surface waves and air-sea interactions
+
 markdown: kramdown
 baseurl: ""
-highlighter: rouge
+highlightjs_theme: "zenburn"
+
+plugins:
+  - jekyll-paginate

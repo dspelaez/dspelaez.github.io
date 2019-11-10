@@ -1,11 +1,8 @@
 ---
 layout: post
 title:  Wave run-up over fringing reefs
-date:   2017-04-20
 author: D.S. Peláez-Zapata
-categories: Research
-tags:	run-up, laboratory
-cover:  "/assets/wave_over_beach.jpg"
+thumbnail:  "img/thumbnails/tower_at_sea.jpg"
 ---
 
 In this work we presented a numerical study of run-up oscillations over a

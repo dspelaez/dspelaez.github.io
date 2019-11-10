@@ -5,7 +5,7 @@ date:   2019-07-23
 author: D.S. Peláez-Zapata
 categories: Posts
 tags:	iowaga, wave spectrum
-cover:  "/assets/wave_over_beach.jpg"
+thumbnail:  "img/thumbnails/code-laptop.jpg"
 ---
 
 In this post we present how to make a reconstruction of the directional wave
