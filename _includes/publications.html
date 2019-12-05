@@ -1,0 +1,27 @@
+<!-- Blog Section -->
+<section class="page-section" id="publications">
+  <div class="container">
+    <h2 class="mb-4 text-center">Publications</h2>
+    <hr class="divider my-4">
+
+    {% for item in site.data.publications %}
+    <div class="row bibliography">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="fa-ul">
+          <li>
+            <span class="fa-li"><i class="fas fa-book"></i></span>
+            <a href="{{ item.doi | prepend: "http://doi.org/" }}"<h4>{{ item.title }} ({{ item.year }})</h4></a>
+            <br>
+            {% for author in item.author %}
+            <span>{{ author }}</span>
+            {% endfor %}
+            <p>{{ item.journal }}</p>
+          </li>
+        </ul>
+        <hr>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</section>
