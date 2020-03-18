@@ -9786,6 +9786,23 @@ header.masthead h1 {
 .bibliography a:hover {
   color: var(--orange);
 }
-.bibliography span {
-  padding-right: 5px;
+.bibliography-author {
+  font-size: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0px;
+  overflow: hidden;
+}
+.bibliography-author li {
+  display: inline;
+}
+.bibliography-author li:after {
+  content: " \00b7";
+}
+.last-author:after {
+  display:none !important;
+}
+
+.bibliography-journal {
+  font-size: 18px;
 }

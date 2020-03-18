@@ -4,15 +4,19 @@ title:  Spectrum reconstruction from IOWAGA partitions
 date:   2019-07-23
 author: D.S. Peláez-Zapata
 categories: Posts
-tags:	iowaga, wave spectrum
+tags:	iowaga, wave spectrum, python
 thumbnail:  "img/thumbnails/code-laptop.jpg"
 ---
 
-In this post we present how to make a reconstruction of the directional wave
-spectrum using the partitions parameters from
-[IOWAGA](https://wwz.ifremer.fr/iowaga) dataset. First we have to import the
-essential Python packages, in this case, we only need
-[`NumPy`](http://numpy.org), [`matplolib`](http://matplolib.org) and
+Sometimes is quite useful to have the information of the frequency direction
+spectrum instead of only the bulk parameters. But this information is scarce. In
+this post we present a simple methodology to reconstruct the directional wave
+spectrum using the bulk parameters from the spectrum partitions taken from the
+[IOWAGA](https://wwz.ifremer.fr/iowaga) dataset.
+
+As usual, the first thing to do is import the essential Python packages, in this
+case, we only need [`NumPy`](http://numpy.org),
+[`matplolib`](http://matplolib.org) and
 [`netCDF4`](https://unidata.github.io/netcdf4-python/netCDF4/index.html).
 
 ```python
@@ -25,12 +29,17 @@ import os
 %matplotlib inline
 ```
 
-## Jonswap spectrum and directional distribution
+## JONSWAP spectrum and directional distribution
+
+The JONSWAP (Joint North Sea Wave Project) spectrum is a representation of the
+wave energy distribution in terms of the frequency and the direction, for a
+given sea state. It was originally developed by Hasselmann et al. in 1973. The
+current form of the JONSWAP spectral shape is given by:
 
 $$
 \begin{aligned}
   S(f)     &= \frac{\alpha g^2}{(2\pi)^4 f^5}
-              \exp \left( -\beta \left(\frac{f_p}{f}\right)^4 \right)
+              \exp \left( -\beta_0 \left(\frac{f_p}{f}\right)^4 \right)
               \gamma^{\delta} \\
   \delta   &= \exp\left( -\frac{(f-f_p)^2}{2(\sigma_0 f_p)^2} \right) \\
   \sigma_0 &= \left\{
@@ -42,7 +51,10 @@ $$
 \end{aligned}
 $$
 
-
+where $\alpha=8.1 \times 10^{-3}$, $\beta_0=5/3$, and $f_p$ is the peak
+frequency. Well, the frequency distribution is more or less well-know but the
+directional distribution is more complicated. In this case we are going to use
+the one proposed by Donelan and colleagues which reads as:
 
 $$
 \begin{aligned}

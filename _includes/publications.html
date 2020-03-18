@@ -4,7 +4,7 @@
     <h2 class="mb-4 text-center">Publications</h2>
     <hr class="divider my-4">
 
-    {% for item in site.data.publications %}
+    {% for item in site.data.publications limit:4 %}
     <div class="row bibliography">
       <div class="col-lg-8 col-md-10 mx-auto">
         <ul class="fa-ul">
@@ -12,10 +12,16 @@
             <span class="fa-li"><i class="fas fa-book"></i></span>
             <a href="{{ item.doi | prepend: "http://doi.org/" }}"<h4>{{ item.title }} ({{ item.year }})</h4></a>
             <br>
+            <ul class=bibliography-author>
             {% for author in item.author %}
-            <span>{{ author }}</span>
+              {% if author == item.author.last %}
+                <li class="last-author">{{ author }}</li>
+              {% else %}
+                <li>{{ author }}</li>
+              {% endif %}
             {% endfor %}
-            <p>{{ item.journal }}</p>
+            </ul>
+            <p class=bibliography-journal>{{ item.journal }}</p>
           </li>
         </ul>
         <hr>
