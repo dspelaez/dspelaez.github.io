@@ -13,7 +13,7 @@
         <div class="card h-100">
           <a href="{{ post.url | prepend: site.baseurl }}">
             {% if post.thumbnail %}
-              <img class="card-img-top" src="{{ post.thumbnail }}" alt="">
+              <img class="card-img-top" src="{{ site.baseurl }}/{{ post.thumbnail }}" alt="">
             {% else %}
             <img class="card-img-top" src="{{ site.baseurl }}/img/bg-masthead.jpg" alt="">
             {% endif %}
@@ -32,6 +32,9 @@
       {% endfor %}
 
     </div>
+
+    <!-- Pagination links -->
+    <!--here-->
+
   </div>
 </section>
-
