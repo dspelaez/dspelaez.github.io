@@ -19,7 +19,10 @@
             {% endif %}
           </a>
           <div class="card-body">
-            <p><small class="text-muted">{{ post.date | date: '%B %d, %Y'}}</small></p>
+            <p><small class="text-muted">
+              <i class="far fa-clock"></i>
+              {{ post.date | date: '%B %d, %Y'}}</small>
+            </p>
             <h4 class="card-title">
               <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h4>
