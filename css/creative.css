@@ -9720,24 +9720,22 @@ header.masthead h1 {
   text-align: center;
   opacity: 0;
   color: #fff;
-  background: rgba(244, 98, 58, 0.9);
+  background: var(--primary);
   transition: opacity 0.25s ease;
   text-align: center;
 }
 
-#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category {
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.85rem;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
-#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name {
-  font-size: 1.2rem;
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-description {
+  font-size: 0.9rem;
 }
 
 #portfolio .container-fluid .portfolio-box:hover .portfolio-box-caption {
-  opacity: 1;
+  opacity: 0.8;
 }
 
 
@@ -9802,7 +9800,6 @@ header.masthead h1 {
 .last-author:after {
   display:none !important;
 }
-
 .bibliography-journal {
   font-size: 18px;
 }
