@@ -9748,8 +9748,11 @@ header.masthead h1 {
 .post-preview a:hover {
   text-decoration: none;
 }
-.post-preview .card p {
+.post-preview .card h4 {
   font-size: 18px;
+}
+.post-preview .card p {
+  font-size: 16px;
   opacity: 0.75;
 }
 .post-preview .card img {
@@ -9774,18 +9777,26 @@ header.masthead h1 {
   padding-top: 60px;
   padding-bottom: 60px;
   margin: auto;
+  text-align: justify;
+  max-width: 780px;
+}
+.blog-body img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
 
 /*biblioggraphy*/
 .bibliography a {
-  font-size: 22px;
+  font-size: 20px;
   text-decoration: none;
 }
 .bibliography a:hover {
   color: var(--orange);
 }
 .bibliography-author {
-  font-size: 20px;
+  font-size: 18px;
   list-style-type: none;
   margin: 0;
   padding: 0px;
@@ -9801,5 +9812,5 @@ header.masthead h1 {
   display:none !important;
 }
 .bibliography-journal {
-  font-size: 18px;
+  font-size: 16px;
 }
