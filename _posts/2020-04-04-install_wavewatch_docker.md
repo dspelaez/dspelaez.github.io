@@ -10,11 +10,12 @@ thumbnail: "img/thumbnails/wavewatch.jpg"
 
 ![docker]({{ site.url }}/img/thumbnails/docker-art.png){: .center-image }
 
-[Docker](https://www.docker.com/) is an open source project that make extremely
-easy deployment of software and applications thought the use of containers.  A
-container, as indicated in the docker project web site, is a "standard unit of
-software that packages up code and all its dependencies so the application runs
-quickly and reliably from one computing environment to another."
+[Docker](https://www.docker.com/) is an open source project that makes extremely
+easy deployment of software and applications through the use of containers. A
+container, as indicated in the docker project [web
+site](https://www.docker.com/), is a "standard unit of software that packages up
+code and all its dependencies so the application runs quickly and reliably from
+one computing environment to another."
 
 It is not a secret that one of the most difficult steps when running a numerical
 or computational model is the compilation/installation, not only the model
@@ -23,8 +24,8 @@ undergrad or grad student can spend more time compiling the model than actually
 running it in real or test cases. In that sense, it is a really good idea to use
 a docker container to install and deploy the model along with all of its
 dependencies, that way one can distribute it, as a package, without worrying
-about to compile and install confusing libraries. Everything is in the docker
-image and it works out-of-the-box.
+about to compile and install confusing libraries. Everything is inside the
+docker image and it works out-of-the-box.
 
 OK, let's see how to create an image containing the [WAVEWATCH III
 5.16](https://polar.ncep.noaa.gov/waves/wavewatch/) using docker and how to use
@@ -33,8 +34,8 @@ the model afterwards.
 
 ### Creating the Dockerfile
 
-The first part is to create a file called `Dockerfile` that contains all the
-steps to create the image. The header of out docker file is:
+The first part is to make a file called `Dockerfile` that contains all the
+instructions to create the image. The header of our `Dockerfile` should be like:
 
 ```
 FROM ubuntu:18.04
@@ -42,9 +43,9 @@ MAINTAINER Daniel Santiago <dspelaez@gmail.com>
 ```
 
 which states that we want to use Ubuntu 18.04 as a base OS. Then we need to
-prepare the update the system, install the dependencies and prepare the folder
-to copy the model source code. In that case WAVEWATCH III depends on `gfortran`
-and `gcc` as Fortran and C/C++ compilers:
+update the system, install the dependencies and prepare the folders to copy the
+model source code. In that case WAVEWATCH III depends on `gfortran` and `gcc` as
+Fortran and C/C++ compilers:
 
 ```
 # set home variable
@@ -53,9 +54,7 @@ ENV TERM xterm
 
 RUN apt-get update
 RUN apt-get -yq install build-essential m4 \
-    gcc gfortran g++ \
-    curl libcurl4-gnutls-dev wget \
-    git tar
+    gcc gfortran g++ curl libcurl4-gnutls-dev wget git tar
 
 # set environmental variables
 ENV NCDIR /usr/local/netcdf
@@ -66,9 +65,10 @@ ENV NETCDF_CONFIG /usr/local/netcdf/bin/nf-config
 RUN mkdir -p /root/libs /root/ww3
 ```
 
-This is the most tricky part. WAVEWATCH III uses netCDF4 to handle the input and
+This is the most tricky part: WAVEWATCH III uses netCDF4 to handle the input and
 output files (can be plain text files as well, but for large datasets it becomes
-unmanageable). To install those libraries in the image we can use the following
+harder to manage). To install those libraries in the image we can use the
+following
 [script](https://raw.githubusercontent.com/dspelaez/install-netcdf-fortran/master/install_netcdf.sh):
 
 ```
@@ -81,12 +81,13 @@ RUN chmod 755 ./install_netcdf.sh && \
     echo export LD_LIBRARY_PATH=/usr/local/netcdf/lib:'$LD_LIBRARY_PATH' >> /root/.bashrc
 ```
 
-If this work well, we are almost done. The next step is to install the model
-itself. Since the 5.16 version the NOAA started to use Github to host the source
-code, it makes everything easier. So the only thing we need to do is clone the
-repo and run the installation script using some tricks to avoid the prompting of
-the questions. Note this will work unless the model developers change the order
-of the questions in future versions.
+If this worked fine, we are almost done. The next step is to install the model
+itself. Since the 5.16 version the NOAA started to use
+(Github)[https://github.com/NOAA-EMC/WW3/] to host the source code, it makes
+everything easier. So the only thing we have to do is clone the repo and run the
+installation script using some tricks to avoid the prompting of the questions.
+Note this will work unless the developers change the order of the questions in
+future versions.
 
 ```
 # get tar file from repository
@@ -102,7 +103,7 @@ RUN tar -xvf wwatch3.v6.07.tar.gz && \
 
 The next step is configure and compile the model. This part is well explained in
 the user manual: we need to have two files `comp` and `link`. Fortunately there
-are some preset versions distributed with the source so the only thing we need
+are some preset versions distributed with the source so the only thing we have
 to do is copy them to the `bin` folder and compile the entire code:
 
 ```
@@ -171,4 +172,6 @@ docker run -it --rm --name=ww3 -v $(pwd):/root/ww3/work ww3-docker /bin/bash
 ```
 
 in this case, `$(pwd)` represents the current directory, i.e., where our input
-data is stored.
+data is stored. And that's it, now we can run the model as usual. You can find
+the full `Dockerfile` in my [Github
+repo](http://github.com/dspelaez/ww3_install).
