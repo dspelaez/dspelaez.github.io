@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Install WAVEWATCH III wave model in a Docker container
+title: Installation of WAVEWATCH III model in a Docker container
 date: 2020-04-04
 author: D.S. Peláez-Zapata
 categories: Posts
