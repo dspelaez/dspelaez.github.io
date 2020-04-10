@@ -9850,6 +9850,6 @@ footer.footer .social-link {
 }
 
 footer.footer .social-link:hover {
-  background-color: var(--gray-dark);
+  background-color: var(--primary);
   text-decoration: none;
 }
