@@ -9745,6 +9745,13 @@ header.masthead h1 {
 }
 
 /* --- post-preview ---*/
+.post-preview .card h4 {
+  font-size: 18px;
+}
+.post-preview p {
+  font-size: 16px;
+  opacity: 0.75;
+}
 .post-preview a:hover {
   text-decoration: none;
 }
@@ -9757,7 +9764,9 @@ header.masthead h1 {
 }
 .post-preview .card img {
   width: 100%;
-  height: 200px;
+  height: auto;
+  max-height: 180px;
+  object-fit: cover;
 }
 .post-preview .card{
   background-color: #FFFFFF;
@@ -9786,6 +9795,14 @@ header.masthead h1 {
   margin: 0 auto;
   display: block;
 }
+.blog-header {
+  height: 350px;
+  max-height: 500px;
+  min-height: 400px;
+  /*background-size: cover;*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+}
 
 /*biblioggraphy*/
 .bibliography a {
@@ -9813,4 +9830,26 @@ header.masthead h1 {
 }
 .bibliography-journal {
   font-size: 16px;
+}
+
+/*footer*/
+footer.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+footer.footer .social-link {
+  display: block;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4.3rem;
+  font-size: 1.5rem;
+  background-color: var(--dark);
+  transition: background-color 0.15s ease-in-out;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+footer.footer .social-link:hover {
+  background-color: var(--gray-dark);
+  text-decoration: none;
 }

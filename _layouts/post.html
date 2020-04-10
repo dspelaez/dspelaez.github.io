@@ -12,12 +12,15 @@ layout: default
 </nav>
 
 <!-- Blog Header -->
-<div class="blog-header page-section bg-primary text-white">
+<div class="blog-header page-section bg-dark text-white">
   <div class="container text-center">
     <h2 class="mb-4">{{ page.title }}</h2>
     <hr class="divider light my-4">
-    <h5 class="mb-4">{{ page.author }}</h5>
-    <h6 class="mb-4"><i class="far fa-clock"></i> {{ page.date | date: '%B %d, %Y' }}</h6>
+    <img class="logo" src="{{ site.baseurl }}/img/logo.png" alt=""/>
+    <p class="mt-2 mb-1 text-light">{{ page.author }}</p>
+    <small class="mb-2 text-white">
+      <i class="far fa-clock"></i> {{ page.date | date: '%B %d, %Y' }}
+    </small>
   </div>
 </div>
 
