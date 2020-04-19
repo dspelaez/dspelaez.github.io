@@ -5,14 +5,15 @@ date:   2019-07-23
 author: D.S. Peláez-Zapata
 categories: Posts
 tags:	iowaga, wave spectrum, python
-thumbnail:  "img/thumbnails/code-laptop.jpg"
+thumbnail:  "img/thumbnails/directional_wave_spectra.png"
 ---
 
-Sometimes is quite useful to have the information of the frequency direction
-spectrum instead of only the bulk parameters. But this information is scarce. In
-this post we present a simple methodology to reconstruct the directional wave
-spectrum using the bulk parameters from the spectrum partitions taken from the
-[IOWAGA](https://wwz.ifremer.fr/iowaga) dataset.
+Sometimes is quite useful to have the information of the frequency-direction
+wave spectrum instead of only the bulk wave parameters. But unfortunately this
+information is scarce. In this post we present a simple methodology to
+reconstruct the directional wave spectrum using the bulk parameters from the
+spectrum partitions taken from the [IOWAGA](https://wwz.ifremer.fr/iowaga)
+dataset.
 
 As usual, the first thing to do is import the essential Python packages, in this
 case, we only need [`NumPy`](http://numpy.org),
@@ -29,12 +30,16 @@ import os
 %matplotlib inline
 ```
 
-## JONSWAP spectrum and directional distribution
+
+## Part I. Preliminaries
+
+
+### JONSWAP spectrum and directional distribution
 
 The JONSWAP (Joint North Sea Wave Project) spectrum is a representation of the
 wave energy distribution in terms of the frequency and the direction, for a
 given sea state. It was originally developed by Hasselmann et al. in 1973. The
-current form of the JONSWAP spectral shape is given by:
+current form of the JONSWAP spectral shape can be written as:
 
 $$
 \begin{aligned}
@@ -53,8 +58,8 @@ $$
 
 where $\alpha=8.1 \times 10^{-3}$, $\beta_0=5/3$, and $f_p$ is the peak
 frequency. Well, the frequency distribution is more or less well-know but the
-directional distribution is more complicated. In this case we are going to use
-the one proposed by Donelan and colleagues which reads as:
+directional distribution is somehow more complex. In this case we are going to
+use the one proposed by Donelan and colleagues:
 
 $$
 \begin{aligned}
@@ -70,8 +75,11 @@ p &= -0.4 + 0.8393 \cdot e^{-0.567 \ln (f/f_p)^2}
 \end{aligned}
 $$
 
-
-
+Well, we are ready to code these functions in Python. First, we are going to
+write a function called `jonswap` which will receive three arguments:
+frequencies array, significant wave height, peak period, and shape factor, and
+it will return an array containing the spectral variance density with the same
+size of the frequencies array:
 
 ```python
 # jonswap spectrum
@@ -82,7 +90,7 @@ def jonswap(frqs, Hs, Tp, gamma=3.3):
     fp = 1./Tp
     alpha, beta, g = 8.1E-3, 5./4., 9.8
     
-    # it could be vectorized!
+    # it should be vectorized!
     S = np.zeros_like(frqs)
     for i, f in enumerate(frqs):
         if f == 0.:
@@ -100,6 +108,13 @@ def jonswap(frqs, Hs, Tp, gamma=3.3):
     return (S / m0) * (Hs**2 /16)
 ```
 
+Now, for the directional distribution we can construct another function, this
+time, the arguments that will be passed are: the frequencies array, the
+directions array (in degrees), and again, the bulk parameters, including the
+mean wave direction. Additionally, we can include the kind of distribution
+function we want, for example, `sech2` for Donelan et al. distribution, and
+`cos2s` for the classical $\cos^{2s}\theta$ distribution, passing the $s$
+parameter as an argument:
 
 ```python
 # directional wave spectrum 
@@ -110,8 +125,8 @@ def directional_wave_spectrum(frqs, dirs, Hs, Tp, mdir, func="cos2s", s=1):
     S = jonswap(frqs, Hs=Hs, Tp=Tp, gamma=3.3)
 
     # direction arrays
-    dir2 = (dirs - mdir) % 360
-    dir3 = dirs - 180
+    dir2 = (dirs - mdir) % 360 # <-- centered in the mean direction
+    dir3 = dirs - 180          # <-- wrapped between -180 and 180
 
     # cos2s
     if func == "cos2s":
@@ -138,8 +153,9 @@ def directional_wave_spectrum(frqs, dirs, Hs, Tp, mdir, func="cos2s", s=1):
 ```
 
 
-## Nice representation of the spectrum
+### Nice representation of the spectrum
 
+Now, let's code a small function to plot the directional wave spectrum.
 
 ```python
 # plot wave spectrum
@@ -189,6 +205,8 @@ def plot_wave_spectrum(frqs, dirs, E, ax=None, label_angle=-45):
                 f"{radii:.1f}")
 ```
 
+A good way to test our function is plotting the two directional distribution
+side-by-side, moreover it is useful to see the differences:
 
 ```python
 frqs = np.linspace(0,1,256)
@@ -203,10 +221,10 @@ ax1.set_title("cos2s")
 ax2.set_title("sech2")
 ```
 
-![png](/assets/posts/iowaga_spectrum_reconstruction/output_8_1.png)
+![png]({{site.url}}/img/blog/wavespec_reconstruction_comparison.png)
 
 
-## Retrieving the data from the web
+## Part II. Retrieving the data from the web
 
 
 ```python
@@ -372,5 +390,4 @@ for i in range(9):
     date += dt.timedelta(hours=3)
 ```
 
-![png](/assets/posts/iowaga_spectrum_reconstruction/output_17_0.png)
-
+![png]({{site.url}}/img/blog/wavespec_reconstruction_results.png)

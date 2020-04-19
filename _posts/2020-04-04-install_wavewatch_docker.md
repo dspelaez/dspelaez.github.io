@@ -11,8 +11,8 @@ thumbnail: "img/thumbnails/wavewatch.jpg"
 ![docker]({{ site.url }}/img/thumbnails/docker-art.png){: .center-image }
 
 [Docker](https://www.docker.com/) is an open source project that makes extremely
-easy deployment of software and applications through the use of containers. A
-container, as indicated in the docker project [web
+easy the deployment of software and applications through the use of containers.
+A container, as indicated in the docker project [web
 site](https://www.docker.com/), is a "standard unit of software that packages up
 code and all its dependencies so the application runs quickly and reliably from
 one computing environment to another."

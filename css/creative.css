@@ -9783,11 +9783,18 @@ header.masthead h1 {
 
 /*post-body*/
 .blog-body {
+  font-family: "Merriweather", serif;
+  font-size: 90%;
+  font-weight: lighter;
   padding-top: 60px;
   padding-bottom: 60px;
   margin: auto;
   text-align: justify;
   max-width: 780px;
+}
+.blog-body h1, h2, h3, h4, h5 {
+  margin-top: 0.75em;
+  margin-bottom: 0.5em;
 }
 .blog-body img {
   width: 100%;
