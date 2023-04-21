@@ -67,7 +67,7 @@ D(f,\theta) &= 0.5 \beta \mathrm{sech}^2 \beta (\theta - \theta_m(f)) \\
 \beta &= \left\{
   \begin{array}{lcr}
     2.61 (f/f_p)^{1.3}  & : & 0.56 < f/f_p < 0.95 \\
-    2.28 (f/f_p)^{-1.3} & : & 0.95 < f/f_p < 1.16 \\
+    2.28 (f/f_p)^{-1.3} & : & 0.95 < f/f_p < 1.60 \\
     10^p             & : & f/f_p > 1.60
   \end{array}
 \right. \\
