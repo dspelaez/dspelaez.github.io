@@ -4328,6 +4328,7 @@ input[type="button"].btn-block {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  width: 100%;
 }
 
 .card > hr {
@@ -4347,7 +4348,11 @@ input[type="button"].btn-block {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: 1.5rem;
+}
+
+.card-body-horizonal {
+  flex: 1 1 auto;
 }
 
 .card-title {
@@ -4431,11 +4436,9 @@ input[type="button"].btn-block {
 .card-img-left {
   border-top-left-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
-  width: 80%;
-  height: 15vw;
+  height: auto;
+  width: 100%;
   object-fit: cover;
-  display: flex;
-  flex: 1 1 auto;
 }
 
 .card-img-bottom {

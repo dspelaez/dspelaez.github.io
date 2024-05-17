@@ -8,6 +8,7 @@
   year: 2022
   doi: 10.1017/eds.2023.31
   type: article
+  thumbnail: "img/pubs/kokina_etal_2023_thumbnail.png"
 
 - title: Meteotsunamis and other anomalous “tidal surge” events in Western Europe in Summer 2022
   author:
@@ -21,6 +22,7 @@
   year: 2023
   doi: 10.1063/5.0139220
   type: article
+  thumbnail: "img/pubs/renzi_etal_2023_thumbnail.jpeg"
 
 - title: Ecosystem management tools to study natural habitats as wave damping structures and coastal protection mechanisms
   author:
@@ -31,6 +33,7 @@
   year: 2019
   doi: 10.1016/j.ecoleng.2017.07.015
   type: article
+  thumbnail: "img/pubs/osorio-cano_thumbnail.jpg"
 
 - title: Numerical Study of Run-up Oscillations over Fringing Reefs
   author:
@@ -41,7 +44,7 @@
   year: 2018
   doi: 10.2112/jcoastres-d-17-00057.1
   type: article
-  thumbnail: "img/thumbnails/tower_at_sea.jpg"
+  thumbnail: "img/pubs/pelaez-runup_2018_thumbnail.jpg"
 
 - title: Occurrence of energetic extreme oceanic events in the Colombian Caribbean coasts and some approaches to assess their impact on ecosystems
   author:
