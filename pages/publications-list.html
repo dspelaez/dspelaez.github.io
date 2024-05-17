@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<!-- Alternative Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="{{ site.url }}/index.html">
+      <i class="fas fa-arrow-left"></i> Back
+    </a>
+  </div>
+</nav>
+
+<!-- Blog Header -->
+<div class="blog-header page-section bg-primary text-white">
+  <div class="container text-center">
+    <h2 class="mb-4">Publications list</h2>
+    <hr class="divider light my-4">
+  </div>
+</div>
+
+<!-- Posts list -->
+<div class="container">
+  <br>
+
+  {% for item in site.data.publications limit:6 %}
+  <div class="row bibliography">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <ul class="fa-ul">
+        <li>
+          <span class="fa-li"><i class="fas fa-book"></i></span>
+          <a href="{{ item.doi | prepend: "http://doi.org/" }}"
+            <h4>{{ item.title }}</h4></a>
+          <br>
+          <ul class=bibliography-author>
+          {% for author in item.author %}
+            {% if author == item.author.last %}
+              <li class="last-author">{{ author }}</li>
+            {% else %}
+              <li>{{ author }}</li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+          <p class=bibliography-journal>{{ item.journal }}, {{ item.year }}</p>
+        </li>
+      </ul>
+      <hr>
+    </div>
+  </div>
+  {% endfor %}
+
+</div>

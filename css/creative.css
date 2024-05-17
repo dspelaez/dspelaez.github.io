@@ -4428,6 +4428,16 @@ input[type="button"].btn-block {
   border-top-right-radius: calc(0.25rem - 1px);
 }
 
+.card-img-left {
+  border-top-left-radius: calc(0.25rem - 1px);
+  border-bottom-left-radius: calc(0.25rem - 1px);
+  width: 80%;
+  height: 15vw;
+  object-fit: cover;
+  display: flex;
+  flex: 1 1 auto;
+}
+
 .card-img-bottom {
   width: 100%;
   border-bottom-right-radius: calc(0.25rem - 1px);

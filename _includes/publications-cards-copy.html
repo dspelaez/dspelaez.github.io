@@ -1,0 +1,72 @@
+
+<!-- Blog Section -->
+<section class="page-section" id="publications">
+
+  <div class="container post-preview">
+
+    <h2 class="mb-4 text-center">Featured publications</h2>
+    <hr class="divider my-4">
+
+    <div class="card mb-3" style="max-width: 840px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="{{ site.baseurl }}/img/bg-masthead.jpg" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      {% for item in site.data.publications limit:6 %}
+      <div class="col-lg-4 col-sm-6 mb-4">
+        <div class="card h-100">
+          <a href="{{ item.doi | prepend: "http://doi.org/" }}">
+            {% if item.thumbnail %}
+              <img class="card-img-top" src="{{ site.baseurl }}/{{ item.thumbnail }}" alt="">
+            {% else %}
+              <img class="card-img-top" src="{{ site.baseurl }}/img/bg-masthead.jpg" alt="">
+            {% endif %}
+          </a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="{{ item.doi | prepend: "http://doi.org/" }}">{{ item.title | truncatewords: 12}}</a>
+            </h4>
+
+            <ul class=bibliography-author>
+            {% for author in item.author %}
+              {% if author == item.author.last %}
+                <li class="last-author">{{ author }}</li>
+              {% else %}
+                <li>{{ author }}</li>
+              {% endif %}
+            {% endfor %}
+            </ul>
+            <p class=bibliography-journal>{{ item.journal }}, {{ item.year }}</p>
+          </div>
+            <a href="{{ post.url | prepend: site.baseurl }}"
+            class="btn btn-light">Read more...</a>
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="col-md-12 text-center">
+        <a class="btn btn-dark btn-xl"
+          href="{{ site.baseurl }}/pages/blog-list.html">
+          See more...
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Pagination links -->
+    <!--here-->
+
+  </div>
+</section>
