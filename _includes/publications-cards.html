@@ -20,7 +20,7 @@
             {% endif %}
           </div>
           <div class="col-md-8">
-            <div class="card-body-horizontal">
+            <div class="card-body">
               <h4 class="card-title">
                 <a href="{{ item.doi | prepend: "http://doi.org/" }}">{{ item.title }}</a>
               </h4>
@@ -35,14 +35,19 @@
               </ul>
               <p class=bibliography-journal>{{ item.journal }}, {{ item.year }}</p>
 
-              <a href="{{ post.url | prepend: site.baseurl }}"
-              class="btn btn-light">Preprint</a>
+              {% if item.preprint %}
+                <a href="{{ item.preprint | prepend: site.baseurl }}"
+                class="btn btn-light">Preprint</a>
+              {% else %}
+                <a href="{{ item.preprint | prepend: site.baseurl }}"
+                class="btn btn-light disabled">Preprint</a>
+              {% endif %}
 
               <a href="{{ item.doi | prepend: "http://doi.org/" }}"
               class="btn btn-light">Link</a>
 
-              <a href="{{ post.url | prepend: site.baseurl }}"
-              class="btn btn-light">Abstract</a>
+              <a href="{{ item.doi | prepend: "https://api.crossref.org/works/" | append: "/transform/application/x-bibtex"}}"
+              class="btn btn-light">Bibtex</a>
 
             </div>
           </div>

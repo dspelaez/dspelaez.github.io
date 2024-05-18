@@ -4348,12 +4348,19 @@ input[type="button"].btn-block {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 1.5rem;
+  padding: 1.25rem;
 }
 
-.card-body-horizonal {
-  flex: 1 1 auto;
+@media (min-width: 768px) {
+  .card-body {
+    padding: 0;
+    padding-right: 1rem;
+  }
 }
+
+/*.card-body-horizonal {*/
+  /*flex: 1 1 auto;*/
+/*}*/
 
 .card-title {
   margin-bottom: 0.75rem;
