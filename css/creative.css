@@ -4351,17 +4351,6 @@ input[type="button"].btn-block {
   padding: 1.25rem;
 }
 
-@media (min-width: 768px) {
-  .card-body {
-    padding: 0;
-    padding-right: 1rem;
-  }
-}
-
-/*.card-body-horizonal {*/
-  /*flex: 1 1 auto;*/
-/*}*/
-
 .card-title {
   margin-bottom: 0.75rem;
 }
@@ -4443,8 +4432,6 @@ input[type="button"].btn-block {
 .card-img-left {
   border-top-left-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
-  height: auto;
-  width: 100%;
   object-fit: cover;
 }
 

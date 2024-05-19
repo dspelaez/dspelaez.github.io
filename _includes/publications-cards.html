@@ -8,18 +8,20 @@
 
     <div class="row d-flex justify-content-center">
 
-      {% for item in site.data.publications limit:6 %}
+      {% for item in site.data.publications limit:5 %}
 
       <div class="card mb-3" style="max-width: 920px;">
-        <div class="row">
-          <div class="col-md-4 col-lg-4">
+        <div class="row no-gutters">
+          
+          <div class="col-md-4">
             {% if item.thumbnail %}
-              <img class="card-img-left" src="{{ site.baseurl }}/{{ item.thumbnail }}" alt="">
+              <img class="card-img-left" style="min-height: 260px;" src="{{ site.baseurl }}/{{ item.thumbnail }}" alt="">
             {% else %}
-              <img class="card-img-left" src="{{ site.baseurl }}/img/pubs/default.jpg" alt="">
+              <img class="card-img-left" style="min-height: 260px;"src="{{ site.baseurl }}/img/pubs/default.jpg" alt="">
             {% endif %}
           </div>
-          <div class="col-md-8">
+
+          <div class="col-md-8 col-lg-8">
             <div class="card-body">
               <h4 class="card-title">
                 <a href="{{ item.doi | prepend: "http://doi.org/" }}">{{ item.title }}</a>
