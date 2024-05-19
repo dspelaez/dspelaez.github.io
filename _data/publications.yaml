@@ -1,9 +1,29 @@
+- title: Dynamics of bubble plumes produced by breaking waves
+  author:
+    - Daniel Peláez-Zapata
+    - Vikram Pakrashi
+    - Frédéric Dias
+  journal: Submitted to the Journal of Physical Oceanography
+  year: 2024
+  type: article
+  thumbnail: "img/pubs/pelaez_bubbles_jpo.jpg"
+
+- title: "Ocean wave directional distribution from GPS buoy observations off the west coast of Ireland: Assessment of a wavelet-based method"
+  author:
+    - Daniel Peláez-Zapata
+    - Vikram Pakrashi
+    - Frédéric Dias
+  journal: Submitted to the Journal of Atmospheric and Oceanic Technology
+  year: 2024
+  type: article
+  thumbnail: "img/pubs/pelaez_dwspec_jtech.jpg"
+
 - title: Improving the sea state forecasts by using local wave observations and the ensembleBMA software
   author:
-    - T. Kokina
-    - D.S. Peláez-Zapata
-    - T.B. Murphy
-    - F. Dias
+    - Tatjana Kokina
+    - Daniel Peláez-Zapata
+    - Brendan Murphy
+    - Frédéric Dias
   journal: Environmental Data Science
   year: 2022
   doi: 10.1017/eds.2023.31
@@ -13,12 +33,12 @@
 
 - title: Meteotsunamis and other anomalous “tidal surge” events in Western Europe in Summer 2022
   author:
-    - E. Renzi
-    - C. Bergin
-    - T. Kokina
-    - D.S. Peláez-Zapata
-    - D. Giles
-    - F. Dias
+    - Emiliano Renzi
+    - Claire Bergin
+    - Tatjana Kokina
+    - Daniel Peláez-Zapata
+    - Daniel Giles
+    - Frédéric Dias
   journal: Physics of Fluids
   year: 2023
   doi: 10.1063/5.0139220
@@ -28,9 +48,9 @@
 
 - title: Ecosystem management tools to study natural habitats as wave damping structures and coastal protection mechanisms
   author:
-    - J.D. Osorio-Cano
-    - Andrés F. Osorio
-    - D.S. Peláez-Zapata
+    - Juan David Osorio-Cano
+    - Andrés Osorio
+    - Daniel Peláez-Zapata
   journal: Ecological Engineering
   year: 2019
   doi: 10.1016/j.ecoleng.2017.07.015
@@ -39,9 +59,9 @@
 
 - title: Numerical Study of Run-up Oscillations over Fringing Reefs
   author:
-    - D.S. Peláez-Zapata
-    - R.D. Montoya
-    - Andrés F. Osorio
+    - Daniel Peláez-Zapata
+    - Rubén Darío Montoya
+    - Andrés Osorio
   journal: Journal of Coastal Research
   year: 2018
   doi: 10.2112/jcoastres-d-17-00057.1
@@ -50,14 +70,14 @@
 
 - title: Occurrence of energetic extreme oceanic events in the Colombian Caribbean coasts and some approaches to assess their impact on ecosystems
   author:
-    - G. Bernal
-    - Andrés F. Osorio
-    - L. Urrego
-    - D.S. Peláez-Zapata
-    - E. Molina
-    - S. Zea
-    - R.D. Montoya
-    - N. Villegas
+    - Gladys Bernal
+    - Andrés Osorio
+    - Ligia Urrego
+    - Daniel Peláez-Zapata
+    - Eliana Molina
+    - Sven Zea
+    - Rubén Montoya
+    - Nancy Villegas
   journal: Journal of Marine Systems
   year: 2016
   doi: 10.1016/j.jmarsys.2016.08.007
@@ -66,9 +86,9 @@
 - title: "Construction of synthetic ocean wave series along the Colombian Caribbean Coast: A wave climate analysis"
   author:
     - Andrés F. Osorio
-    - R.D. Montoya
-    - J.C. Ortiz
-    - D.S. Peláez-Zapata
+    - Rubén Darío Montoya
+    - Juan Carlos Ortiz
+    - Daniel Peláez-Zapata
   journal: Applied Ocean Research
   year: 2016
   doi: 10.1016/j.apor.2016.01.004
@@ -76,13 +96,13 @@
 
 - title: "Hydrodynamics applied to the management and conservation of marine and coastal ecosystems: Gorgona Island, Colombian Pacific Ocean"
   author:
-    - Andrés F. Osorio
-    - D.S. Peláez-Zapata
-    - J.J. Guerrero-Gallego
-    - O.A. Álvarez-Silva
-    - J.D. Osorio-Cano
-    - F.M. Toro-Botero
-    - A. Girlado
+    - Andrés Osorio
+    - Daniel Peláez-Zapata
+    - Juan Guerrero-Gallego
+    - Oscar Álvarez-Silva
+    - Juan David Osorio-Cano
+    - Francisco Toro-Botero
+    - Andrés Giraldo
   journal: Revista de Biología Tropical
   year: 2014
   doi:
