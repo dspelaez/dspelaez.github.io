@@ -45,11 +45,17 @@
                 class="btn btn-light disabled">Preprint</a>
               {% endif %}
 
-              <a href="{{ item.doi | prepend: "http://doi.org/" }}"
-              class="btn btn-light">Link</a>
-
-              <a href="{{ item.doi | prepend: "https://api.crossref.org/works/" | append: "/transform/application/x-bibtex"}}"
-              class="btn btn-light">Bibtex</a>
+              {% if item.doi %}
+                <a href="{{ item.doi | prepend: "http://doi.org/" }}"
+                class="btn btn-light">Link</a>
+                <a href="{{ item.doi | prepend: "https://api.crossref.org/works/" | append: "/transform/application/x-bibtex"}}"
+                class="btn btn-light">Bibtex</a>
+              {% else %}
+                <a href="{{ item.doi | prepend: "http://doi.org/" }}"
+                class="btn btn-light disabled">Link</a>
+                <a href="{{ item.doi | prepend: "https://api.crossref.org/works/" | append: "/transform/application/x-bibtex"}}"
+                class="btn btn-light disabled">Bibtex</a>
+              {% endif %}
 
             </div>
           </div>
