@@ -211,8 +211,8 @@ side-by-side, moreover it is useful to see the differences:
 ```python
 frqs = np.linspace(0,1,256)
 dirs = np.arange(360)
-E_cos2s = directional_wave_spectrum(frqs, dirs, Hs=2, Tp=4, mdir=45, func="sech2")
-E_sech2 = directional_wave_spectrum(frqs, dirs, Hs=2, Tp=4, mdir=45, func="cos2s", s=4)
+E_sech2 = directional_wave_spectrum(frqs, dirs, Hs=2, Tp=4, mdir=45, func="sech2")
+E_cos2s = directional_wave_spectrum(frqs, dirs, Hs=2, Tp=4, mdir=45, func="cos2s", s=4)
 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7,3.5), dpi=120)
 plot_wave_spectrum(frqs, dirs, E_cos2s, ax=ax1)
