@@ -28,8 +28,7 @@ layout: default
     <div class="col-lg-8 col-md-10 mx-auto">
       <ul class="fa-ul">
         <li>
-          <!--<span class="fa-li"><i class="fas fa-book"></i></span>-->
-          <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="hover-right" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+          <span class="fa-li"><i class="fas fa-book"></i></span>
           <a href="{{ item.doi | prepend: "http://doi.org/" }}"
             <h4>{{ item.title }}</h4></a>
           <br>
@@ -43,6 +42,7 @@ layout: default
           {% endfor %}
           </ul>
           <p class=bibliography-journal>{{ item.journal }}, {{ item.year }}</p>
+          <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="hover-right" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
         </li>
       </ul>
       <hr>
