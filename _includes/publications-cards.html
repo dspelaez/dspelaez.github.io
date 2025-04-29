@@ -26,6 +26,9 @@
               <h4 class="card-title">
                 <a href="{{ item.doi | prepend: "http://doi.org/" }}">{{ item.title | truncatewords: 18}}</a>
               </h4>
+
+              <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="hover-right" data-style="large_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+
               <ul class=bibliography-author>
               {% for author in item.author %}
                 {% if author == item.author.last %}
@@ -37,8 +40,6 @@
               </ul>
               <p class=bibliography-journal>{{ item.journal }}, {{ item.year }}</p>
               
-              <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="hover-right" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
-
               {% if item.preprint %}
                 <a href="{{ item.preprint | prepend: site.baseurl }}"
                 class="btn btn-light">Preprint</a>
