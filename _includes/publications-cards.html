@@ -36,6 +36,8 @@
               {% endfor %}
               </ul>
               <p class=bibliography-journal>{{ item.journal }}, {{ item.year }}</p>
+              
+              <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="hover-right" data-style="large_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
               {% if item.preprint %}
                 <a href="{{ item.preprint | prepend: site.baseurl }}"
@@ -50,7 +52,6 @@
                 class="btn btn-light">Link</a>
                 <a href="{{ item.doi | prepend: "https://api.crossref.org/works/" | append: "/transform/application/x-bibtex"}}"
                 class="btn btn-light">Bibtex</a>
-                <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="hover-right" data-style="large_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
               {% else %}
                 <a href="{{ item.doi | prepend: "http://doi.org/" }}"
                 class="btn btn-light disabled">Link</a>
