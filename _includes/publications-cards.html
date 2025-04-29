@@ -37,7 +37,7 @@
               </ul>
               <p class=bibliography-journal>{{ item.journal }}, {{ item.year }}</p>
               
-              <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="hover-right" data-style="large_rectangle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+              <span class="__dimensions_badge_embed__" data-doi="{{ item.doi }}" data-legend="hover-right" data-style="small_circle"></span><script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
 
               {% if item.preprint %}
                 <a href="{{ item.preprint | prepend: site.baseurl }}"
