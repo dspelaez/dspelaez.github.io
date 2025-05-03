@@ -1,3 +1,13 @@
+- title: "EWDM: A wavelet-based method for estimating directional spectra of ocean waves"
+  author:
+    - Daniel Peláez-Zapata
+    - Frédéric Dias
+  journal: Journal of Open Source Software
+  year: 2025
+  doi: 10.21105/joss.07942
+  type: article
+  thumbnail: "img/pubs/pelaez-zapata_and_dias_2025.png"
+
 - title: Dynamics of bubble plumes produced by breaking waves
   author:
     - Daniel Peláez-Zapata
