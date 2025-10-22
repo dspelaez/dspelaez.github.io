@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Publications from '../components/sections/Publications.astro';
+import Projects from '../components/sections/Projects.astro';
+import Blog from '../components/sections/Blog.astro';
+import Contact from '../components/sections/Contact.astro';
+---
+
+<BaseLayout
+  title="Daniel Peláez-Zapata | Physical Oceanographer | Phd. Applied Mathematics"
+  description="Physical oceanographer specializing in ocean wave dynamics, air-sea interactions, and numerical modeling. Research on energy transfer, momentum exchange, and mass fluxes between ocean and atmosphere."
+>
+  <Header />
+
+  <main>
+    <Hero />
+    <About />
+    <Publications />
+    <Projects />
+    <Blog />
+    <Contact />
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,686 @@
+{
+  "config": {
+    "id": "36a3b0b5-bad0-4a04-b79b-441c7cef77db",
+    "label": "BetterBibTeX JSON",
+    "preferences": {
+      "ascii": "",
+      "asciiBibLaTeX": false,
+      "asciiBibTeX": true,
+      "autoAbbrev": false,
+      "autoExport": "immediate",
+      "autoExportDelay": 5,
+      "autoExportIdleWait": 10,
+      "autoExportPathReplaceDiacritics": false,
+      "autoExportPathReplaceDirSep": "-",
+      "autoExportPathReplaceSpace": " ",
+      "automaticTags": true,
+      "autoPinDelay": 0,
+      "auxImport": false,
+      "baseAttachmentPath": "/Users/dspelaez",
+      "biblatexExtendedDateFormat": true,
+      "biblatexExtendedNameFormat": true,
+      "biblatexExtractEprint": true,
+      "biblatexUsePrefix": true,
+      "bibtexEditionOrdinal": false,
+      "bibtexParticleNoOp": false,
+      "bibtexURL": "off",
+      "cache": true,
+      "cacheDelete": false,
+      "cacheRetain": false,
+      "charmap": "",
+      "chinese": false,
+      "chineseSplitName": true,
+      "citeCommand": "cite",
+      "citekeyCaseInsensitive": true,
+      "citekeyFold": true,
+      "citekeyFormat": "authors(2, sep = \"_and_\", max = 2) + \"_\" + year;\nauthEtal2(sep = _) + \"_\" + year",
+      "citekeySearch": true,
+      "citekeyUnsafeChars": "\\\"#%'(),={}~",
+      "csquotes": "",
+      "DOIandURL": "both",
+      "exportBibTeXStrings": "off",
+      "exportBraceProtection": true,
+      "exportSort": "citekey",
+      "exportTitleCase": true,
+      "extraMergeCitekeys": false,
+      "extraMergeCSL": false,
+      "extraMergeTeX": false,
+      "git": "config",
+      "import": true,
+      "importBibTeXStrings": true,
+      "importCaseProtection": "as-needed",
+      "importCitationKey": true,
+      "importDetectURLs": true,
+      "importExtra": true,
+      "importJabRefAbbreviations": true,
+      "importJabRefStrings": true,
+      "importNoteToExtra": "",
+      "importPlaceEvent": "inproceedings,conference,presentation,talk",
+      "importSentenceCase": "on+guess",
+      "importSentenceCaseQuoted": true,
+      "importUnknownTexCommand": "ignore",
+      "itemObserverDelay": 5,
+      "jabrefFormat": 0,
+      "japanese": false,
+      "keyConflictPolicy": "keep",
+      "keyScope": "library",
+      "language": "langid",
+      "mapMath": "",
+      "mapText": "",
+      "packages": "",
+      "parseParticles": true,
+      "patchDates": "dateadded=dateAdded, date-added=dateAdded, datemodified=dateModified, date-modified=dateModified",
+      "postscript": "",
+      "postscriptOverride": "",
+      "preferencesOverride": "",
+      "qualityReport": false,
+      "quickCopyEta": "",
+      "quickCopyMode": "latex",
+      "quickCopyOrgMode": "zotero",
+      "quickCopyPandocBrackets": false,
+      "quickCopySelectLink": "zotero",
+      "rawImports": false,
+      "rawLaTag": "#LaTeX",
+      "relativeFilePaths": true,
+      "separatorList": "and",
+      "separatorNames": "and",
+      "skipFields": "langid,abstract,keywords,file",
+      "skipWords": "a,ab,aboard,about,above,across,after,against,al,along,amid,among,an,and,anti,around,as,at,before,behind,below,beneath,beside,besides,between,beyond,but,by,d,da,das,de,del,dell,dello,dei,degli,della,dell,delle,dem,den,der,des,despite,die,do,down,du,during,ein,eine,einem,einen,einer,eines,el,en,et,except,for,from,gli,i,il,in,inside,into,is,l,la,las,le,les,like,lo,los,near,nor,of,off,on,onto,or,over,past,per,plus,round,save,since,so,some,sur,than,the,through,to,toward,towards,un,una,unas,under,underneath,une,unlike,uno,unos,until,up,upon,versus,via,von,while,with,within,without,yet,zu,zum",
+      "startupProgress": "popup",
+      "strings": "",
+      "stringsOverride": "",
+      "verbatimFields": "url,doi,file,pdf,ids,eprint,/^verb[a-z]$/,groups,/^citeulike-linkout-[0-9]+$/, /^bdsk-url-[0-9]+$/, keywords",
+      "warnBulkModify": 10,
+      "warnTitleCased": false
+    },
+    "options": {
+      "Items": true,
+      "Normalize": false,
+      "Preferences": true,
+      "exportFileData": false,
+      "exportNotes": true,
+      "keepUpdated": false,
+      "worker": true,
+      "exportDir": "/Users/dspelaez/Dropbox/blog/astro-academic-cv/public",
+      "exportPath": "/Users/dspelaez/Dropbox/blog/astro-academic-cv/public/publications.json"
+    }
+  },
+  "version": {
+    "zotero": "7.0.27",
+    "bbt": "7.0.59"
+  },
+  "collections": {},
+  "items": [
+    {
+      "key": "8AJ4DCDR",
+      "version": 0,
+      "itemType": "journalArticle",
+      "title": "Construction of synthetic ocean wave series along the Colombian Caribbean Coast: A wave climate analysis",
+      "abstractNote": "In this paper a methodology is applied to generate synthetic wave series during mean and extreme conditions. An analysis is carried out that describes mean and extreme wave behavior for several climatic conditions along the Colombian Caribbean Coast. During mean conditions, the most energetic ocean waves are observed during the DJF season for both ENSO phases (El Niño and La Niña) for most of the Caribbean Sea. During the Niño years, there is a reduction in the speed of the north-east trade winds and their associated waves, but only in the DJF and MAM seasons. However, during the JJA season, this situation is reversed with the highest values occurring during El Niño and low values appearing during La Niña. Toward the east around the Guajira region, this general pattern is shown to change significantly. For extreme conditions, the results show a significant influence of extreme events toward the northwest, around La Guajira and the insular zones of San Andres and Providence when compared with other regions along the coast. All of these results (including the synthetic wave series) provide a design and management tool for the successful implementation of any coastal project (scientific or consulting) in Colombia.",
+      "date": "2016-03-01",
+      "shortTitle": "Construction of synthetic ocean wave series along the Colombian Caribbean Coast",
+      "libraryCatalog": "ScienceDirect",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0141118716300025",
+      "accessDate": "2025-01-20T12:17:21Z",
+      "volume": "56",
+      "pages": "119-131",
+      "publicationTitle": "Applied Ocean Research",
+      "DOI": "10.1016/j.apor.2016.01.004",
+      "journalAbbreviation": "Applied Ocean Research",
+      "ISSN": "0141-1187",
+      "creators": [
+        {
+          "firstName": "Andrés F.",
+          "lastName": "Osorio",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Rubén D.",
+          "lastName": "Montoya",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Juan Carlos",
+          "lastName": "Ortiz",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Daniel",
+          "lastName": "Peláez-Zapata",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "Colombia",
+          "type": 1
+        },
+        {
+          "tag": "Waves",
+          "type": 1
+        },
+        {
+          "tag": "Caribbean Sea",
+          "type": 1
+        },
+        {
+          "tag": "Hurricane waves",
+          "type": 1
+        },
+        {
+          "tag": "Synthetic series",
+          "type": 1
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2025-01-20T12:17:21Z",
+      "dateModified": "2025-01-20T12:17:46Z",
+      "uri": "http://zotero.org/users/8594295/items/8AJ4DCDR",
+      "itemID": 1601,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Osorio et al. - 2016 - Construction of synthetic ocean wave series along the Colombian Caribbean Coast A wave climate anal.pdf",
+          "url": "https://www.sciencedirect.com/science/article/am/pii/S0141118716300025",
+          "path": "/Users/dspelaez/Library/Mobile Documents/com~apple~CloudDocs/Library/articles/Osorio et al. - 2016 - Construction of synthetic ocean wave series along the Colombian Caribbean Coast A wave climate anal.pdf",
+          "tags": [
+            {
+              "tag": "zotmoov"
+            }
+          ],
+          "relations": {},
+          "dateAdded": "2025-01-20T12:17:27Z",
+          "dateModified": "2025-01-20T12:17:32Z",
+          "uri": "http://zotero.org/users/8594295/items/GX5L9N93",
+          "select": "zotero://select/library/items/GX5L9N93"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Osorio_etal_2016",
+      "itemKey": "8AJ4DCDR",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/8AJ4DCDR"
+    },
+    {
+      "key": "VWCSRJ8H",
+      "version": 0,
+      "itemType": "journalArticle",
+      "title": "Ecosystem management tools to study natural habitats as wave damping structures and coastal protection mechanisms",
+      "date": "05/2019",
+      "language": "en",
+      "libraryCatalog": "DOI.org (Crossref)",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S0925857417304123",
+      "accessDate": "2023-09-13T15:38:27Z",
+      "volume": "130",
+      "pages": "282-295",
+      "publicationTitle": "Ecological Engineering",
+      "DOI": "10.1016/j.ecoleng.2017.07.015",
+      "journalAbbreviation": "Ecological Engineering",
+      "ISSN": "09258574",
+      "creators": [
+        {
+          "firstName": "J.D.",
+          "lastName": "Osorio-Cano",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "A.F.",
+          "lastName": "Osorio",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "D.S.",
+          "lastName": "Peláez-Zapata",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2023-09-13T15:38:27Z",
+      "dateModified": "2023-09-13T15:38:28Z",
+      "uri": "http://zotero.org/users/8594295/items/VWCSRJ8H",
+      "itemID": 763,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Osorio-Cano et al. - 2019 - Ecosystem management tools to study natural habitats as wave damping structures and coastal protecti.pdf",
+          "path": "/Users/dspelaez/Library/Mobile Documents/com~apple~CloudDocs/Library/articles/Osorio-Cano et al. - 2019 - Ecosystem management tools to study natural habitats as wave damping structures and coastal protecti.pdf",
+          "tags": [
+            {
+              "tag": "zotmoov"
+            }
+          ],
+          "relations": {},
+          "dateAdded": "2024-03-19T14:09:35Z",
+          "dateModified": "2025-08-04T13:12:01Z",
+          "uri": "http://zotero.org/users/8594295/items/HEJ8S39B",
+          "select": "zotero://select/library/items/HEJ8S39B"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Osorio-Cano_etal_2019",
+      "itemKey": "VWCSRJ8H",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/VWCSRJ8H"
+    },
+    {
+      "key": "GJ47KGL6",
+      "version": 0,
+      "itemType": "thesis",
+      "title": "Effect of waves in the upper ocean boundary layer",
+      "abstractNote": "Surface gravity waves represent a key process to determine the dynamics of the upper ocean and its interaction with the lower atmosphere. However, there are relatively few observations that could allow us to understand the effect of the waves in the upper ocean boundary layer. This work presents measurements of the dissipation rate of turbulent kinetic energy in the upper 80 m, collected with a free-fall vertical microstructure profiler. Simultaneously, measurements of air-sea momentum flux and meteorological conditions were made using an Oceanographic and Marine Meteorology Buoy (BOMM). Directional wave spectra were computed using the Wavelet Directional Method (WDM). Wave-induced stress was estimated using the quasi-linear theory of wave growth. Air-side friction velocity shows a quadratic behavior with the 10 meters wind speed at neutral conditions. However, the results show an increase (decrease) of the friction velocity as the swell energy increases (decreases), which suggests that the friction velocity is not well modelled solely with the wind speed but the sea-state play an important role and must be included in the parameterisation. The results show that almost 35 % of the wind stress is transferred to the waves. This is expected since swell prevailed under wind-sea waves during the experiment. The more momentum is transferred from the atmosphere to the waves, the more energy is dissipated from the waves to the ocean. Results suggest that when the wave spectrum shows an equilibrium in the high frequency range, an enhanced dissipation rate is observed near to the sea surface. Finally, comparisons of different parameterisations of dissipation rates, indicate that when Stokes drift production term is included in the balance of turbulent kinetic energy, the dissipation rate is better represented when only the law of the wall scaling is used.",
+      "date": "2018",
+      "language": "es",
+      "url": "http://cicese.repositorioinstitucional.mx/jspui/handle/1007/2241",
+      "place": "Ensenada, BC, México",
+      "thesisType": "MSc Thesis",
+      "university": "Centro de Investigación Científica y de Educación Superior de Ensenada",
+      "creators": [
+        {
+          "firstName": "D. S.",
+          "lastName": "Peláez-Zapata",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2023-07-07T19:00:52Z",
+      "dateModified": "2023-08-26T13:58:25Z",
+      "uri": "http://zotero.org/users/8594295/items/GJ47KGL6",
+      "itemID": 615,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Peláez-Zapata - 2018 - Effect of waves in the upper ocean boundary layer.pdf",
+          "path": "/Users/dspelaez/Library/Mobile Documents/com~apple~CloudDocs/Library/articles/Peláez-Zapata - 2018 - Effect of waves in the upper ocean boundary layer.pdf",
+          "tags": [
+            {
+              "tag": "zotmoov"
+            }
+          ],
+          "relations": {},
+          "dateAdded": "2024-03-19T14:09:41Z",
+          "dateModified": "2025-08-04T13:12:01Z",
+          "uri": "http://zotero.org/users/8594295/items/QYQQI33K",
+          "select": "zotero://select/library/items/QYQQI33K"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Pelaez-Zapata_2018",
+      "itemKey": "GJ47KGL6",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/GJ47KGL6"
+    },
+    {
+      "key": "EQAIIG8B",
+      "version": 0,
+      "itemType": "journalArticle",
+      "title": "Numerical Study of Run-up Oscillations over Fringing Reefs",
+      "date": "09/2018",
+      "language": "en",
+      "libraryCatalog": "DOI.org (Crossref)",
+      "url": "http://www.bioone.org/doi/10.2112/JCOASTRES-D-17-00057.1",
+      "accessDate": "2023-07-04T11:03:44Z",
+      "volume": "345",
+      "pages": "1065-1079",
+      "publicationTitle": "Journal of Coastal Research",
+      "DOI": "10.2112/JCOASTRES-D-17-00057.1",
+      "journalAbbreviation": "Journal of Coastal Research",
+      "ISSN": "0749-0208, 1551-5036",
+      "creators": [
+        {
+          "firstName": "D.S.",
+          "lastName": "Peláez-Zapata",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Rubén D.",
+          "lastName": "Montoya",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Andrés F.",
+          "lastName": "Osorio",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "runup"
+        },
+        {
+          "tag": "coral reefs"
+        },
+        {
+          "tag": "swash"
+        },
+        {
+          "tag": "coastal hazards"
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2023-07-04T11:03:44Z",
+      "dateModified": "2023-07-04T11:05:46Z",
+      "uri": "http://zotero.org/users/8594295/items/EQAIIG8B",
+      "itemID": 26,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Peláez-Zapata et al. - 2018 - Numerical Study of Run-up Oscillations over Fringing Reefs.pdf",
+          "path": "/Users/dspelaez/Library/Mobile Documents/com~apple~CloudDocs/Library/articles/Peláez-Zapata et al. - 2018 - Numerical Study of Run-up Oscillations over Fringing Reefs.pdf",
+          "tags": [
+            {
+              "tag": "zotmoov"
+            }
+          ],
+          "relations": {},
+          "dateAdded": "2024-03-19T14:09:44Z",
+          "dateModified": "2025-08-04T13:12:08Z",
+          "uri": "http://zotero.org/users/8594295/items/LZG68EJE",
+          "select": "zotero://select/library/items/LZG68EJE"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Pelaez-Zapata_etal_2018",
+      "itemKey": "EQAIIG8B",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/EQAIIG8B"
+    },
+    {
+      "key": "2YTSJXTI",
+      "version": 0,
+      "itemType": "journalArticle",
+      "title": "Dynamics of Bubble Plumes Produced by Breaking Waves",
+      "abstractNote": "Bubble plumes play a signiﬁcant role in the air–sea interface by inﬂuencing processes such as air–sea gas exchange, aerosol production, modulation of oceanic carbon and nutrient cycles, and the vertical structure of the upper ocean. Using acoustic Doppler current proﬁler (ADCP) data collected off the west coast of Ireland, we investigate the dynamics of bubble plumes and their relationship with sea state variables. In particular, we describe the patterns of bubble plume vertical extension, duration, and periodicity. We establish a power-law relationship between the average bubble penetration depth and wind speed, consistent with previous ﬁndings. Additionally, the study reveals a signiﬁcant association between whitecapping coverage and observed acoustic volume backscatter intensity, underscoring the role of wave breaking in bubble plume generation. The shape of the probability distribution of bubble plume depths reveals a transition toward stronger and more organized bubble entrainment events during higher wind speeds. Furthermore, we show that deeper bubble plumes are associated with turbulent Langmuir number Lat ; 0.3, highlighting the potential role of Langmuir circulation on the transport and deepening of bubble plumes. These results contribute to a better understanding of the complex interactions between ocean waves, wind, and bubble plumes, providing valuable insights for improving predictive models and enhancing our understanding of air–sea interactions.",
+      "date": "10/2024",
+      "language": "en",
+      "libraryCatalog": "DOI.org (Crossref)",
+      "url": "https://journals.ametsoc.org/view/journals/phoc/54/10/JPO-D-23-0261.1.xml",
+      "accessDate": "2024-09-13T19:51:08Z",
+      "rights": "http://www.ametsoc.org/PUBSReuseLicenses",
+      "volume": "54",
+      "pages": "2059-2071",
+      "publicationTitle": "Journal of Physical Oceanography",
+      "DOI": "10.1175/JPO-D-23-0261.1",
+      "issue": "10",
+      "ISSN": "0022-3670, 1520-0485",
+      "creators": [
+        {
+          "firstName": "Daniel",
+          "lastName": "Peláez-Zapata",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Vikram",
+          "lastName": "Pakrashi",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Frédéric",
+          "lastName": "Dias",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2024-09-13T19:51:08Z",
+      "dateModified": "2024-09-13T19:51:09Z",
+      "uri": "http://zotero.org/users/8594295/items/2YTSJXTI",
+      "itemID": 1314,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Peláez-Zapata et al. - 2024 - Dynamics of Bubble Plumes Produced by Breaking Waves.pdf",
+          "path": "/Users/dspelaez/Library/Mobile Documents/com~apple~CloudDocs/Library/articles/Peláez-Zapata et al. - 2024 - Dynamics of Bubble Plumes Produced by Breaking Waves.pdf",
+          "tags": [
+            {
+              "tag": "zotmoov"
+            }
+          ],
+          "relations": {},
+          "dateAdded": "2024-12-08T13:41:34Z",
+          "dateModified": "2025-08-04T13:12:01Z",
+          "uri": "http://zotero.org/users/8594295/items/ESV2BS2J",
+          "select": "zotero://select/library/items/ESV2BS2J"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Pelaez-Zapata_etal_2024",
+      "itemKey": "2YTSJXTI",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/2YTSJXTI"
+    },
+    {
+      "key": "QFDQ83SB",
+      "version": 0,
+      "itemType": "journalArticle",
+      "title": "Ocean Wave Directional Distribution from GPS Buoy Observations off the West Coast of Ireland: Assessment of a Wavelet-Based Method",
+      "abstractNote": "Knowledge of the directional distribution of a wave field is crucial for a better understanding of complex air–sea interactions. However, the dynamic and unpredictable nature of ocean waves, combined with the limitations of existing measurement technologies and analysis techniques, makes it difficult to obtain precise directional information, leading to a poor understanding of this important quantity. This study investigates the potential use of a wavelet-based method applied to GPS buoy observations as an alternative approach to the conventional methods for estimating the directional distribution of ocean waves. The results indicate that the wavelet-based estimations are consistently good when compared to the framework of widely used parameterizations for the directional distribution. The wavelet-based method presents advantages in comparison with the conventional methods, including being purely data-driven and not requiring any assumptions about the shape of the distribution. In addition, it was found that the wave directional distribution is narrower at the spectral peak and broadens asymmetrically at higher and lower scales, particularly sharply for frequencies below the peak. The directional spreading appears to be independent of the wave age across the entire range of frequencies, implying that the angular width of the directional spectrum is primarily controlled by nonlinear wave–wave interactions rather than by wind forcing. These results support the use of the wavelet-based method as a practical alternative for the estimation of the wave directional distribution. In addition, this study highlights the need for continued innovation in the field of ocean wave measuring technologies and analysis techniques to improve our understanding of air–sea interactions. Significance Statement This study presents a wavelet-based technique for obtaining the directional distribution of ocean waves applied to GPS buoy. This method serves as an alternative to conventional methods and is relatively easy to implement, making it a practical option for researchers and engineers. The study was conducted in a highly energetic environment characterized by high wind speeds and large waves, providing a valuable dataset for understanding the dynamics of marine environment in extreme conditions. This research has implications for improving our understanding of directional characteristics of ocean waves, which is crucial for navigation, offshore engineering, weather forecasting, and coastal hazard mitigation. This study also highlights the challenges associated with understanding wave directionality and emphasizes a need for further observations.",
+      "date": "2024-08-02",
+      "language": "en",
+      "shortTitle": "Ocean Wave Directional Distribution from GPS Buoy Observations off the West Coast of Ireland",
+      "libraryCatalog": "journals.ametsoc.org",
+      "url": "https://journals.ametsoc.org/view/journals/atot/41/8/JTECH-D-23-0058.1.xml",
+      "accessDate": "2024-09-16T14:30:54Z",
+      "extra": "Section: Journal of Atmospheric and Oceanic Technology",
+      "publicationTitle": "Journal of Atmospheric and Oceanic Technology",
+      "DOI": "10.1175/JTECH-D-23-0058.1",
+      "journalAbbreviation": "Journal of Atmospheric and Oceanic Technology",
+      "creators": [
+        {
+          "firstName": "Daniel",
+          "lastName": "Peláez-Zapata",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Vikram",
+          "lastName": "Pakrashi",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Frédéric",
+          "lastName": "Dias",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "Wind waves",
+          "type": 1
+        },
+        {
+          "tag": "Air–sea interaction",
+          "type": 1
+        },
+        {
+          "tag": "Buoy observations",
+          "type": 1
+        },
+        {
+          "tag": "In situ oceanic observations",
+          "type": 1
+        },
+        {
+          "tag": "Spectral analysis/models/distribution",
+          "type": 1
+        },
+        {
+          "tag": "Wavelets",
+          "type": 1
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2024-09-16T14:30:54Z",
+      "dateModified": "2025-06-16T17:02:17Z",
+      "uri": "http://zotero.org/users/8594295/items/QFDQ83SB",
+      "itemID": 1315,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Peláez-Zapata et al. - 2024 - Ocean Wave Directional Distribution from GPS Buoy Observations off the West Coast of Ireland Assess.pdf",
+          "path": "/Users/dspelaez/Library/Mobile Documents/com~apple~CloudDocs/Library/articles/Peláez-Zapata et al. - 2024 - Ocean Wave Directional Distribution from GPS Buoy Observations off the West Coast of Ireland Assess.pdf",
+          "tags": [
+            {
+              "tag": "zotmoov"
+            }
+          ],
+          "relations": {},
+          "dateAdded": "2024-12-08T13:41:14Z",
+          "dateModified": "2025-08-04T13:12:09Z",
+          "uri": "http://zotero.org/users/8594295/items/PXXFVRE2",
+          "select": "zotero://select/library/items/PXXFVRE2"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Pelaez-Zapata_etal_2024a",
+      "itemKey": "QFDQ83SB",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/QFDQ83SB"
+    },
+    {
+      "key": "ENXQVRJZ",
+      "version": 0,
+      "itemType": "journalArticle",
+      "title": "Ocean wave measurements for marine renewable energy applications",
+      "abstractNote": "Accurate wave measurements are crucial for multiple aspects of marine renewable energy projects, including assessing environmental conditions, estimating wave-induced loads on fixed and floating platforms and validating numerical models. This review explores the current state of wave measuring techniques and sensors, their advantages, limitations, and recent technological advancements. Various approaches including in-situ measurements using wave buoys, acoustic Doppler current profilers (ADCPs) and hydrophones are discussed. Challenges in acquiring accurate and reliable measurements, effects of the marine environment on devices, and limitations in measuring technologies are highlighted. This review identifies future research areas including power-efficient long-term monitoring, directional wave characteristics, and better sensor integration. Addressing these challenges can lead to enhanced understanding of ocean waves, contributing to improved wave characterisation in the marine renewable energy sector. Additionally, this study aims to contribute towards sustainable development by advancing affordable and clean energy technologies and addressing the challenges of climate change.",
+      "date": "09/2025",
+      "language": "en",
+      "libraryCatalog": "DOI.org (Crossref)",
+      "url": "https://linkinghub.elsevier.com/retrieve/pii/S1364032125005015",
+      "accessDate": "2025-05-23T10:34:02Z",
+      "volume": "219",
+      "pages": "115828",
+      "publicationTitle": "Renewable and Sustainable Energy Reviews",
+      "DOI": "10.1016/j.rser.2025.115828",
+      "journalAbbreviation": "Renewable and Sustainable Energy Reviews",
+      "ISSN": "13640321",
+      "creators": [
+        {
+          "firstName": "Daniel",
+          "lastName": "Peláez-Zapata",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Vikram",
+          "lastName": "Pakrashi",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "Frédéric",
+          "lastName": "Dias",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [],
+      "relations": {},
+      "dateAdded": "2025-05-23T10:34:02Z",
+      "dateModified": "2025-05-23T10:34:02Z",
+      "uri": "http://zotero.org/users/8594295/items/ENXQVRJZ",
+      "itemID": 1944,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Peláez-Zapata et al. - 2025 - Ocean wave measurements for marine renewable energy applications.pdf",
+          "path": "/Users/dspelaez/Library/Mobile Documents/com~apple~CloudDocs/Library/articles/Peláez-Zapata et al. - 2025 - Ocean wave measurements for marine renewable energy applications.pdf",
+          "tags": [
+            {
+              "tag": "zotmoov"
+            }
+          ],
+          "relations": {},
+          "dateAdded": "2025-05-23T10:33:59Z",
+          "dateModified": "2025-05-23T10:34:08Z",
+          "uri": "http://zotero.org/users/8594295/items/4U7IRQT3",
+          "select": "zotero://select/library/items/4U7IRQT3"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Pelaez-Zapata_etal_2025",
+      "itemKey": "ENXQVRJZ",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/ENXQVRJZ"
+    },
+    {
+      "key": "KU74W2L3",
+      "version": 0,
+      "itemType": "journalArticle",
+      "title": "Meteotsunamis and other anomalous “tidal surge” events in Western Europe in Summer 2022",
+      "abstractNote": "We investigate occurrences of anomalous tidal activity in coastal waters of north-west Europe during Summer 2022. Sightings of an anomalous “tidal surge” occurred on 18 June 2022 in Wales, followed by similar observations in Ireland, France, and Spain. Several anomalous long-wave events were also reported in south England and Wales in the morning of 19 July 2022. We analyzed surface and high-altitude air pressure ﬁelds, and sea level oscillations for both days. Our detailed analysis reveals that the 18 June events were a series of meteotsunamis, propagating over several countries in Western Europe and triggered by localized pressure perturbations, originating within a low-pressure area over the North Atlantic Ocean. A local analysis of the southern coast of Ireland suggests that Proudman resonance was the determinant mechanism that ampliﬁed the meteotsunami traveling eastward in the afternoon of 18 June. A similar analysis of the 19 July events suggests that the tidal surge reported in the UK and anomalous signals recorded in Ireland and France were episodes of seiching triggered by infragravity waves, resonated subharmonically by wind waves. Numerical simulations of the 18 June event were performed with Volna-OP2, which solves the non-linear shallow water equations using a ﬁnite volume discretization. The inﬂuence of the atmospheric wave velocity on the ampliﬁcation of the sea surface elevation is analyzed.",
+      "date": "2023-04-01",
+      "language": "en",
+      "libraryCatalog": "DOI.org (Crossref)",
+      "url": "https://pubs.aip.org/pof/article/35/4/046605/2884730/Meteotsunamis-and-other-anomalous-tidal-surge",
+      "accessDate": "2023-07-04T11:03:48Z",
+      "volume": "35",
+      "pages": "046605",
+      "publicationTitle": "Physics of Fluids",
+      "DOI": "10.1063/5.0139220",
+      "issue": "4",
+      "ISSN": "1070-6631, 1089-7666",
+      "creators": [
+        {
+          "firstName": "E.",
+          "lastName": "Renzi",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "C.",
+          "lastName": "Bergin",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "T.",
+          "lastName": "Kokina",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "D. S.",
+          "lastName": "Pelaez-Zapata",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "D.",
+          "lastName": "Giles",
+          "creatorType": "author"
+        },
+        {
+          "firstName": "F.",
+          "lastName": "Dias",
+          "creatorType": "author"
+        }
+      ],
+      "tags": [
+        {
+          "tag": "meteotsunamis"
+        }
+      ],
+      "relations": {},
+      "dateAdded": "2023-07-04T11:03:48Z",
+      "dateModified": "2023-07-04T11:05:02Z",
+      "uri": "http://zotero.org/users/8594295/items/KU74W2L3",
+      "itemID": 27,
+      "attachments": [
+        {
+          "itemType": "attachment",
+          "title": "Renzi et al. - 2023 - Meteotsunamis and other anomalous “tidal surge” events in Western Europe in Summer 2022.pdf",
+          "path": "/Users/dspelaez/Library/Mobile Documents/com~apple~CloudDocs/Library/articles/Renzi et al. - 2023 - Meteotsunamis and other anomalous “tidal surge” events in Western Europe in Summer 2022.pdf",
+          "tags": [
+            {
+              "tag": "zotmoov"
+            }
+          ],
+          "relations": {},
+          "dateAdded": "2024-03-19T14:10:31Z",
+          "dateModified": "2025-08-04T13:12:07Z",
+          "uri": "http://zotero.org/users/8594295/items/E2ZGVFBH",
+          "select": "zotero://select/library/items/E2ZGVFBH"
+        }
+      ],
+      "notes": [],
+      "citationKey": "Renzi_etal_2023",
+      "itemKey": "KU74W2L3",
+      "libraryID": 1,
+      "select": "zotero://select/library/items/KU74W2L3"
+    }
+  ]
+}

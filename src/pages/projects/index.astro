@@ -1,0 +1,208 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const projects = await getCollection('projects');
+const sortedProjects = projects.sort((a, b) =>
+  b.data.startDate.getTime() - a.data.startDate.getTime()
+);
+
+const statusStyles = {
+  ongoing: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
+  planned: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
+  completed: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300',
+};
+
+// Group by status
+const ongoingProjects = sortedProjects.filter(p => p.data.status === 'ongoing');
+const plannedProjects = sortedProjects.filter(p => p.data.status === 'planned');
+const completedProjects = sortedProjects.filter(p => p.data.status === 'completed');
+---
+
+<BaseLayout
+  title="Research Projects | D.S. Peláez-Zapata"
+  description="Current and past research projects in physical oceanography, wave modeling, and coastal dynamics"
+>
+  <Header />
+
+  <main class="pt-20">
+    <div class="container mx-auto px-4 py-12">
+      <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            Research Projects
+          </h1>
+          <p class="text-lg text-slate-600 dark:text-slate-400">
+            Ongoing, planned, and completed research initiatives
+          </p>
+        </div>
+
+        <!-- Ongoing Projects -->
+        {ongoingProjects.length > 0 && (
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6 border-b-2 border-green-500 pb-2">
+              Ongoing Projects
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              {ongoingProjects.map((project) => (
+                <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all p-6 border border-slate-200 dark:border-slate-700">
+                  {project.data.image && (
+                    <img
+                      src={project.data.image}
+                      alt={project.data.title}
+                      class="w-full h-48 object-cover rounded-lg mb-4"
+                    />
+                  )}
+
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${statusStyles[project.data.status]}`}>
+                    {project.data.status}
+                  </span>
+
+                  <h3 class="text-xl font-semibold text-slate-900 dark:text-white mt-3 mb-2">
+                    {project.data.title}
+                  </h3>
+
+                  <p class="text-slate-600 dark:text-slate-400 mb-4">
+                    {project.data.description}
+                  </p>
+
+                  <div class="space-y-2 mb-4 text-sm">
+                    <p class="text-slate-500 dark:text-slate-500">
+                      Started: {project.data.startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
+                    </p>
+                    {project.data.funding && (
+                      <p class="text-slate-600 dark:text-slate-400">
+                        <strong>Funding:</strong> {project.data.funding}
+                      </p>
+                    )}
+                    {project.data.collaborators && project.data.collaborators.length > 0 && (
+                      <p class="text-slate-600 dark:text-slate-400">
+                        <strong>Collaborators:</strong> {project.data.collaborators.join(', ')}
+                      </p>
+                    )}
+                  </div>
+
+                  {project.data.tags && project.data.tags.length > 0 && (
+                    <div class="flex flex-wrap gap-2 mb-4">
+                      {project.data.tags.map((tag) => (
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {project.data.repo && (
+                    <a
+                      href={project.data.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm"
+                    >
+                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                      View Repository
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Planned Projects -->
+        {plannedProjects.length > 0 && (
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6 border-b-2 border-blue-500 pb-2">
+              Planned Projects
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              {plannedProjects.map((project) => (
+                <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 border border-slate-200 dark:border-slate-700">
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${statusStyles[project.data.status]}`}>
+                    {project.data.status}
+                  </span>
+
+                  <h3 class="text-xl font-semibold text-slate-900 dark:text-white mt-3 mb-2">
+                    {project.data.title}
+                  </h3>
+
+                  <p class="text-slate-600 dark:text-slate-400 mb-4">
+                    {project.data.description}
+                  </p>
+
+                  {project.data.tags && project.data.tags.length > 0 && (
+                    <div class="flex flex-wrap gap-2">
+                      {project.data.tags.map((tag) => (
+                        <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Completed Projects -->
+        {completedProjects.length > 0 && (
+          <div class="mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6 border-b-2 border-slate-500 pb-2">
+              Completed Projects
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+              {completedProjects.map((project) => (
+                <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 border border-slate-200 dark:border-slate-700 opacity-90">
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${statusStyles[project.data.status]}`}>
+                    {project.data.status}
+                  </span>
+
+                  <h3 class="text-xl font-semibold text-slate-900 dark:text-white mt-3 mb-2">
+                    {project.data.title}
+                  </h3>
+
+                  <p class="text-slate-600 dark:text-slate-400 mb-4">
+                    {project.data.description}
+                  </p>
+
+                  <div class="text-sm text-slate-500 dark:text-slate-500 mb-4">
+                    {project.data.startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+                    {project.data.endDate && ` - ${project.data.endDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}`}
+                  </div>
+
+                  {project.data.repo && (
+                    <a
+                      href={project.data.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm"
+                    >
+                      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                      View Repository
+                    </a>
+                  )}
+                </article>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {projects.length === 0 && (
+          <p class="text-center text-slate-600 dark:text-slate-400 py-12">
+            No projects yet. Add content to <code>src/content/projects/</code>
+          </p>
+        )}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

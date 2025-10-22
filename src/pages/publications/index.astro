@@ -1,0 +1,131 @@
+---
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Read publications from JSON file
+const publicationsPath = resolve('./public/publications.json');
+const publicationsData = JSON.parse(await readFile(publicationsPath, 'utf-8'));
+const items = publicationsData.items || [];
+
+// Transform publications
+const publications = items.map((item: any) => {
+  const year = new Date(item.date).getFullYear();
+  const authors = item.creators.map((c: any) =>
+    `${c.firstName} ${c.lastName}`
+  ).join(', ');
+
+  return {
+    title: item.title,
+    authors,
+    journal: item.publicationTitle || item.university || 'Publication',
+    year,
+    doi: item.DOI,
+    abstract: item.abstractNote || '',
+    citationKey: item.citationKey,
+    itemType: item.itemType,
+  };
+}).sort((a, b) => b.year - a.year);
+
+// Group by year
+const publicationsByYear = publications.reduce((acc, pub) => {
+  const year = pub.year;
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(pub);
+  return acc;
+}, {} as Record<number, typeof publications>);
+---
+
+<BaseLayout
+  title="Publications | Daniel Peláez-Zapata"
+  description="Complete list of peer-reviewed publications in physical oceanography, ocean waves, and coastal dynamics"
+>
+  <Header />
+
+  <main class="pt-20">
+    <div class="container mx-auto px-4 py-12">
+      <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            Publications
+          </h1>
+          <p class="text-lg text-slate-600 dark:text-slate-400">
+            Peer-reviewed publications in oceanography journals
+          </p>
+        </div>
+
+        <!-- Publications by Year -->
+        {Object.keys(publicationsByYear)
+          .sort((a, b) => Number(b) - Number(a))
+          .map((year) => (
+            <div class="mb-12">
+              <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6 border-b-2 border-blue-500 pb-2">
+                {year}
+              </h2>
+
+              <div class="space-y-6">
+                {publicationsByYear[Number(year)].map((pub) => (
+                  <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 border border-slate-200 dark:border-slate-700">
+                    <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+                      {pub.title}
+                    </h3>
+
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                      {pub.authors}
+                    </p>
+
+                    <p class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-4">
+                      {pub.journal}, {pub.year}
+                    </p>
+
+                    {/* Abstract */}
+                    {pub.abstract && (
+                      <details class="mb-4">
+                        <summary class="cursor-pointer text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                          Show abstract
+                        </summary>
+                        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                          {pub.abstract}
+                        </p>
+                      </details>
+                    )}
+
+                    {/* Links */}
+                    <div class="flex flex-wrap gap-2">
+                      {pub.doi && (
+                        <a
+                          href={`https://doi.org/${pub.doi}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
+                        >
+                          DOI
+                        </a>
+                      )}
+                      <button
+                        class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-colors copy-bibtex"
+                        data-citation-key={pub.citationKey}
+                      >
+                        Copy BibTeX
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+
+        {publications.length === 0 && (
+          <p class="text-center text-slate-600 dark:text-slate-400 py-12">
+            No publications yet. Add content to <code>src/content/publications/</code>
+          </p>
+        )}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

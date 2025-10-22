@@ -1,0 +1,117 @@
+---
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+
+// Read publications from JSON file
+const publicationsPath = resolve('./public/publications.json');
+const publicationsData = JSON.parse(await readFile(publicationsPath, 'utf-8'));
+const items = publicationsData.items || [];
+
+// Transform and sort publications
+const publications = items
+  .map((item: any) => {
+    const year = new Date(item.date).getFullYear();
+    const authors = item.creators.map((c: any) =>
+      `${c.firstName} ${c.lastName}`
+    ).join(', ');
+
+    return {
+      title: item.title,
+      authors,
+      journal: item.publicationTitle || item.university || 'Publication',
+      year,
+      doi: item.DOI,
+      abstract: item.abstractNote || '',
+      citationKey: item.citationKey,
+      itemType: item.itemType,
+    };
+  })
+  .sort((a, b) => b.year - a.year)
+  .slice(0, 4);
+---
+
+<section id="publications" class="py-20 bg-slate-50 dark:bg-slate-900">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Title -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          Recent Publications
+        </h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400">
+          Selected peer-reviewed publications in physical oceanography
+        </p>
+      </div>
+
+      <!-- Publications Grid -->
+      {publications.length > 0 ? (
+        <div class="grid gap-6 mb-10">
+          {publications.map((pub) => (
+            <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-slate-200 dark:border-slate-700">
+              <div class="flex flex-col md:flex-row gap-4">
+                <!-- Year Badge -->
+                <div class="flex-shrink-0">
+                  <div class="w-16 h-16 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                    {pub.year}
+                  </div>
+                </div>
+
+                <!-- Content -->
+                <div class="flex-grow">
+                  <!-- Title -->
+                  <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+                    {pub.title}
+                  </h3>
+
+                  <!-- Authors -->
+                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                    {pub.authors}
+                  </p>
+
+                  <!-- Journal -->
+                  <p class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-3">
+                    {pub.journal}, {pub.year}
+                  </p>
+
+                  <!-- Links -->
+                  <div class="flex flex-wrap gap-2">
+                    {pub.doi && (
+                      <a
+                        href={`https://doi.org/${pub.doi}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
+                      >
+                        DOI
+                      </a>
+                    )}
+                    <button
+                      class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-colors copy-bibtex"
+                      data-citation-key={pub.citationKey}
+                    >
+                      Copy BibTeX
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <!-- View All Link -->
+        <div class="text-center">
+          <a
+            href="/publications"
+            class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg"
+          >
+            View All Publications
+          </a>
+        </div>
+      ) : (
+        <p class="text-center text-slate-600 dark:text-slate-400">
+          No publications yet. Add content to <code>src/content/publications/</code>
+        </p>
+      )}
+    </div>
+  </div>
+</section>

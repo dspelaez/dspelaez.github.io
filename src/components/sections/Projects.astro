@@ -1,0 +1,134 @@
+---
+import { getCollection } from 'astro:content';
+
+// Get featured projects
+const allProjects = await getCollection('projects');
+const projects = allProjects
+  .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
+  .slice(0, 3);
+
+const statusStyles = {
+  ongoing: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
+  planned: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
+  completed: 'bg-slate-100 text-slate-700 dark:bg-slate-700 dark:text-slate-300',
+};
+---
+
+<section id="projects" class="py-20 bg-white dark:bg-slate-800">
+  <div class="container mx-auto px-4">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section Title -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
+          Research Projects
+        </h2>
+        <p class="text-lg text-slate-600 dark:text-slate-400">
+          Current and future research initiatives
+        </p>
+      </div>
+
+      <!-- Projects Carousel -->
+      {projects.length > 0 ? (
+        <div class="relative mb-10">
+          <!-- Carousel Container -->
+          <div class="overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-4" id="projects-carousel">
+            <div class="flex gap-6" style="width: max-content;">
+              {projects.map((project) => (
+                <article class="bg-slate-50 dark:bg-slate-900 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1 p-6 border border-slate-200 dark:border-slate-700 flex flex-col snap-center" style="width: 380px; max-width: 90vw;">
+              <!-- Image -->
+              {project.data.image && (
+                <img
+                  src={project.data.image}
+                  alt={project.data.title}
+                  class="w-full h-48 object-cover rounded-lg mb-4"
+                />
+              )}
+
+              <!-- Status Badge -->
+              <div class="mb-3">
+                <span class={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${statusStyles[project.data.status]}`}>
+                  {project.data.status}
+                </span>
+              </div>
+
+              <!-- Title -->
+              <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+                {project.data.title}
+              </h3>
+
+              <!-- Description -->
+              <p class="text-slate-600 dark:text-slate-400 mb-4 flex-grow">
+                {project.data.description}
+              </p>
+
+              <!-- Meta Info -->
+              <div class="space-y-2 mb-4">
+                <p class="text-sm text-slate-500 dark:text-slate-500">
+                  {project.data.startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+                  {project.data.endDate && ` - ${project.data.endDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}`}
+                </p>
+                {project.data.funding && (
+                  <p class="text-sm text-slate-600 dark:text-slate-400">
+                    <strong>Funding:</strong> {project.data.funding}
+                  </p>
+                )}
+                {project.data.collaborators && project.data.collaborators.length > 0 && (
+                  <p class="text-sm text-slate-600 dark:text-slate-400">
+                    <strong>Collaborators:</strong> {project.data.collaborators.join(', ')}
+                  </p>
+                )}
+              </div>
+
+              <!-- Tags -->
+              {project.data.tags && project.data.tags.length > 0 && (
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {project.data.tags.map((tag) => (
+                    <span class="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              <!-- Repo Link -->
+              {project.data.repo && (
+                <a
+                  href={project.data.repo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  View Repository
+                </a>
+              )}
+            </article>
+          ))}
+            </div>
+          </div>
+
+          <!-- Navigation Hint -->
+          <div class="text-center mt-4 text-sm text-slate-500 dark:text-slate-400">
+            ← Scroll to see more →
+          </div>
+        </div>
+
+        <!-- View All Link -->
+        <div class="text-center">
+          <a
+            href="/projects"
+            class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg"
+          >
+            View All Projects
+          </a>
+        </div>
+      ) : (
+        <p class="text-center text-slate-600 dark:text-slate-400">
+          No projects yet. Add content to <code>src/content/projects/</code>
+        </p>
+      )}
+    </div>
+  </div>
+</section>
