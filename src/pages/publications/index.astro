@@ -4,30 +4,38 @@ import { resolve } from 'node:path';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { generateBibtex } from '../../lib/crossref';
 
-// Read publications from JSON file
-const publicationsPath = resolve('./public/publications.json');
-const publicationsData = JSON.parse(await readFile(publicationsPath, 'utf-8'));
-const items = publicationsData.items || [];
+interface Publication {
+  title: string;
+  authors: string;
+  journal: string;
+  year: number;
+  doi: string;
+  abstract: string;
+  citationKey: string;
+  itemType: string;
+  citationCount?: number;
+  bibtex?: string;
+}
 
-// Transform publications
-const publications = items.map((item: any) => {
-  const year = new Date(item.date).getFullYear();
-  const authors = item.creators.map((c: any) =>
-    `${c.firstName} ${c.lastName}`
-  ).join(', ');
+// Read publications from CrossRef cache
+const cachePath = resolve('./public/crossref-publications.json');
+let publications: Publication[] = [];
 
-  return {
-    title: item.title,
-    authors,
-    journal: item.publicationTitle || item.university || 'Publication',
-    year,
-    doi: item.DOI,
-    abstract: item.abstractNote || '',
-    citationKey: item.citationKey,
-    itemType: item.itemType,
-  };
-}).sort((a, b) => b.year - a.year);
+try {
+  const cacheData = JSON.parse(await readFile(cachePath, 'utf-8'));
+  publications = cacheData.publications || [];
+
+  // Ensure BibTeX is generated for each publication
+  publications = publications.map(pub => ({
+    ...pub,
+    bibtex: pub.bibtex || generateBibtex(pub)
+  }));
+} catch (error) {
+  console.error('Failed to read publications cache:', error);
+  publications = [];
+}
 
 // Group by year
 const publicationsByYear = publications.reduce((acc, pub) => {
@@ -35,7 +43,7 @@ const publicationsByYear = publications.reduce((acc, pub) => {
   if (!acc[year]) acc[year] = [];
   acc[year].push(pub);
   return acc;
-}, {} as Record<number, typeof publications>);
+}, {} as Record<number, Publication[]>);
 ---
 
 <BaseLayout
@@ -44,7 +52,7 @@ const publicationsByYear = publications.reduce((acc, pub) => {
 >
   <Header />
 
-  <main class="pt-20">
+  <main class="pt-20 bg-white dark:bg-slate-900 min-h-screen">
     <div class="container mx-auto px-4 py-12">
       <div class="max-w-5xl mx-auto">
         <!-- Header -->
@@ -77,9 +85,16 @@ const publicationsByYear = publications.reduce((acc, pub) => {
                       {pub.authors}
                     </p>
 
-                    <p class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-4">
-                      {pub.journal}, {pub.year}
-                    </p>
+                    <div class="flex items-center gap-3 mb-4">
+                      <p class="text-sm font-medium text-blue-600 dark:text-blue-400">
+                        {pub.journal}, {pub.year}
+                      </p>
+                      {pub.citationCount !== undefined && pub.citationCount > 0 && (
+                        <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">
+                          {pub.citationCount} {pub.citationCount === 1 ? 'citation' : 'citations'}
+                        </span>
+                      )}
+                    </div>
 
                     {/* Abstract */}
                     {pub.abstract && (
@@ -107,7 +122,7 @@ const publicationsByYear = publications.reduce((acc, pub) => {
                       )}
                       <button
                         class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-colors copy-bibtex"
-                        data-citation-key={pub.citationKey}
+                        data-bibtex={pub.bibtex}
                       >
                         Copy BibTeX
                       </button>
@@ -129,3 +144,37 @@ const publicationsByYear = publications.reduce((acc, pub) => {
 
   <Footer />
 </BaseLayout>
+
+<script>
+  // Handle BibTeX copy button clicks
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-bibtex');
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const bibtex = button.getAttribute('data-bibtex');
+
+        if (bibtex) {
+          try {
+            await navigator.clipboard.writeText(bibtex);
+
+            // Visual feedback
+            const originalText = button.textContent;
+            button.textContent = '✓ Copied!';
+            button.classList.add('bg-green-600');
+            button.classList.remove('bg-slate-600');
+
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.classList.remove('bg-green-600');
+              button.classList.add('bg-slate-600');
+            }, 2000);
+          } catch (err) {
+            console.error('Failed to copy BibTeX:', err);
+            alert('Failed to copy BibTeX to clipboard');
+          }
+        }
+      });
+    });
+  });
+</script>

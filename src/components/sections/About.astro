@@ -57,26 +57,37 @@ const icons = {
         About Me
       </h2>
 
-      <!-- Bio and Research Interests -->
-      <div class="max-w-4xl mx-auto mb-16">
-        <div class="scroll-animate-left">
-          <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 text-lg">
-            I am a physical oceanographer studying air–sea interactions, with a focus on
-            ocean wave dynamics. My research combines field observations, remote sensing,
-            and numerical modelling to understand how waves are generated, evolve, and
-            dissipate, and how they influence ocean–atmosphere exchanges and climate
-            processes.
-          </p>
+      <!-- Bio and Research Interests - Side by Side -->
+      <div class="max-w-6xl mx-auto mb-16">
+        <div class="grid md:grid-cols-2 gap-8 items-stretch">
+          <!-- Left: About Me paragraph -->
+          <div class="scroll-animate-left flex">
+            <div class="bg-gradient-to-br from-blue-50 to-slate-50 dark:from-slate-800 dark:to-slate-700 p-8 rounded-xl border-l-4 border-blue-500 shadow-md flex items-center w-full">
+              <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
+                I am a physical oceanographer studying air–sea interactions, with a focus on
+                ocean wave dynamics. My research combines field observations, remote sensing,
+                and numerical modelling to understand how waves are generated, evolve, and
+                dissipate, and how they influence ocean–atmosphere exchanges and climate
+                processes.
+              </p>
+            </div>
+          </div>
 
-          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 mt-8">Research Interests</h3>
-          <ul class="space-y-3">
-            {researchInterests.map((interest, index) => (
-              <li class="flex gap-3 items-start scroll-animate" style={`animation-delay: ${index * 0.05}s`}>
-                <span class="text-blue-600 dark:text-blue-400 mt-1.5 flex-shrink-0">•</span>
-                <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{interest}</span>
-              </li>
-            ))}
-          </ul>
+          <!-- Right: Research Interests -->
+          <div class="scroll-animate-right flex flex-col">
+            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+              <span class="w-1 h-8 bg-blue-500 rounded-full"></span>
+              Research Interests
+            </h3>
+            <ul class="space-y-3 flex-1">
+              {researchInterests.map((interest, index) => (
+                <li class="flex gap-3 items-start scroll-animate hover-lift" style={`animation-delay: ${index * 0.05}s`}>
+                  <span class="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2.5 shadow-sm"></span>
+                  <span class="text-slate-700 dark:text-slate-300 leading-relaxed flex-1 hover:text-slate-900 dark:hover:text-slate-100 transition-colors">{interest}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -87,8 +98,8 @@ const icons = {
           <!-- Vertical timeline line -->
           <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-300 dark:bg-blue-700"></div>
 
-          <!-- Timeline items -->
-          <div class="space-y-12">
+          <!-- Timeline items - compact spacing -->
+          <div class="space-y-3">
             {education.map((edu, index) => {
               const iconHtml = icons[edu.icon as keyof typeof icons] || icons.bachelor;
               const isEven = index % 2 === 0;
@@ -96,10 +107,10 @@ const icons = {
                 <div class={`relative flex items-center ${isEven ? 'justify-start' : 'justify-end'} scroll-animate`} style={`animation-delay: ${index * 0.1}s`}>
                   {/* Content card */}
                   <div class={`w-5/12 ${isEven ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <div class="bg-slate-50 dark:bg-slate-700/50 p-6 rounded-lg shadow-md hover-lift border border-slate-200 dark:border-slate-600">
-                      <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">{edu.degree}</h4>
-                      <p class="text-sm text-slate-600 dark:text-slate-400 mb-1">{edu.institution}</p>
-                      <p class="text-xs text-slate-500 dark:text-slate-500">{edu.location}</p>
+                    <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-lg shadow-md hover-lift border border-slate-200 dark:border-slate-600">
+                      <h4 class="text-base font-semibold text-slate-900 dark:text-white mb-1">{edu.degree}</h4>
+                      <p class="text-sm text-slate-600 dark:text-slate-400">{edu.institution}</p>
+                      <p class="text-xs text-slate-600 dark:text-slate-400">{edu.location}</p>
                     </div>
                   </div>
 

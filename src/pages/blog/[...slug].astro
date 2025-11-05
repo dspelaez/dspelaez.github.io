@@ -37,7 +37,7 @@ const categoryColors = {
 >
   <Header />
 
-  <main class="pt-20">
+  <main class="pt-20 bg-white dark:bg-slate-900 min-h-screen">
     <article class="container mx-auto px-4 py-12">
       <div class="max-w-3xl mx-auto">
         <!-- Header -->
@@ -64,7 +64,7 @@ const categoryColors = {
             {post.data.description}
           </p>
 
-          <div class="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-500">
+          <div class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
             <time datetime={post.data.pubDate.toISOString()}>
               {post.data.pubDate.toLocaleDateString('en-US', {
                 year: 'numeric',
@@ -95,7 +95,15 @@ const categoryColors = {
         )}
 
         <!-- Content -->
-        <div class="prose prose-lg dark:prose-invert max-w-none prose-headings:font-bold prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline prose-img:rounded-lg prose-code:text-sm prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-slate-900 dark:prose-pre:bg-slate-950">
+        <div class="prose prose-lg dark:prose-invert max-w-none
+                    prose-headings:text-slate-900 dark:prose-headings:text-white prose-headings:font-bold
+                    prose-p:text-slate-700 dark:prose-p:text-slate-300
+                    prose-li:text-slate-700 dark:prose-li:text-slate-300
+                    prose-strong:text-slate-900 dark:prose-strong:text-white
+                    prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+                    prose-img:rounded-lg
+                    prose-code:text-sm prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-code:text-slate-800 dark:prose-code:text-slate-200 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
+                    prose-pre:bg-slate-900 dark:prose-pre:bg-slate-950 prose-pre:text-slate-100">
           <Content />
         </div>
 

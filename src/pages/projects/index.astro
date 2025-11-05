@@ -27,7 +27,7 @@ const completedProjects = sortedProjects.filter(p => p.data.status === 'complete
 >
   <Header />
 
-  <main class="pt-20">
+  <main class="pt-20 bg-white dark:bg-slate-900 min-h-screen">
     <div class="container mx-auto px-4 py-12">
       <div class="max-w-6xl mx-auto">
         <!-- Header -->
@@ -70,7 +70,7 @@ const completedProjects = sortedProjects.filter(p => p.data.status === 'complete
                   </p>
 
                   <div class="space-y-2 mb-4 text-sm">
-                    <p class="text-slate-500 dark:text-slate-500">
+                    <p class="text-slate-600 dark:text-slate-400">
                       Started: {project.data.startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}
                     </p>
                     {project.data.funding && (
@@ -171,7 +171,7 @@ const completedProjects = sortedProjects.filter(p => p.data.status === 'complete
                     {project.data.description}
                   </p>
 
-                  <div class="text-sm text-slate-500 dark:text-slate-500 mb-4">
+                  <div class="text-sm text-slate-600 dark:text-slate-400 mb-4">
                     {project.data.startDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
                     {project.data.endDate && ` - ${project.data.endDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}`}
                   </div>

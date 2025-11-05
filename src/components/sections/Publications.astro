@@ -1,13 +1,14 @@
 ---
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { fetchPublicationsFromCrossref, generateBibtex } from '../../lib/crossref';
 
-// Read publications from JSON file
-const publicationsPath = resolve('./public/publications.json');
-const publicationsData = JSON.parse(await readFile(publicationsPath, 'utf-8'));
-const items = publicationsData.items || [];
+// Configuration
+const ORCID = '0000-0001-5862-6194';
+const EMAIL = 'daniel.pelaez_zapata@ens-paris-saclay.fr'; // Replace with your email for CrossRef polite pool
+const CACHE_PATH = resolve('./public/crossref-publications.json');
+const CACHE_DURATION = 7 * 24 * 60 * 60 * 1000; // 7 days in milliseconds
 
-// Transform and sort publications
 interface Publication {
   title: string;
   authors: string;
@@ -17,28 +18,64 @@ interface Publication {
   abstract: string;
   citationKey: string;
   itemType: string;
+  citationCount?: number;
+  bibtex?: string;
 }
 
-const publications: Publication[] = items
-  .map((item: any): Publication => {
-    const year = new Date(item.date).getFullYear();
-    const authors = item.creators.map((c: any) =>
-      `${c.firstName} ${c.lastName}`
-    ).join(', ');
+let publications: Publication[] = [];
 
-    return {
-      title: item.title,
-      authors,
-      journal: item.publicationTitle || item.university || 'Publication',
-      year,
-      doi: item.DOI,
-      abstract: item.abstractNote || '',
-      citationKey: item.citationKey,
-      itemType: item.itemType,
-    };
-  })
-  .sort((a: Publication, b: Publication) => b.year - a.year)
-  .slice(0, 4);
+try {
+  // Try to read cached data
+  const cached = await readFile(CACHE_PATH, 'utf-8');
+  const cacheData = JSON.parse(cached);
+
+  const cacheAge = Date.now() - cacheData.timestamp;
+
+  if (cacheAge < CACHE_DURATION) {
+    // Use cached data if fresh enough
+    console.log('Using cached CrossRef data');
+    publications = cacheData.publications;
+  } else {
+    throw new Error('Cache expired');
+  }
+} catch (error) {
+  // Fetch fresh data if cache miss or expired
+  try {
+    console.log('Fetching fresh data from CrossRef API');
+    publications = await fetchPublicationsFromCrossref(ORCID, EMAIL);
+
+    // Generate BibTeX for each publication
+    publications = publications.map(pub => ({
+      ...pub,
+      bibtex: generateBibtex(pub)
+    }));
+
+    // Ensure public directory exists
+    await mkdir(resolve('./public'), { recursive: true });
+
+    // Cache the results
+    await writeFile(
+      CACHE_PATH,
+      JSON.stringify({ timestamp: Date.now(), publications }, null, 2)
+    );
+    console.log('Publications cached successfully');
+  } catch (fetchError) {
+    console.error('Failed to fetch from CrossRef:', fetchError);
+    // Try to use stale cache as fallback
+    try {
+      const cached = await readFile(CACHE_PATH, 'utf-8');
+      const cacheData = JSON.parse(cached);
+      publications = cacheData.publications;
+      console.log('Using stale cache as fallback');
+    } catch {
+      console.error('No cached data available');
+      publications = [];
+    }
+  }
+}
+
+// Get recent publications (top 4)
+const recentPublications = publications.slice(0, 4);
 ---
 
 <section id="publications" class="py-20 bg-slate-50 dark:bg-slate-900">
@@ -55,9 +92,9 @@ const publications: Publication[] = items
       </div>
 
       <!-- Publications Grid -->
-      {publications.length > 0 ? (
+      {recentPublications.length > 0 ? (
         <div class="grid gap-6 mb-10">
-          {publications.map((pub: Publication, index: number) => (
+          {recentPublications.map((pub: Publication, index: number) => (
             <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-slate-200 dark:border-slate-700 scroll-animate hover-lift" style={`animation-delay: ${index * 0.15}s`}>
               <div class="flex flex-col md:flex-row gap-4">
                 <!-- Year Badge -->
@@ -79,10 +116,17 @@ const publications: Publication[] = items
                     {pub.authors}
                   </p>
 
-                  <!-- Journal -->
-                  <p class="text-sm font-medium text-blue-600 dark:text-blue-400 mb-3">
-                    {pub.journal}, {pub.year}
-                  </p>
+                  <!-- Journal and Citation Count -->
+                  <div class="flex items-center gap-3 mb-3">
+                    <p class="text-sm font-medium text-blue-600 dark:text-blue-400">
+                      {pub.journal}, {pub.year}
+                    </p>
+                    {pub.citationCount !== undefined && pub.citationCount > 0 && (
+                      <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">
+                        {pub.citationCount} {pub.citationCount === 1 ? 'citation' : 'citations'}
+                      </span>
+                    )}
+                  </div>
 
                   <!-- Links -->
                   <div class="flex flex-wrap gap-2">
@@ -98,7 +142,7 @@ const publications: Publication[] = items
                     )}
                     <button
                       class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-all hover-scale copy-bibtex"
-                      data-citation-key={pub.citationKey}
+                      data-bibtex={pub.bibtex}
                     >
                       Copy BibTeX
                     </button>
@@ -126,3 +170,37 @@ const publications: Publication[] = items
     </div>
   </div>
 </section>
+
+<script>
+  // Handle BibTeX copy button clicks
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-bibtex');
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const bibtex = button.getAttribute('data-bibtex');
+
+        if (bibtex) {
+          try {
+            await navigator.clipboard.writeText(bibtex);
+
+            // Visual feedback
+            const originalText = button.textContent;
+            button.textContent = '✓ Copied!';
+            button.classList.add('bg-green-600');
+            button.classList.remove('bg-slate-600');
+
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.classList.remove('bg-green-600');
+              button.classList.add('bg-slate-600');
+            }, 2000);
+          } catch (err) {
+            console.error('Failed to copy BibTeX:', err);
+            alert('Failed to copy BibTeX to clipboard');
+          }
+        }
+      });
+    });
+  });
+</script>

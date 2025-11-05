@@ -33,6 +33,7 @@ html {
   font-weight: 700;
   font-size: 1.5em;
   line-height: 1.3;
+  color: #0f172a;
 }
 
 .prose h3 {
@@ -41,6 +42,12 @@ html {
   font-weight: 600;
   font-size: 1.25em;
   line-height: 1.4;
+  color: #0f172a;
+}
+
+.prose p,
+.prose li {
+  color: #334155;
 }
 
 /* Code blocks */
@@ -49,10 +56,12 @@ html {
   border-radius: 0.5rem;
   padding: 1rem;
   overflow-x: auto;
+  color: #e2e8f0;
 }
 
 .prose code {
   background-color: #e2e8f0;
+  color: #0f172a;
   padding: 0.2em 0.4em;
   border-radius: 0.25rem;
   font-size: 0.875em;
@@ -60,13 +69,30 @@ html {
 
 .prose pre code {
   background-color: transparent;
+  color: inherit;
   padding: 0;
 }
 
-/* Dark mode code */
+/* Dark mode */
 @media (prefers-color-scheme: dark) {
+  .prose h2,
+  .prose h3 {
+    color: #f8fafc;
+  }
+
+  .prose p,
+  .prose li {
+    color: #cbd5e1;
+  }
+
   .prose code {
     background-color: #334155;
+    color: #cbd5e1;
+  }
+
+  .prose pre {
+    background-color: #0f172a;
+    color: #e2e8f0;
   }
 }
 
