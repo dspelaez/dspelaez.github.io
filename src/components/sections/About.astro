@@ -32,11 +32,20 @@ const education = [
   },
 ];
 
-// Icon components
+const researchInterests = [
+  'Ocean wave dynamics: generation, evolution, and dissipation processes',
+  'Air–sea momentum and energy transfer: coupling between waves, wind, and currents',
+  'Upper ocean turbulence: wave-driven boundary layers and Langmuir circulation',
+  'Gas exchange processes: wave-induced and bubble-mediated air–sea fluxes',
+  'Observational methods: ocean acoustics, wave buoys, satellite remote sensing, and radar systems',
+  'Numerical modeling: SWAN, WAVEWATCH III, Oceananigans.jl, GOTM, etc'
+];
+
+// Icon components - larger for timeline
 const icons = {
-  phd: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" /></svg>',
-  masters: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>',
-  bachelor: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>'
+  phd: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" /></svg>',
+  masters: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" /></svg>',
+  bachelor: '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>'
 };
 ---
 
@@ -44,41 +53,62 @@ const icons = {
   <div class="container mx-auto px-4">
     <div class="max-w-6xl mx-auto">
       <!-- Section Title -->
-      <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-12 text-center">
+      <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-12 text-center scroll-animate">
         About Me
       </h2>
 
-      <!-- Bio and Education Side by Side -->
-      <div class="grid md:grid-cols-2 gap-12 mb-16">
-        <!-- Bio -->
-        <div>
-          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Research Focus</h3>
-          <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
-            My research involves the analysis of in-situ and remote sensing ocean
-            wave data as well as the use of numerical models to better understand wave
-            dynamics.
+      <!-- Bio and Research Interests -->
+      <div class="max-w-4xl mx-auto mb-16">
+        <div class="scroll-animate-left">
+          <p class="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 text-lg">
+            I am a physical oceanographer studying air–sea interactions, with a focus on
+            ocean wave dynamics. My research combines field observations, remote sensing,
+            and numerical modelling to understand how waves are generated, evolve, and
+            dissipate, and how they influence ocean–atmosphere exchanges and climate
+            processes.
           </p>
-          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-            I am particularly fascinated by the intricate role of ocean waves in
-            energy transfer, momentum exchange, and mass fluxes between the ocean and the
-            atmosphere.
-          </p>
-        </div>
 
-        <!-- Education -->
-        <div>
-          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">Education</h3>
-          <div class="space-y-4">
-            {education.map((edu) => (
-              <div class="flex gap-3 items-start">
-                <div class="flex-shrink-0 text-blue-600 dark:text-blue-400 mt-1" set:html={icons[edu.icon]} />
-                <div class="border-l-4 border-blue-500 pl-4 py-2 flex-grow">
-                  <h4 class="text-base font-semibold text-slate-900 dark:text-white">{edu.degree}</h4>
-                  <p class="text-sm text-slate-600 dark:text-slate-400">{edu.institution}</p>
-                  <p class="text-xs text-slate-500 dark:text-slate-500">{edu.location}</p>
-                </div>
-              </div>
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 mt-8">Research Interests</h3>
+          <ul class="space-y-3">
+            {researchInterests.map((interest, index) => (
+              <li class="flex gap-3 items-start scroll-animate" style={`animation-delay: ${index * 0.05}s`}>
+                <span class="text-blue-600 dark:text-blue-400 mt-1.5 flex-shrink-0">•</span>
+                <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{interest}</span>
+              </li>
             ))}
+          </ul>
+        </div>
+      </div>
+
+      <!-- Education Timeline -->
+      <div class="max-w-3xl mx-auto">
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-12 text-center">Education</h3>
+        <div class="relative">
+          <!-- Vertical timeline line -->
+          <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-300 dark:bg-blue-700"></div>
+
+          <!-- Timeline items -->
+          <div class="space-y-12">
+            {education.map((edu, index) => {
+              const iconHtml = icons[edu.icon as keyof typeof icons] || icons.bachelor;
+              const isEven = index % 2 === 0;
+              return (
+                <div class={`relative flex items-center ${isEven ? 'justify-start' : 'justify-end'} scroll-animate`} style={`animation-delay: ${index * 0.1}s`}>
+                  {/* Content card */}
+                  <div class={`w-5/12 ${isEven ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                    <div class="bg-slate-50 dark:bg-slate-700/50 p-6 rounded-lg shadow-md hover-lift border border-slate-200 dark:border-slate-600">
+                      <h4 class="text-lg font-semibold text-slate-900 dark:text-white mb-2">{edu.degree}</h4>
+                      <p class="text-sm text-slate-600 dark:text-slate-400 mb-1">{edu.institution}</p>
+                      <p class="text-xs text-slate-500 dark:text-slate-500">{edu.location}</p>
+                    </div>
+                  </div>
+
+                  {/* Icon circle - centered on timeline */}
+                  <div class="absolute left-1/2 transform -translate-x-1/2 w-16 h-16 bg-white dark:bg-slate-800 rounded-full border-4 border-blue-500 dark:border-blue-400 flex items-center justify-center text-blue-600 dark:text-blue-400 shadow-lg hover-scale z-10" set:html={iconHtml}>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

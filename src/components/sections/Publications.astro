@@ -8,8 +8,19 @@ const publicationsData = JSON.parse(await readFile(publicationsPath, 'utf-8'));
 const items = publicationsData.items || [];
 
 // Transform and sort publications
-const publications = items
-  .map((item: any) => {
+interface Publication {
+  title: string;
+  authors: string;
+  journal: string;
+  year: number;
+  doi: string;
+  abstract: string;
+  citationKey: string;
+  itemType: string;
+}
+
+const publications: Publication[] = items
+  .map((item: any): Publication => {
     const year = new Date(item.date).getFullYear();
     const authors = item.creators.map((c: any) =>
       `${c.firstName} ${c.lastName}`
@@ -26,7 +37,7 @@ const publications = items
       itemType: item.itemType,
     };
   })
-  .sort((a, b) => b.year - a.year)
+  .sort((a: Publication, b: Publication) => b.year - a.year)
   .slice(0, 4);
 ---
 
@@ -34,7 +45,7 @@ const publications = items
   <div class="container mx-auto px-4">
     <div class="max-w-6xl mx-auto">
       <!-- Section Title -->
-      <div class="text-center mb-12">
+      <div class="text-center mb-12 scroll-animate">
         <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
           Recent Publications
         </h2>
@@ -46,8 +57,8 @@ const publications = items
       <!-- Publications Grid -->
       {publications.length > 0 ? (
         <div class="grid gap-6 mb-10">
-          {publications.map((pub) => (
-            <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-slate-200 dark:border-slate-700">
+          {publications.map((pub: Publication, index: number) => (
+            <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-slate-200 dark:border-slate-700 scroll-animate hover-lift" style={`animation-delay: ${index * 0.15}s`}>
               <div class="flex flex-col md:flex-row gap-4">
                 <!-- Year Badge -->
                 <div class="flex-shrink-0">
@@ -80,13 +91,13 @@ const publications = items
                         href={`https://doi.org/${pub.doi}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
+                        class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-all hover-scale hover-glow"
                       >
                         DOI
                       </a>
                     )}
                     <button
-                      class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-colors copy-bibtex"
+                      class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-all hover-scale copy-bibtex"
                       data-citation-key={pub.citationKey}
                     >
                       Copy BibTeX
@@ -99,10 +110,10 @@ const publications = items
         </div>
 
         <!-- View All Link -->
-        <div class="text-center">
+        <div class="text-center scroll-animate">
           <a
             href="/publications"
-            class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors shadow-md hover:shadow-lg"
+            class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all hover-scale hover-lift shadow-md hover:shadow-lg"
           >
             View All Publications
           </a>

@@ -138,7 +138,7 @@ Update the following files:
 /
 ├── public/              # Static assets
 │   ├── profile.jpg      # Your profile photo
-│   └── favicon.svg      # Site icon
+│   └── favicon.png      # Site icon
 ├── src/
 │   ├── components/      # Reusable components
 │   │   ├── sections/    # Homepage sections
