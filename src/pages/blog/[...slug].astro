@@ -30,8 +30,59 @@ const categoryColors = {
 };
 ---
 
+<style is:global>
+  .prose {
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .prose p {
+    margin-bottom: 0.75rem !important;
+  }
+
+  .prose ul {
+    list-style-type: disc !important;
+    padding-left: 1.5rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .prose ol {
+    list-style-type: decimal !important;
+    padding-left: 1.5rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .prose ul > li,
+  .prose ol > li {
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.75rem !important;
+    padding-left: 0.5rem !important;
+    display: list-item !important;
+  }
+
+  .prose ul > li > p,
+  .prose ol > li > p {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .prose a {
+    color: #0d9488 !important;
+    text-decoration: none !important;
+  }
+
+  .prose a:hover {
+    text-decoration: underline !important;
+  }
+
+  .dark .prose a {
+    color: #5eead4 !important;
+  }
+</style>
+
 <BaseLayout
-  title={`${post.data.title} | D.S. Peláez-Zapata`}
+  title={`${post.data.title} | Daniel Peláez-Zapata`}
   description={post.data.description}
   image={post.data.image}
 >
@@ -52,13 +103,13 @@ const categoryColors = {
             Back to Blog
           </a>
 
-          <span class={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase ${categoryColors[post.data.category]} mb-4`}>
-            {post.data.category.replace('-', ' ')}
-          </span>
-
           <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             {post.data.title}
           </h1>
+
+          <span class={`inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase ${categoryColors[post.data.category]} mb-4`}>
+            {post.data.category.replace('-', ' ')}
+          </span>
 
           <p class="text-lg text-slate-600 dark:text-slate-400 mb-4">
             {post.data.description}
@@ -100,7 +151,7 @@ const categoryColors = {
                     prose-p:text-slate-700 dark:prose-p:text-slate-300
                     prose-li:text-slate-700 dark:prose-li:text-slate-300
                     prose-strong:text-slate-900 dark:prose-strong:text-white
-                    prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:no-underline hover:prose-a:underline
+                    prose-a:text-teal-600 dark:prose-a:text-teal-400 prose-a:no-underline hover:prose-a:underline
                     prose-img:rounded-lg
                     prose-code:text-sm prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-code:text-slate-800 dark:prose-code:text-slate-200 prose-code:px-1 prose-code:py-0.5 prose-code:rounded
                     prose-pre:bg-slate-900 dark:prose-pre:bg-slate-950 prose-pre:text-slate-100">
