@@ -1,13 +1,14 @@
 ---
 title: "Wave Spectra Analysis with Wavelet Methods"
-description: "Development of advanced wavelet-based techniques for analyzing ocean wave directional spectra from GPS buoy data. This project explores non-parametric methods for understanding wave field complexity."
+description: "Development of a wavelet-based technique for analysing ocean wave directional spectra from GPS buoy data. This project explores non-parametric methods for understanding wave field complexity. Part of the big ERC HIGHWAVE project."
 status: "completed"
 startDate: 2022-01-01
 endDate: 2024-08-01
-collaborators:
+principalInvestigators:
   - "Prof. Frédéric Dias (University College Dublin)"
+collaborators:
   - "Dr. Vikram Pakrashi (University College Dublin)"
-funding: "Irish Research Council"
+funding: "ERC"
 tags:
   - "wavelets"
   - "directional spectra"
@@ -19,7 +20,7 @@ featured: false
 
 ## Project Overview
 
-This research project developed novel wavelet-based methods for analyzing ocean wave directional spectra. Traditional methods often rely on parametric assumptions about the shape of the directional distribution, which may not capture the full complexity of real ocean wave fields.
+This research project was part of the ERC HIGHWAVE project and developed novel wavelet-based methods for analyzing ocean wave directional spectra. Traditional methods often rely on parametric assumptions about the shape of the directional distribution, which may not capture the full complexity of real ocean wave fields.
 
 ## Key Objectives
 
@@ -44,14 +45,14 @@ The project utilized:
 
 ## Publications
 
-1. Peláez-Zapata, D., Pakrashi, V., & Dias, F. (2024). *Ocean Wave Directional Distribution from GPS Buoy Observations*. JAOT.
+1. Peláez-Zapata, D., Pakrashi, V., & Dias, F. (2024). *Ocean Wave Directional Distribution from GPS Buoy Observations*. JTECH.
 
 ## Code and Data
 
 Project code available on GitHub. Includes:
 - Wavelet transformation routines
 - Directional spectrum estimation
-- Visualization tools
+- Visualisation tools
 - Example datasets
 
 ## Impact

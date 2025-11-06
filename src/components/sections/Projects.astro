@@ -72,6 +72,11 @@ const statusStyles = {
                     <strong>Funding:</strong> {project.data.funding}
                   </p>
                 )}
+                {project.data.principalInvestigators && project.data.principalInvestigators.length > 0 && (
+                  <p class="text-sm text-slate-600 dark:text-slate-400">
+                    <strong>PI{project.data.principalInvestigators.length > 1 ? 's' : ''}:</strong> {project.data.principalInvestigators.join(', ')}
+                  </p>
+                )}
                 {project.data.collaborators && project.data.collaborators.length > 0 && (
                   <p class="text-sm text-slate-600 dark:text-slate-400">
                     <strong>Collaborators:</strong> {project.data.collaborators.join(', ')}

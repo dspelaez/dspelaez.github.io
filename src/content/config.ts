@@ -27,6 +27,7 @@ const projects = defineCollection({
     status: z.enum(['ongoing', 'planned', 'completed']),
     startDate: z.date(),
     endDate: z.date().optional(),
+    principalInvestigators: z.array(z.string()).optional(),
     collaborators: z.array(z.string()).optional(),
     funding: z.string().optional(),
     tags: z.array(z.string()),

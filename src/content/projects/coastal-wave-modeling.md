@@ -1,27 +1,25 @@
 ---
-title: "High-Resolution Coastal Wave Modeling"
-description: "Development of a high-resolution wave modeling framework for coastal regions using SWAN and WAVEWATCH III. This project aims to improve wave predictions in complex coastal geometries with enhanced bathymetry and forcing data."
+title: "ARIA/WAVECLIM: Wave Breaking in Climate"
+description: "Understanding the role of wave breaking in climate systems. This ARIA-funded project investigates how wave breaking processes affect air-sea interactions and contribute to climate dynamics."
 status: "ongoing"
-startDate: 2023-06-01
+startDate: 2024-06-01
+principalInvestigators:
+  - "Prof. Serge Guillas (UCL)"
+  - "Prof. Frédéric Dias (UCD)"
+  - "Prof. Christine Gommenginger (NOC)"
 collaborators:
-  - "Dr. Jane Smith (Coastal University)"
-  - "Prof. Robert Johnson (Marine Institute)"
-funding: "National Science Foundation"
+  - Jack Dignan (UCL)
+  - Ben Timmermans (NOC)
+  - Isadora Zampol (NOC)
+funding: "ARIA"
 tags:
-  - "SWAN"
-  - "coastal modeling"
-  - "wave prediction"
-repo: "https://github.com/dspelaez/coastal-wave-model"
+  - "wave breaking"
+  - "climate"
+  - "air-sea interactions"
+  - "numerical modeling"
 featured: true
 ---
 
 ## Project Overview
 
-This ongoing research project focuses on developing an advanced wave modeling system for coastal environments...
-
-## Objectives
-
-- Implement high-resolution nested grids
-- Integrate real-time meteorological forcing
-- Validate against buoy and satellite observations
-- Develop operational forecasting capabilities
+This ongoing research project, funded by ARIA, focuses on understanding the role of wave breaking in climate systems. Wave breaking is a crucial process that mediates energy, momentum, and mass transfer between the ocean and atmosphere, but its representation in climate models remains challenging.
