@@ -42,7 +42,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
-    category: z.enum(['python', 'swan', 'ww3', 'data-analysis', 'research-update', 'tutorial']),
+    category: z.enum(['python', 'modelling', 'data-analysis', 'research-update', 'tutorial']),
     tags: z.array(z.string()),
     image: z.string().optional(),
     featured: z.boolean().default(false),

@@ -2,7 +2,7 @@
 title: "Getting Started with WAVEWATCH III"
 description: "A beginner's guide to understanding and using the WAVEWATCH III spectral wave model for ocean wave forecasting and hindcasting."
 pubDate: 2024-09-10
-category: "ww3"
+category: "modelling"
 tags: ["WAVEWATCH III", "wave modeling", "ocean forecasting", "beginner guide"]
 featured: false
 ---

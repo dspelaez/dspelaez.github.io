@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 const allProjects = await getCollection('projects');
 const projects = allProjects
   .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
-  .slice(0, 3);
+  .slice(0, 6);
 
 const statusStyles = {
   ongoing: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300',
