@@ -61,9 +61,7 @@ Accurate wave directional information isn't just academically interesting—it h
 
 ## What We Learnt from the Irish Coast
 
-Testing the method off Ireland's west coast was ideal. This region sees the full fury of North Atlantic storms with complex, rapidly-changing wave conditions. One particularly interesting finding was that directional spreading (how widely waves are distributed around the main direction) didn't depend much on wave age. This suggests that nonlinear wave-wave interactions play a bigger role than direct wind forcing in determining how waves spread out directionally.
-
-The directional spreading was narrowest at the spectral peak (the dominant waves) and broadened asymmetrically at higher and lower frequencies—exactly what wave physics predicts, which was reassuring!
+Testing the method off Ireland's west coast was ideal. This region sees the full fury of North Atlantic storms with complex, rapidly-changing wave conditions. One particularly interesting finding was that directional spreading (how widely waves are distributed around the main direction) didn't depend much on wave age. This suggests that nonlinear wave-wave interactions play a bigger role than direct wind forcing in determining how waves spread out directionally. We also found that directional spreading was narrowest at the spectral peak (the dominant waves) and broadened asymmetrically at higher and lower frequencies.
 
 ## Open Science in Action
 
