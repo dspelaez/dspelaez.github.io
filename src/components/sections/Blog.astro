@@ -32,11 +32,31 @@ const categoryColors = {
       <!-- Blog Posts Carousel -->
       {posts.length > 0 ? (
         <div class="relative mb-10">
+          <!-- Previous Button -->
+          <button
+            class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-slate-800 text-slate-900 dark:text-white p-3 rounded-full shadow-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all opacity-90 hover:opacity-100 blog-carousel-prev"
+            aria-label="Previous"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          <!-- Next Button -->
+          <button
+            class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-slate-800 text-slate-900 dark:text-white p-3 rounded-full shadow-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all opacity-90 hover:opacity-100 blog-carousel-next"
+            aria-label="Next"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
           <!-- Carousel Container -->
-          <div class="overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-4" id="blog-carousel">
-            <div class="flex gap-6" style="width: max-content;">
-              {posts.map((post) => (
-                <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1 overflow-hidden border border-slate-200 dark:border-slate-700 snap-center" style="width: 380px; max-width: 90vw;">
+          <div class="overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-6 blog-carousel-container" id="blog-carousel" style="overflow-y: visible;">
+            <div class="flex gap-6 py-4" style="width: max-content;">
+              {posts.map((post, index) => (
+                <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-2 overflow-hidden border border-slate-200 dark:border-slate-700 snap-center blog-carousel-item" style="width: 380px; max-width: 90vw;" data-index={index}>
               <!-- Image -->
               {post.data.image && (
                 <img
@@ -100,9 +120,15 @@ const categoryColors = {
             </div>
           </div>
 
-          <!-- Navigation Hint -->
-          <div class="text-center mt-4 text-sm text-slate-500 dark:text-slate-400">
-            ← Scroll to see more →
+          <!-- Carousel Indicators -->
+          <div class="flex justify-center gap-2 mt-6">
+            {posts.map((_, index) => (
+              <button
+                class="blog-carousel-indicator w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 transition-all hover:bg-slate-400 dark:hover:bg-slate-500"
+                data-index={index}
+                aria-label={`Go to slide ${index + 1}`}
+              ></button>
+            ))}
           </div>
         </div>
 
@@ -123,3 +149,130 @@ const categoryColors = {
     </div>
   </div>
 </section>
+
+<script>
+  // Blog Carousel Auto-scroll
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('blog-carousel');
+    const items = document.querySelectorAll('.blog-carousel-item');
+    const indicators = document.querySelectorAll('.blog-carousel-indicator');
+    const prevBtn = document.querySelector('.blog-carousel-prev');
+    const nextBtn = document.querySelector('.blog-carousel-next');
+
+    if (!carousel || items.length === 0) return;
+
+    let currentIndex = 0;
+    let autoScrollInterval;
+    const AUTO_SCROLL_DELAY = 5000; // 5 seconds
+
+    // Scroll to specific item
+    function scrollToItem(index) {
+      if (index < 0 || index >= items.length) return;
+
+      currentIndex = index;
+      const item = items[index];
+      const itemWidth = item.offsetWidth;
+      const gap = 24; // 6 * 4px (gap-6)
+      const scrollPosition = (itemWidth + gap) * index;
+
+      carousel.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+
+      // Update indicators
+      updateIndicators();
+    }
+
+    // Update indicator styles
+    function updateIndicators() {
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.remove('bg-slate-300', 'dark:bg-slate-600');
+          indicator.classList.add('bg-blue-600', 'dark:bg-blue-500', 'w-8');
+        } else {
+          indicator.classList.remove('bg-blue-600', 'dark:bg-blue-500', 'w-8');
+          indicator.classList.add('bg-slate-300', 'dark:bg-slate-600');
+        }
+      });
+    }
+
+    // Next slide
+    function nextSlide() {
+      const nextIndex = (currentIndex + 1) % items.length;
+      scrollToItem(nextIndex);
+    }
+
+    // Previous slide
+    function prevSlide() {
+      const prevIndex = (currentIndex - 1 + items.length) % items.length;
+      scrollToItem(prevIndex);
+    }
+
+    // Start auto-scroll
+    function startAutoScroll() {
+      stopAutoScroll();
+      autoScrollInterval = setInterval(nextSlide, AUTO_SCROLL_DELAY);
+    }
+
+    // Stop auto-scroll
+    function stopAutoScroll() {
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
+      }
+    }
+
+    // Event listeners
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        stopAutoScroll();
+        startAutoScroll(); // Restart after manual interaction
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        stopAutoScroll();
+        startAutoScroll(); // Restart after manual interaction
+      });
+    }
+
+    indicators.forEach((indicator) => {
+      indicator.addEventListener('click', () => {
+        const index = parseInt(indicator.dataset.index);
+        scrollToItem(index);
+        stopAutoScroll();
+        startAutoScroll(); // Restart after manual interaction
+      });
+    });
+
+    // Pause on hover
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', startAutoScroll);
+
+    // Handle manual scroll
+    let scrollTimeout;
+    carousel.addEventListener('scroll', () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(() => {
+        // Detect which item is most visible
+        const scrollLeft = carousel.scrollLeft;
+        const itemWidth = items[0].offsetWidth;
+        const gap = 24;
+        const newIndex = Math.round(scrollLeft / (itemWidth + gap));
+
+        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < items.length) {
+          currentIndex = newIndex;
+          updateIndicators();
+        }
+      }, 150);
+    });
+
+    // Initialize
+    updateIndicators();
+    startAutoScroll();
+  });
+</script>
