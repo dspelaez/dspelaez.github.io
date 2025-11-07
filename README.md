@@ -1,4 +1,4 @@
-# Academic CV Website - D.S. Peláez-Zapata
+# Academic CV Website - Daniel Peláez-Zapata
 
 A modern academic website built with Astro, showcasing research, publications, projects, and tutorials in physical oceanography.
 
