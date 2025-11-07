@@ -49,7 +49,7 @@ make install
 
 SWAN uses a structured grid. Here's a simple example:
 
-```fortran
+```plaintext
 CGRID REGULAR -90.0 25.0 0.0 1000 800 0.01 0.01
 ```
 
@@ -62,7 +62,7 @@ This creates a grid:
 
 A basic SWAN input file (`INPUT`) looks like:
 
-```fortran
+```plaintext
 PROJ 'CoastalWaves' 'v1.0'
 
 SET LEVEL=0.0
@@ -91,14 +91,14 @@ STOP
 
 ### Wind Input
 
-```fortran
+```plaintext
 INPGRID WIND REGULAR -90.0 25.0 0.0 100 80 0.1 0.1
 READINP WIND 1.0 'wind.dat' 4 0 FREE
 ```
 
 ### Wave Spectrum at Boundaries
 
-```fortran
+```plaintext
 BOUNDSPEC SEGMENT IJ 1 1 1 800 VARIABLE FILE 'boundary_spectra.txt'
 ```
 

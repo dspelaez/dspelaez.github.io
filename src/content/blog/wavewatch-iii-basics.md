@@ -54,7 +54,7 @@ export WWATCH3_ENV=environment_file
 
 Create a grid definition file describing your domain:
 
-```fortran
+```plaintext
 $ WAVEWATCH III Grid preprocessor input file
 $
 $ Grid name
