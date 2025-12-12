@@ -78,6 +78,22 @@ const categoryColors = {
   .dark .prose a {
     color: #5eead4 !important;
   }
+
+  /* Center display math equations */
+  .prose .katex-display {
+    text-align: center !important;
+    margin: 1.5em 0 !important;
+  }
+
+  /* Center paragraphs containing display math */
+  .prose p:has(> span.katex > span.katex-mathml > math[display="block"]) {
+    text-align: center !important;
+  }
+
+  /* Center paragraphs that only contain katex (display equations) */
+  .prose p:has(> span.katex:only-child) {
+    text-align: center !important;
+  }
 </style>
 
 <BaseLayout

@@ -63,7 +63,7 @@ The data processing techniques we developed can be applied to existing ADCP data
 
 This research adds another piece to the puzzle of how breaking waves inject energy, momentum, and gases into the ocean. The transition from sporadic, random bubble entrainment during low winds to organised, Langmuir-driven transport during storms reveals a rich complexity in what might seem like simple white foam.
 
-Every time you watch waves breaking on a beach, there's an invisible cascade happening beneath the surface—millions of bubbles being created, transported, dissolved, and rising. Understanding this process, quantifying it, and incorporating it into our models brings us closer to understanding the intricate relationship between the ocean and the atmosphere that shapes our climate.
+Every time you watch waves breaking on a beach, there's an invisible cascade happening beneath the surface, millions of bubbles being created, transported, dissolved, and rising. Understanding this process, quantifying it, and incorporating it into our models brings us closer to understanding the intricate relationship between the ocean and the atmosphere that shapes our climate.
 
 And sometimes, all you need is a well-placed acoustic sensor listening patiently to the symphony of bubbles beneath the waves.
 

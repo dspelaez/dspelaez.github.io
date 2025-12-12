@@ -99,6 +99,23 @@ html {
 /* Math rendering */
 .katex {
   font-size: 1.1em;
+  color: #0f172a;
+}
+
+.katex-display {
+  text-align: center !important;
+  margin: 1.5em 0 !important;
+}
+
+.prose .katex-display {
+  text-align: center !important;
+}
+
+/* Dark mode support for math */
+@media (prefers-color-scheme: dark) {
+  .katex {
+    color: #e2e8f0 !important;
+  }
 }
 
 /* Section spacing */

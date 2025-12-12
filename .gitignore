@@ -4,6 +4,8 @@ dist/
 .astro/
 .vscode/
 
+.ipynb_checkpoints/
+
 # dependencies
 node_modules/
 
