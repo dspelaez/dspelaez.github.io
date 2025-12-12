@@ -182,9 +182,24 @@ The visual differences are striking. **MEM-I performs reasonably well on simple 
 
 To quantify this, I ran both methods on 100 randomly generated distributions (mix of unimodal and bimodal) and computed three error metrics:
 
-- **RMSE**: Root mean square error between true and estimated distributions
-- **KL Divergence**: Information-theoretic distance (lower = better)
-- **Fourier Error**: Euclidean distance in Fourier coefficient space
+- **RMSE** (Root Mean Square Error):  
+  $$
+  \mathrm{RMSE} = \sqrt{ \frac{1}{N} \sum_{i=1}^{N} \left[ D_{\text{est}}(\theta_i) - D_{\text{true}}(\theta_i) \right]^2 }
+  $$
+  Measures the average squared difference between the estimated and true distributions.
+
+- **KL Divergence** (Kullback–Leibler Divergence):  
+  $$
+  D_{\mathrm{KL}} = \sum_{i=1}^{N} D_{\text{true}}(\theta_i) \log \left( \frac{D_{\text{true}}(\theta_i)}{D_{\text{est}}(\theta_i)} \right)
+  $$
+  Quantifies the information loss when using the estimate instead of the true distribution (lower = better).
+
+- **Fourier Error** (Fourier Coefficient Error):  
+  $$
+  \varepsilon_{\mathrm{Fourier}} = \sqrt{ (a_1 - \tilde{a}_1)^2 + (b_1 - \tilde{b}_1)^2 + (a_2 - \tilde{a}_2)^2 + (b_2 - \tilde{b}_2)^2}
+  $$
+  Gives the Euclidean distance between the estimated and true Fourier coefficients.
+
 
 ![Performance metrics comparison between MEM-I and MEM-II](/images/mem-performance-metrics.png)
 
