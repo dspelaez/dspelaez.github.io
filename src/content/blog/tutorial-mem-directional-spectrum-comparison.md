@@ -173,7 +173,7 @@ Here's what the comparison looks like:
 
 ![Comparison of MEM-I and MEM-II across six test cases](/images/mem-comparison-six-panel.png)
 
-*Six-panel comparison showing true directional distributions (black filled) versus reconstructions using MEM-I (blue dotted) and MEM-II (red dashed). Note how MEM-I struggles with bimodal cases.*
+*Six-panel comparison showing true directional distributions (black filled) versus reconstructions using MEM-I (blue dotted) and MEM-II (red dashed).*
 
 The visual differences are striking. **MEM-I performs reasonably well on simple unimodal distributions but fails catastrophically on bimodal cases**, often creating spurious peaks or missing peaks entirely. **MEM-II generally reproduces the true distribution with high accuracy** across most cases, but it does have limitations: **when the two peaks in a bimodal distribution are very close together, MEM-II tends to merge them into a single broader peak and cannot fully resolve both modes**. In all other cases, MEM-II closely matches the true distribution.
 
@@ -231,7 +231,7 @@ The choice between MEM-I and MEM-II comes down to the accuracy-speed tradeoff. F
 
 Use MEM-I only when you have a specific reason: real-time constraints, known-simple spectra, or resource limitations. But be aware of its limitations, particularly with bimodal distributions—which are common in the real ocean when swell and wind sea coexist.
 
-The full implementation with all test cases is available in the [Jupyter notebook](/notebooks/2025-12-05-mem_tutorial.ipynb) if you want to experiment with your own data.
+The full implementation with all test cases is available in the [Jupyter notebook](https://github.com/dspelaez/dspelaez.github.io/blob/main/public/notebooks/2025-12-05-mem_tutorial.ipynb) if you want to experiment with your own data.
 
 ---
 
