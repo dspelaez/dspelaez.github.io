@@ -1,7 +1,7 @@
 ---
 title: "A Drifting Buoy's Journey Through an Extreme Event: Recording the 2023 Marine Heatwave"
 description: "Our new paper in Scientific Data presents a unique high-resolution dataset captured by a serendipitously drifting buoy during the 2023 North Atlantic marine heatwave."
-pubDate: 2025-01-20
+pubDate: 2025-12-12
 category: "research-update"
 tags:
   - "Marine Heatwaves"
@@ -19,9 +19,9 @@ Incidentally, we had deployed a [Spotter buoy](https://www.sofarocean.com/produc
 
 Our new paper, [recently published in *Scientific Data*](https://doi.org/10.1038/s41597-025-06268-y), presents the high-resolution dataset recorded during this extreme event, making these unique in-situ observations available for future research.
 
-<video controls autoplay loop muted playsinline style="width: 100%; max-width: 800px; margin: 2rem auto; display: block; border-radius: 8px;">
+<video controls autoplay loop muted playsinline style="width: 100%; max-width: 800px; margin: 2rem auto; display: block; border-radius: 8px;" title="Sea surface temperature evolution around Ireland during the June 2023 marine heatwave showing a 4°C anomaly and buoy trajectory">
   <source src="/movies/mhw_ireland_sst_animation.mp4" type="video/mp4">
-  Your browser does not support the video tag.
+  Sea surface temperature evolution around Ireland during the June 2023 marine heatwave showing a 4°C anomaly and buoy trajectory.
 </video>
 
 *Sea surface temperature evolution around Ireland during the 2023 marine heatwave. The animation shows the dramatic warming that occurred off the Irish west coast, with the yellow track indicating the drifting buoy trajectory capturing high-resolution data throughout the event.*
@@ -52,7 +52,7 @@ For coastal communities and marine industries, the stakes are existential. Fishe
 
 Understanding and predicting marine heatwaves requires detailed observations, yet acquiring co-located, in-situ measurements of ocean temperature, wind, and waves remains logistically challenging. Most monitoring relies on satellite data or reanalysis products with daily averages, which smooth out the fine-scale variability crucial for understanding air-sea interactions.
 
-This is where the 2023 dataset becomes uniquely valuable. A [Spotter buoy](https://www.sofarocean.com/products/spotter), deployed off the Aran Islands in April 2023, captured 1-minute resolution sea surface temperature measurements, 30-minute directional wave spectra, and wind speed estimates throughout the deployment. When the buoy broke free from its mooring on 1 June 2023, this incident became a stroke of fortune: the drifting buoy continued measuring throughout the peak of the marine heatwave, providing unique high-resolution and simultaneous measurements of waves, wind, and temperature during an extreme event.
+This is where the 2023 dataset becomes uniquely valuable. A [Spotter buoy](https://www.sofarocean.com/products/spotter), deployed off the Aran Islands in April 2023, captured 1-minute resolution sea surface temperature measurements, 30-minute directional wave spectra, and wind speed estimates throughout the deployment. This deployment followed our previous work on [bubble plume dynamics off the Irish coast](/blog/bubble-plumes-wave-breaking), which highlighted the complex air-sea interactions in this energetic region. When the buoy broke free from its mooring on 1 June 2023, this incident became a stroke of fortune: the drifting buoy continued measuring throughout the peak of the marine heatwave, providing unique high-resolution and simultaneous measurements of waves, wind, and temperature during an extreme event.
 
 ![Sea Surface Temperature and Wind Speed Comparison](/images/sst_and_wind_comparison.png)
 

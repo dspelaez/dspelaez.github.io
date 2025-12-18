@@ -23,11 +23,11 @@ But here's the challenge: these bubble clouds are transient, chaotic, and diffic
 
 In our recent research, published in the *Journal of Physical Oceanography* ([Peláez-Zapata et al., 2024](https://doi.org/10.1175/JPO-D-23-0261.1)), we tackled this problem using an unlikely tool: an acoustic Doppler current profiler (ADCP). Whilst ADCPs are typically used to measure ocean currents, they also happen to be excellent at detecting bubbles. Why? Because bubbles scatter sound waves particularly well, creating bright acoustic signatures that reveal their presence and depth.
 
-![Bubble plumes created by breaking waves in the ocean. Photo by Jeremy Lanfranchi on Unsplash.](/images/bubble-plumes-example.jpg)
+![Bubble plumes created by breaking waves in the Atlantic Ocean off the Irish coast, illustrating energetic air-sea gas exchange.](/images/bubble-plumes-example.jpg)
 
 *Photo by [Jeremy Lanfranchi](https://unsplash.com/@ridershow) on Unsplash*
 
-We deployed a bottom-mounted, upward-looking ADCP off the west coast of Ireland, a particular well-suited location to study energetic breaking waves. For months, this instrument sent acoustic pings upwards through the water column, recording not just currents but also the acoustic backscatter from bubble clouds created by breaking waves up there.
+We deployed a bottom-mounted, upward-looking ADCP off the west coast of Ireland, a particularly well-suited location to study energetic breaking waves. This site is close to where we recently captured [high-resolution data during the 2023 marine heatwave](/blog/marine-heatwave-2023-north-atlantic). For months, this instrument sent acoustic pings upwards through the water column, recording not just currents but also the acoustic backscatter from bubble clouds created by breaking waves up there.
 
 ## What We Found
 
