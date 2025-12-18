@@ -1,6 +1,18 @@
 {
-  "timestamp": 1765226781215,
+  "timestamp": 1765983494880,
   "publications": [
+    {
+      "title": "Sea Surface Temperature and Directional Wave Spectra During the 2023 Marine Heatwave in the North Atlantic",
+      "authors": "Daniel Peláez-Zapata, Brian Ward, Frédéric Dias",
+      "journal": "Scientific Data",
+      "year": 2025,
+      "doi": "10.1038/s41597-025-06268-y",
+      "abstract": "",
+      "citationKey": "Peláez-Zapata_2025",
+      "itemType": "journal-article",
+      "citationCount": 0,
+      "bibtex": "@article{Peláez-Zapata_2025,\n  title = {Sea Surface Temperature and Directional Wave Spectra During the 2023 Marine Heatwave in the North Atlantic},\n  author = {Daniel Peláez-Zapata, Brian Ward, Frédéric Dias},\n  journal = {Scientific Data},\n  year = {2025},\n  doi = {10.1038/s41597-025-06268-y},\n}"
+    },
     {
       "title": "Meteotsunami prediction in km-scale regional systems coupled at high frequency",
       "authors": "Nefeli Makrygianni, Ségolène Berthou, David L. A. Flack, Cindy Lebeaupin Brossier, Jonathan Beuvier, Juan Manuel Castillo, Emiliano Renzi, Clare O’Neill, Daniel Peláez-Zapata, Frederic Dias, Huw Lewis, Diego Bruciaferri",
@@ -22,7 +34,7 @@
       "abstract": "",
       "citationKey": "Peláez-Zapata_2025",
       "itemType": "journal-article",
-      "citationCount": 0,
+      "citationCount": 1,
       "volume": "219",
       "pages": "115828",
       "bibtex": "@article{Peláez-Zapata_2025,\n  title = {Ocean wave measurements for marine renewable energy applications},\n  author = {Daniel Peláez-Zapata, Vikram Pakrashi, Frédéric Dias},\n  journal = {Renewable and Sustainable Energy Reviews},\n  year = {2025},\n  volume = {219},\n  pages = {115828},\n  doi = {10.1016/j.rser.2025.115828},\n}"
@@ -36,7 +48,7 @@
       "abstract": "",
       "citationKey": "Peláez-Zapata_2025",
       "itemType": "journal-article",
-      "citationCount": 0,
+      "citationCount": 1,
       "volume": "10",
       "issue": "109",
       "pages": "7942",
@@ -78,7 +90,7 @@
       "abstract": "Abstract\nKnowledge of the directional distribution of a wave field is crucial for a better understanding of complex air–sea interactions. However, the dynamic and unpredictable nature of ocean waves, combined with the limitations of existing measurement technologies and analysis techniques, makes it difficult to obtain precise directional information, leading to a poor understanding of this important quantity. This study investigates the potential use of a wavelet-based method applied to GPS buoy observations as an alternative approach to the conventional methods for estimating the directional distribution of ocean waves. The results indicate that the wavelet-based estimations are consistently good when compared to the framework of widely used parameterizations for the directional distribution. The wavelet-based method presents advantages in comparison with the conventional methods, including being purely data-driven and not requiring any assumptions about the shape of the distribution. In addition, it was found that the wave directional distribution is narrower at the spectral peak and broadens asymmetrically at higher and lower scales, particularly sharply for frequencies below the peak. The directional spreading appears to be independent of the wave age across the entire range of frequencies, implying that the angular width of the directional spectrum is primarily controlled by nonlinear wave–wave interactions rather than by wind forcing. These results support the use of the wavelet-based method as a practical alternative for the estimation of the wave directional distribution. In addition, this study highlights the need for continued innovation in the field of ocean wave measuring technologies and analysis techniques to improve our understanding of air–sea interactions.\n\nSignificance Statement\nThis study presents a wavelet-based technique for obtaining the directional distribution of ocean waves applied to GPS buoy. This method serves as an alternative to conventional methods and is relatively easy to implement, making it a practical option for researchers and engineers. The study was conducted in a highly energetic environment characterized by high wind speeds and large waves, providing a valuable dataset for understanding the dynamics of marine environment in extreme conditions. This research has implications for improving our understanding of directional characteristics of ocean waves, which is crucial for navigation, offshore engineering, weather forecasting, and coastal hazard mitigation. This study also highlights the challenges associated with understanding wave directionality and emphasizes a need for further observations.",
       "citationKey": "Peláez-Zapata_2024",
       "itemType": "journal-article",
-      "citationCount": 5,
+      "citationCount": 6,
       "volume": "41",
       "issue": "8",
       "pages": "749-765",
