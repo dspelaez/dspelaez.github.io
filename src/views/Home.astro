@@ -3,6 +3,7 @@ import { getLang, useTranslations, localizePath, locales, colon, projectText, ve
 const lang = getLang(Astro.url);
 const t = useTranslations(lang);
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { personSchema, websiteSchema } from '../lib/seo';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Hero from '../components/sections/Hero.astro';
@@ -16,6 +17,7 @@ import Contact from '../components/sections/Contact.astro';
 <BaseLayout
   title={t('meta.home.title')}
   description={t('meta.home.description')}
+  jsonLd={[personSchema(lang), websiteSchema(lang)]}
 >
   <Header />
 

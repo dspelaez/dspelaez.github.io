@@ -52,6 +52,8 @@ const blog = defineCollection({
     tags: z.array(z.string()),
     image: z.string().optional(),
     featured: z.boolean().default(false),
+    // DOI link of the paper a post is about
+    paperUrl: z.string().optional(),
   }),
 });
 

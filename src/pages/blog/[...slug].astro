@@ -4,11 +4,13 @@ import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import { blogPostingSchema } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
   return posts.map((post) => ({
-    params: { slug: post.id },
+    // Clean URLs without the .md extension (old .md URLs redirect, see astro.config)
+    params: { slug: post.slug },
     props: { post },
   }));
 }
@@ -149,7 +151,16 @@ const categoryColors = {
   description={post.data.description}
   image={post.data.image}
   pubDate={post.data.pubDate}
-  paperUrl={post.data.paperUrl}
+  type="article"
+  jsonLd={blogPostingSchema({
+    title: post.data.title,
+    description: post.data.description,
+    url: new URL(`/blog/${post.slug}/`, Astro.site).href,
+    pubDate: post.data.pubDate,
+    image: post.data.image,
+    tags: post.data.tags,
+    paperUrl: post.data.paperUrl,
+  })}
 >
   <Header />
 
