@@ -33,26 +33,6 @@ const statusStyles = {
       <!-- Projects Carousel -->
       {projects.length > 0 ? (
         <div class="relative mb-10">
-          <!-- Previous Button -->
-          <button
-            class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-slate-800 text-slate-900 dark:text-white p-3 rounded-full shadow-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all opacity-90 hover:opacity-100 projects-carousel-prev"
-            aria-label={t('carousel.prev')}
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          <!-- Next Button -->
-          <button
-            class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white dark:bg-slate-800 text-slate-900 dark:text-white p-3 rounded-full shadow-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-all opacity-90 hover:opacity-100 projects-carousel-next"
-            aria-label={t('carousel.next')}
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
           <!-- Carousel Container -->
           <div class="overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-6 projects-carousel-container" id="projects-carousel" style="overflow-y: visible;">
             <div class="flex gap-6 py-4" style="width: max-content;">
@@ -137,15 +117,33 @@ const statusStyles = {
             </div>
           </div>
 
-          <!-- Carousel Indicators -->
-          <div class="flex justify-center gap-2 mt-6">
-            {projects.map((_, index) => (
-              <button
-                class="projects-carousel-indicator w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 transition-all hover:bg-slate-400 dark:hover:bg-slate-500"
-                data-index={index}
-                aria-label={`${t('carousel.goto')} ${index + 1}`}
-              ></button>
-            ))}
+          <!-- Carousel controls: previous, indicators, next -->
+          <div class="flex justify-center items-center gap-4 mt-6">
+            <button
+              class="p-2 rounded-full border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors projects-carousel-prev"
+              aria-label={t('carousel.prev')}
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <div class="flex gap-2">
+              {projects.map((_, index) => (
+                <button
+                  class="projects-carousel-indicator w-2 h-2 rounded-full bg-slate-300 dark:bg-slate-600 transition-all hover:bg-slate-400 dark:hover:bg-slate-500"
+                  data-index={index}
+                  aria-label={`${t('carousel.goto')} ${index + 1}`}
+                ></button>
+              ))}
+            </div>
+            <button
+              class="p-2 rounded-full border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors projects-carousel-next"
+              aria-label={t('carousel.next')}
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
           </div>
         </div>
 
