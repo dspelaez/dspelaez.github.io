@@ -34,6 +34,11 @@ const projects = defineCollection({
     image: z.string().optional(),
     repo: z.string().optional(),
     featured: z.boolean().default(false),
+    // Translated title/description, e.g. i18n: { es: { title, description } }
+    i18n: z.record(
+      z.enum(['es', 'fr']),
+      z.object({ title: z.string().optional(), description: z.string().optional() })
+    ).optional(),
   }),
 });
 

@@ -1,4 +1,7 @@
 ---
+import { getLang, useTranslations, localizePath, locales, colon, projectText, venueLabel } from '../../i18n/ui';
+const lang = getLang(Astro.url);
+const t = useTranslations(lang);
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fetchPublications, generateBibtex } from '../../lib/crossref';
@@ -85,10 +88,10 @@ const recentPublications = publications.slice(0, 4);
       <!-- Section Title -->
       <div class="text-center mb-12 scroll-animate">
         <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-4">
-          Recent Publications
+          {t('pubs.title')}
         </h2>
         <p class="text-lg text-slate-600 dark:text-slate-400">
-          Selected peer-reviewed publications in physical oceanography
+          {t('pubs.subtitle')}
         </p>
       </div>
 
@@ -120,11 +123,11 @@ const recentPublications = publications.slice(0, 4);
                   <!-- Journal and Citation Count -->
                   <div class="flex items-center gap-3 mb-3">
                     <p class="text-sm font-medium text-blue-600 dark:text-blue-400">
-                      {pub.journal}, {pub.year}
+                      {venueLabel(pub.journal, lang)}, {pub.year}
                     </p>
                     {pub.citationCount !== undefined && pub.citationCount > 0 && (
                       <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">
-                        {pub.citationCount} {pub.citationCount === 1 ? 'citation' : 'citations'}
+                        {pub.citationCount} {pub.citationCount === 1 ? t('pubs.citation') : t('pubs.citations')}
                       </span>
                     )}
                   </div>
@@ -138,14 +141,16 @@ const recentPublications = publications.slice(0, 4);
                         rel="noopener noreferrer"
                         class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-all hover-scale hover-glow"
                       >
-                        {pub.doi ? 'DOI' : 'Link'}
+                        {pub.doi ? 'DOI' : t('pubs.link')}
                       </a>
                     )}
                     <button
                       class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-all hover-scale copy-bibtex"
                       data-bibtex={pub.bibtex}
+                      data-copied={t('pubs.copied')}
+                      data-failed={t('pubs.copyFailed')}
                     >
-                      Copy BibTeX
+                      {t('pubs.copy')}
                     </button>
                   </div>
                 </div>
@@ -157,10 +162,10 @@ const recentPublications = publications.slice(0, 4);
         <!-- View All Link -->
         <div class="text-center scroll-animate">
           <a
-            href="/publications"
+            href={localizePath('/publications', lang)}
             class="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all hover-scale hover-lift shadow-md hover:shadow-lg"
           >
-            View All Publications
+            {t('pubs.viewAll')}
           </a>
         </div>
       ) : (
@@ -187,7 +192,7 @@ const recentPublications = publications.slice(0, 4);
 
             // Visual feedback
             const originalText = button.textContent;
-            button.textContent = '✓ Copied!';
+            button.textContent = button.getAttribute('data-copied') || '✓ Copied!';
             button.classList.add('bg-green-600');
             button.classList.remove('bg-slate-600');
 
@@ -198,7 +203,7 @@ const recentPublications = publications.slice(0, 4);
             }, 2000);
           } catch (err) {
             console.error('Failed to copy BibTeX:', err);
-            alert('Failed to copy BibTeX to clipboard');
+            alert(button.getAttribute('data-failed') || 'Failed to copy BibTeX to clipboard');
           }
         }
       });

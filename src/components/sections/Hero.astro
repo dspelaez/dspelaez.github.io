@@ -1,4 +1,6 @@
 ---
+import { getLang, useTranslations } from '../../i18n/ui';
+const t = useTranslations(getLang(Astro.url));
 ---
 
 <section id="hero" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
@@ -36,11 +38,11 @@
       </h1>
 
       <p class="text-xl md:text-2xl text-blue-200 font-medium mb-3 drop-shadow font-lato animate-fade-in-up animate-delay-400" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.4);">
-        Researcher in physical oceanography and air-sea interactions
+        {t('hero.subtitle')}
       </p>
 
       <p class="text-base md:text-lg text-white/80 mb-8 drop-shadow font-lato animate-fade-in-up animate-delay-400" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.4);">
-        Postdoctoral researcher · LOPS (Ifremer / CNRS)
+        {t('hero.position')}
       </p>
 
 

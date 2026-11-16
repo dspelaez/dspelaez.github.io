@@ -17,6 +17,13 @@ tags:
   - "satellite tandem"
 # repo: "https://gitlab.ifremer.fr/sentinel2/opticaltandem"
 featured: true
+i18n:
+  es:
+    title: "Corrientes oceánicas de submesoescala a partir de imágenes ópticas de Sentinel-2"
+    description: "¿Por qué observar las corrientes oceánicas a escalas de 1 km? Controlan cómo se mueven el calor, el carbono y los nutrientes entre la costa, el mar abierto y el océano profundo, pero siguen estando en gran medida fuera del alcance de los satélites. Aprovechamos la relación de dispersión del oleaje (las olas viajan más rápido o más lento según la corriente que tienen debajo), usando los satélites Sentinel-2 en tándem para cartografiar estas corrientes."
+  fr:
+    title: "Courants océaniques de sous-mésoéchelle à partir d'images optiques Sentinel-2"
+    description: "Pourquoi observer les courants océaniques à l'échelle du kilomètre ? Ils contrôlent les échanges de chaleur, de carbone et de nutriments entre la côte, le large et l'océan profond, mais restent en grande partie hors de portée des satellites. Nous exploitons la relation de dispersion des vagues (les vagues se propagent plus ou moins vite selon le courant qui les porte), grâce aux satellites Sentinel-2 en tandem, pour cartographier ces courants."
 ---
 
 ## Project Overview

@@ -18,6 +18,13 @@ tags:
   - "air-sea interactions"
   - "numerical modeling"
 featured: true
+i18n:
+  es:
+    title: "ARIA/WAVECLIM: la rotura de las olas en el clima"
+    description: "Comprender el papel de la rotura de las olas en el sistema climático. Este proyecto, financiado por ARIA, estudia cómo los procesos de rotura del oleaje afectan la interacción océano-atmósfera y contribuyen a la dinámica del clima."
+  fr:
+    title: "ARIA/WAVECLIM : le déferlement des vagues dans le climat"
+    description: "Comprendre le rôle du déferlement des vagues dans le système climatique. Ce projet financé par ARIA étudie comment le déferlement influence les interactions océan-atmosphère et contribue à la dynamique du climat."
 ---
 
 ## Project Overview

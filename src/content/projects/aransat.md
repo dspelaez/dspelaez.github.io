@@ -13,6 +13,13 @@ tags:
   - "GPS buoys"
   - "NDBC"
 featured: true
+i18n:
+  es:
+    title: "ARANSAT: análisis del espectro direccional a partir de CFOSAT"
+    description: "Análisis de datos del satélite CFOSAT colocalizados con boyas Spotter y del NDBC para estudiar la forma del espectro direccional. El proyecto combina teledetección satelital y observaciones in situ para mejorar nuestra comprensión de la direccionalidad del oleaje."
+  fr:
+    title: "ARANSAT : analyse du spectre directionnel à partir de CFOSAT"
+    description: "Analyse des données du satellite CFOSAT colocalisées avec des bouées Spotter et NDBC pour étudier la forme du spectre directionnel. Le projet associe télédétection satellitaire et observations in situ afin de mieux comprendre la directionnalité des vagues."
 ---
 
 ## Project Overview

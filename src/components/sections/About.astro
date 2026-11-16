@@ -1,69 +1,11 @@
 ---
-const education = [
-  {
-    degree: 'PhD. Mathématiques aux interfaces',
-    institution: 'Université Paris-Saclay',
-    location: 'France',
-    icon: 'phd'
-  },
-  {
-    degree: 'PhD. Applied Mathematics',
-    institution: 'University College Dublin',
-    location: 'Ireland',
-    icon: 'phd'
-  },
-  {
-    degree: 'M.Sc. Physical Oceanography',
-    institution: 'CICESE',
-    location: 'Ensenada, México',
-    icon: 'masters'
-  },
-  {
-    degree: 'M.Eng. Water Resources',
-    institution: 'Universidad Nacional de Colombia',
-    location: 'Medellín',
-    icon: 'masters'
-  },
-  {
-    degree: 'B.Sc. Civil Engineering',
-    institution: 'Universidad Nacional de Colombia',
-    location: 'Medellín',
-    icon: 'bachelor'
-  },
-];
-
-const researchInterests = [
-  {
-    icon: 'waves',
-    title: 'Ocean wave dynamics',
-    description: 'Generation, evolution, and dissipation processes'
-  },
-  {
-    icon: 'wind',
-    title: 'Air–sea momentum and energy transfer',
-    description: 'Coupling between waves, wind, and currents'
-  },
-  {
-    icon: 'turbulence',
-    title: 'Upper ocean turbulence',
-    description: 'Wave-driven boundary layers and Langmuir circulation'
-  },
-  {
-    icon: 'bubbles',
-    title: 'Gas exchange processes',
-    description: 'Wave-induced and bubble-mediated air–sea fluxes'
-  },
-  {
-    icon: 'sensors',
-    title: 'Observational methods',
-    description: 'Ocean acoustics, wave buoys, satellite remote sensing, and radar systems'
-  },
-  {
-    icon: 'modeling',
-    title: 'Numerical modeling',
-    description: 'SWAN, WAVEWATCH III, Oceananigans.jl, GOTM, etc'
-  }
-];
+import { getLang, useTranslations, colon } from '../../i18n/ui';
+import { bio, researchInterests, education } from '../../i18n/about';
+const lang = getLang(Astro.url);
+const t = useTranslations(lang);
+const paragraphs = bio[lang];
+const interests = researchInterests[lang];
+const degrees = education[lang];
 
 // Icon components - larger for timeline
 const icons = {
@@ -85,33 +27,38 @@ const icons = {
     <div class="max-w-6xl mx-auto">
       <!-- Section Title -->
       <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-12 text-center scroll-animate">
-        About Me
+        {t('about.title')}
       </h2>
 
-      <!-- Bio - Centered on top -->
-      <div class="max-w-4xl mx-auto mb-16 scroll-animate">
-        <p class="text-slate-700 dark:text-slate-300 leading-relaxed text-lg text-center">
-          I am a physical oceanographer studying air–sea interactions, with a focus on
-          ocean wave dynamics. My research combines field observations, remote sensing,
-          and numerical modelling to understand how waves are generated, evolve, and
-          dissipate, and how they influence ocean–atmosphere exchanges and climate
-          processes.
-        </p>
+      <!-- Bio: two short boxes, what I do / my path -->
+      <div class="max-w-5xl mx-auto mb-16 grid md:grid-cols-2 gap-6">
+        {[
+          { title: t('about.what'), text: paragraphs.what, icon: '<path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/>' },
+          { title: t('about.path'), text: paragraphs.path, icon: '<circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/>' },
+        ].map((box) => (
+          <div class="scroll-animate bg-slate-50 dark:bg-slate-700/50 border border-slate-200 dark:border-slate-600 rounded-lg p-6">
+            <h3 class="flex items-center gap-2 text-lg font-semibold text-blue-600 dark:text-blue-400 mb-3">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true" set:html={box.icon} />
+              {box.title}
+            </h3>
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">{box.text}</p>
+          </div>
+        ))}
       </div>
 
       <!-- Research Interests - Below -->
       <div class="max-w-5xl mx-auto mb-16">
         <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-8 text-center">
-          Research Interests
+          {t('about.interests')}
         </h3>
         <div class="grid md:grid-cols-2 gap-8">
-          {researchInterests.map((interest, index) => {
+          {interests.map((interest, index) => {
             const iconHtml = icons[interest.icon as keyof typeof icons] || icons.waves;
             return (
               <div class="flex gap-4 items-start scroll-animate" style={`animation-delay: ${index * 0.05}s`}>
                 <span class="flex-shrink-0 mt-1" set:html={iconHtml}></span>
                 <div class="flex-1">
-                  <div class="text-slate-900 dark:text-white font-semibold">{interest.title}:</div>
+                  <div class="text-slate-900 dark:text-white font-semibold">{interest.title}{colon(lang)}</div>
                   <div class="text-slate-700 dark:text-slate-300 leading-relaxed">{interest.description}</div>
                 </div>
               </div>
@@ -122,14 +69,14 @@ const icons = {
 
       <!-- Education Timeline -->
       <div class="max-w-3xl mx-auto">
-        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-12 text-center">Education</h3>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-12 text-center">{t('about.education')}</h3>
         <div class="relative">
           <!-- Vertical timeline line -->
           <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-blue-300 dark:bg-blue-700"></div>
 
           <!-- Timeline items - compact spacing -->
           <div class="space-y-3">
-            {education.map((edu, index) => {
+            {degrees.map((edu, index) => {
               const iconHtml = icons[edu.icon as keyof typeof icons] || icons.bachelor;
               const isEven = index % 2 === 0;
               return (

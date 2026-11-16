@@ -1,18 +1,33 @@
 ---
+import { getLang, useTranslations, localizePath, stripLang, isTranslatedPage, languages, langs } from '../i18n/ui';
+
+const lang = getLang(Astro.url);
+const t = useTranslations(lang);
+const home = localizePath('/', lang);
+
 const navItems = [
-  { name: 'About', href: '/#about' },
-  { name: 'Publications', href: '/#publications' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Contact', href: '/#contact' },
+  { name: t('nav.about'), href: `${home}#about` },
+  { name: t('nav.publications'), href: `${home}#publications` },
+  { name: t('nav.projects'), href: localizePath('/projects', lang) },
+  { name: t('nav.blog'), href: localizePath('/blog', lang) },
+  { name: t('nav.contact'), href: `${home}#contact` },
 ];
+
+// Same page in another language; pages that only exist in English
+// (blog posts for now) point to that language's blog or home page
+const base = stripLang(Astro.url.pathname);
+const switchTo = (l: typeof lang) =>
+  isTranslatedPage(Astro.url.pathname)
+    ? localizePath(base, l)
+    : localizePath(base.startsWith('/blog/') ? '/blog/' : '/', l);
+const languageLinks = langs.map((l) => ({ code: l, name: languages[l], href: switchTo(l) }));
 ---
 
 <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <nav class="container mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
       <!-- Logo/Name -->
-      <a href="/" class="flex items-center gap-2 text-xl font-bold text-white hover:text-blue-400 transition-all duration-300 header-text hover-scale">
+      <a href={home} class="flex items-center gap-2 text-xl font-bold text-white hover:text-blue-400 transition-all duration-300 header-text hover-scale">
         <img src="/favicon.png" alt="Logo" class="w-8 h-8 transition-transform duration-300 hover:rotate-12" />
         <span>Daniel Peláez-Zapata</span>
       </a>
@@ -33,13 +48,32 @@ const navItems = [
           ))}
         </ul>
 
+        <!-- Language switcher -->
+        <div class="hidden md:flex items-center gap-1 text-sm font-medium" role="navigation" aria-label={t('nav.language')}>
+          {languageLinks.map((l, i) => (
+            <>
+              {i > 0 && <span class="opacity-50 text-white header-text" aria-hidden="true">·</span>}
+              <a
+                href={l.href}
+                hreflang={l.code}
+                lang={l.code}
+                title={l.name}
+                aria-current={l.code === lang ? 'true' : undefined}
+                class={`uppercase header-text text-white/90 hover:text-blue-400 transition-colors ${l.code === lang ? 'font-bold underline underline-offset-4' : 'opacity-70'}`}
+              >
+                {l.code}
+              </a>
+            </>
+          ))}
+        </div>
+
         <!-- Light/dark toggle: shows the moon in light mode and the sun in dark mode -->
         <button
           id="theme-toggle"
           type="button"
           class="p-2 rounded-full text-white/90 hover:text-blue-400 header-text transition-all duration-300 hover-scale"
-          aria-label="Switch between light and dark mode"
-          title="Switch between light and dark mode"
+          aria-label={t('nav.theme')}
+          title={t('nav.theme')}
         >
           <svg class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
@@ -54,7 +88,7 @@ const navItems = [
         <button
           id="mobile-menu-button"
           class="md:hidden p-2 text-white/90 hover:text-blue-400 header-text transition-all duration-300 hover-scale"
-          aria-label="Toggle menu"
+          aria-label={t('nav.menu')}
         >
           <svg class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -77,6 +111,19 @@ const navItems = [
           </li>
         ))}
       </ul>
+      <div class="flex items-center gap-4 pt-3 mt-3 border-t border-slate-200 dark:border-slate-700 text-sm font-medium" aria-label={t('nav.language')}>
+        {languageLinks.map((l) => (
+          <a
+            href={l.href}
+            hreflang={l.code}
+            lang={l.code}
+            aria-current={l.code === lang ? 'true' : undefined}
+            class={`header-text text-slate-600 hover:text-blue-600 ${l.code === lang ? 'font-bold underline underline-offset-4' : ''}`}
+          >
+            {l.name}
+          </a>
+        ))}
+      </div>
     </div>
   </nav>
 </header>

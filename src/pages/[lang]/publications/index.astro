@@ -1,0 +1,9 @@
+---
+import PublicationsPage from '../../../views/PublicationsPage.astro';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'fr' } }];
+}
+---
+
+<PublicationsPage />

@@ -1,0 +1,186 @@
+---
+import { getLang, useTranslations, localizePath, locales, colon, projectText, venueLabel } from '../i18n/ui';
+const lang = getLang(Astro.url);
+const t = useTranslations(lang);
+import { readFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { generateBibtex } from '../lib/crossref';
+
+interface Publication {
+  title: string;
+  authors: string;
+  journal: string;
+  year: number;
+  doi: string;
+  url?: string;
+  abstract: string;
+  citationKey: string;
+  itemType: string;
+  citationCount?: number;
+  bibtex?: string;
+}
+
+// Read publications from CrossRef cache
+const cachePath = resolve('./public/crossref-publications.json');
+let publications: Publication[] = [];
+
+try {
+  const cacheData = JSON.parse(await readFile(cachePath, 'utf-8'));
+  publications = cacheData.publications || [];
+
+  // Ensure BibTeX is generated for each publication
+  publications = publications.map(pub => ({
+    ...pub,
+    bibtex: pub.bibtex || generateBibtex(pub)
+  }));
+} catch (error) {
+  console.error('Failed to read publications cache:', error);
+  publications = [];
+}
+
+// Group by year
+const publicationsByYear = publications.reduce((acc, pub) => {
+  const year = pub.year;
+  if (!acc[year]) acc[year] = [];
+  acc[year].push(pub);
+  return acc;
+}, {} as Record<number, Publication[]>);
+---
+
+<BaseLayout
+  title={t('meta.publications.title')}
+  description={t('meta.publications.description')}
+>
+  <Header />
+
+  <main class="pt-20 bg-white dark:bg-slate-900 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+      <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <div class="mb-12">
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            {t('pubs.pageTitle')}
+          </h1>
+          <p class="text-lg text-slate-600 dark:text-slate-400">
+            {t('pubs.pageSubtitle')}
+          </p>
+        </div>
+
+        <!-- Publications by Year -->
+        {Object.keys(publicationsByYear)
+          .sort((a, b) => Number(b) - Number(a))
+          .map((year) => (
+            <div class="mb-12">
+              <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6 border-b-2 border-blue-500 pb-2">
+                {year}
+              </h2>
+
+              <div class="space-y-6">
+                {publicationsByYear[Number(year)].map((pub) => (
+                  <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md p-6 border border-slate-200 dark:border-slate-700">
+                    <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+                      {pub.title}
+                    </h3>
+
+                    <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">
+                      {pub.authors}
+                    </p>
+
+                    <div class="flex items-center gap-3 mb-4">
+                      <p class="text-sm font-medium text-blue-600 dark:text-blue-400">
+                        {venueLabel(pub.journal, lang)}, {pub.year}
+                      </p>
+                      {pub.citationCount !== undefined && pub.citationCount > 0 && (
+                        <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">
+                          {pub.citationCount} {pub.citationCount === 1 ? t('pubs.citation') : t('pubs.citations')}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Abstract */}
+                    {pub.abstract && (
+                      <details class="mb-4">
+                        <summary class="cursor-pointer text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300">
+                          {t('pubs.showAbstract')}
+                        </summary>
+                        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                          {pub.abstract}
+                        </p>
+                      </details>
+                    )}
+
+                    {/* Links */}
+                    <div class="flex flex-wrap gap-2">
+                      {(pub.doi || pub.url) && (
+                        <a
+                          href={pub.doi ? `https://doi.org/${pub.doi}` : pub.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
+                        >
+                          {pub.doi ? 'DOI' : t('pubs.link')}
+                        </a>
+                      )}
+                      <button
+                        class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-colors copy-bibtex"
+                        data-bibtex={pub.bibtex}
+                        data-copied={t('pubs.copied')}
+                        data-failed={t('pubs.copyFailed')}
+                      >
+                        {t('pubs.copy')}
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          ))}
+
+        {publications.length === 0 && (
+          <p class="text-center text-slate-600 dark:text-slate-400 py-12">
+            No publications yet. Add content to <code>src/content/publications/</code>
+          </p>
+        )}
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  // Handle BibTeX copy button clicks
+  document.addEventListener('DOMContentLoaded', () => {
+    const copyButtons = document.querySelectorAll('.copy-bibtex');
+
+    copyButtons.forEach(button => {
+      button.addEventListener('click', async () => {
+        const bibtex = button.getAttribute('data-bibtex');
+
+        if (bibtex) {
+          try {
+            await navigator.clipboard.writeText(bibtex);
+
+            // Visual feedback
+            const originalText = button.textContent;
+            button.textContent = button.getAttribute('data-copied') || '✓ Copied!';
+            button.classList.add('bg-green-600');
+            button.classList.remove('bg-slate-600');
+
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.classList.remove('bg-green-600');
+              button.classList.add('bg-slate-600');
+            }, 2000);
+          } catch (err) {
+            console.error('Failed to copy BibTeX:', err);
+            alert(button.getAttribute('data-failed') || 'Failed to copy BibTeX to clipboard');
+          }
+        }
+      });
+    });
+  });
+</script>

@@ -16,6 +16,13 @@ tags:
   - "signal processing"
 repo: "https://github.com/dspelaez/wavelet-directional-method"
 featured: false
+i18n:
+  es:
+    title: "Análisis de espectros de oleaje con wavelets"
+    description: "Desarrollo de una técnica basada en wavelets para analizar espectros direccionales del oleaje a partir de datos de boyas GPS. El proyecto explora métodos no paramétricos para entender la complejidad del campo de oleaje. Forma parte del gran proyecto ERC HIGHWAVE."
+  fr:
+    title: "Analyse des spectres de vagues par ondelettes"
+    description: "Développement d'une méthode fondée sur les ondelettes pour analyser les spectres directionnels des vagues à partir de données de bouées GPS. Le projet explore des méthodes non paramétriques pour comprendre la complexité du champ de vagues. Il fait partie du grand projet ERC HIGHWAVE."
 ---
 
 ## Project Overview

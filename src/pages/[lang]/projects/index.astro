@@ -1,0 +1,9 @@
+---
+import ProjectsPage from '../../../views/ProjectsPage.astro';
+
+export function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'fr' } }];
+}
+---
+
+<ProjectsPage />

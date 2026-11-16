@@ -1,9 +1,12 @@
 ---
+import { getLang, useTranslations } from '../i18n/ui';
+const t = useTranslations(getLang(Astro.url));
 const currentYear = new Date().getFullYear();
 
 const socialLinks = [
   {
     name: 'Email',
+    outline: true, // stroke icon: filling it turns it into a solid shape
     href: 'mailto:dspelaez@ifremer.fr',
     icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
   },
@@ -15,12 +18,12 @@ const socialLinks = [
   {
     name: 'Google Scholar',
     href: 'https://scholar.google.com/citations?user=Usm9u2AAAAAJ&hl=en',
-    icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'
+    icon: 'M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z'
   },
   {
     name: 'ORCID',
     href: 'https://orcid.org/0000-0001-5862-6194',
-    icon: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.5 4.5h3v11h-3v-11z'
+    icon: 'M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z'
   },
 ];
 ---
@@ -30,7 +33,7 @@ const socialLinks = [
     <div class="flex flex-col md:flex-row justify-between items-center gap-4">
       <!-- Copyright -->
       <p class="text-sm text-slate-600 dark:text-slate-400">
-        © {currentYear} Daniel Peláez-Zapata. All rights reserved.
+        © {currentYear} Daniel Peláez-Zapata. {t('footer.rights')}
       </p>
 
       <!-- Social Links -->
@@ -44,7 +47,15 @@ const socialLinks = [
             aria-label={link.name}
             title={link.name}
           >
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <svg
+              class="w-6 h-6"
+              viewBox="0 0 24 24"
+              fill={link.outline ? 'none' : 'currentColor'}
+              stroke={link.outline ? 'currentColor' : undefined}
+              stroke-width={link.outline ? 2 : undefined}
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <path d={link.icon} />
             </svg>
           </a>
@@ -55,7 +66,7 @@ const socialLinks = [
     <!-- Built with -->
     <div class="mt-4 text-center">
       <p class="text-xs text-slate-600 dark:text-slate-400">
-        Built with <a href="https://astro.build" class="hover:text-blue-600 dark:hover:text-blue-400">Astro</a> and <a href="https://tailwindcss.com" class="hover:text-blue-600 dark:hover:text-blue-400">Tailwind CSS</a>
+        {t('footer.builtWith')} <a href="https://astro.build" class="hover:text-blue-600 dark:hover:text-blue-400">Astro</a> {t('footer.and')} <a href="https://tailwindcss.com" class="hover:text-blue-600 dark:hover:text-blue-400">Tailwind CSS</a>
       </p>
     </div>
   </div>
