@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @import "katex/dist/katex.min.css";
 
+/* Dark mode follows the .dark class on <html> (set by the theme toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark {
+  color-scheme: dark;
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -15,11 +22,9 @@ html {
 }
 
 /* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #0f172a;
-    --color-text: #e2e8f0;
-  }
+.dark {
+  --color-bg: #0f172a;
+  --color-text: #e2e8f0;
 }
 
 /* Typography for academic content */
@@ -74,26 +79,24 @@ html {
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-  .prose h2,
-  .prose h3 {
-    color: #f8fafc;
-  }
+.dark .prose h2,
+.dark .prose h3 {
+  color: #f8fafc;
+}
 
-  .prose p,
-  .prose li {
-    color: #cbd5e1;
-  }
+.dark .prose p,
+.dark .prose li {
+  color: #cbd5e1;
+}
 
-  .prose code {
-    background-color: #334155;
-    color: #cbd5e1;
-  }
+.dark .prose code {
+  background-color: #334155;
+  color: #cbd5e1;
+}
 
-  .prose pre {
-    background-color: #0f172a;
-    color: #e2e8f0;
-  }
+.dark .prose pre {
+  background-color: #0f172a;
+  color: #e2e8f0;
 }
 
 /* Math rendering */
@@ -112,10 +115,8 @@ html {
 }
 
 /* Dark mode support for math */
-@media (prefers-color-scheme: dark) {
-  .katex {
-    color: #e2e8f0 !important;
-  }
+.dark .katex {
+  color: #e2e8f0 !important;
 }
 
 /* Section spacing */

@@ -104,22 +104,35 @@ const categoryColors = {
   }
 
   .prose thead {
-    border-bottom: 2px solid #475569;
+    border-bottom: 2px solid #94a3b8;
   }
 
   .prose th {
     padding: 0.75rem 1rem;
     text-align: left;
     font-weight: 600;
-    color: #ffffff !important;
+    color: #0f172a !important;
     background-color: transparent;
   }
 
   .prose td {
     padding: 0.75rem 1rem;
-    border-bottom: 1px solid #334155;
-    color: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155 !important;
     background-color: transparent;
+  }
+
+  .dark .prose thead {
+    border-bottom-color: #475569;
+  }
+
+  .dark .prose th,
+  .dark .prose td {
+    color: #ffffff !important;
+  }
+
+  .dark .prose td {
+    border-bottom-color: #334155;
   }
 
   .prose tbody tr {

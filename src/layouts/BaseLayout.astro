@@ -54,16 +54,25 @@ const socialImage = image ? new URL(image, Astro.site) : new URL('/og-image.jpg'
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=JetBrains+Mono&display=swap" rel="stylesheet" />
 
-    <!-- Force light mode -->
+    <!-- Theme: the visitor's choice (theme toggle) or, by default, the system setting.
+         Runs before the page paints to avoid a flash of the wrong theme. -->
     <script is:inline>
-      // Remove dark class and clear any stored theme preference
-      document.documentElement.classList.remove('dark');
-      if (typeof localStorage !== 'undefined') {
-        localStorage.removeItem('theme');
-      }
+      (function () {
+        var stored = null;
+        try { stored = localStorage.getItem('theme'); } catch (e) {}
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+        var apply = function (dark) { document.documentElement.classList.toggle('dark', dark); };
+        apply(stored ? stored === 'dark' : media.matches);
+        // Follow system changes while the visitor hasn't picked a theme
+        media.addEventListener('change', function (e) {
+          var pick = null;
+          try { pick = localStorage.getItem('theme'); } catch (err) {}
+          if (!pick) apply(e.matches);
+        });
+      })();
     </script>
   </head>
-  <body class="bg-white text-slate-900 font-[Lato] antialiased">
+  <body class="bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100 font-[Lato] antialiased">
     <slot />
   </body>
 </html>
