@@ -1,7 +1,7 @@
 ---
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
-import { fetchPublicationsFromCrossref, generateBibtex } from '../../lib/crossref';
+import { fetchPublications, generateBibtex } from '../../lib/crossref';
 
 // Configuration
 const ORCID = '0000-0001-5862-6194';
@@ -15,6 +15,7 @@ interface Publication {
   journal: string;
   year: number;
   doi: string;
+  url?: string;
   abstract: string;
   citationKey: string;
   itemType: string;
@@ -42,7 +43,7 @@ try {
   // Fetch fresh data if cache miss or expired
   try {
     console.log('Fetching fresh data from CrossRef API');
-    publications = await fetchPublicationsFromCrossref(ORCID, EMAIL);
+    publications = await fetchPublications(ORCID, EMAIL);
 
     // Generate BibTeX for each publication
     publications = publications.map(pub => ({
@@ -130,14 +131,14 @@ const recentPublications = publications.slice(0, 4);
 
                   <!-- Links -->
                   <div class="flex flex-wrap gap-2">
-                    {pub.doi && (
+                    {(pub.doi || pub.url) && (
                       <a
-                        href={`https://doi.org/${pub.doi}`}
+                        href={pub.doi ? `https://doi.org/${pub.doi}` : pub.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-all hover-scale hover-glow"
                       >
-                        DOI
+                        {pub.doi ? 'DOI' : 'Link'}
                       </a>
                     )}
                     <button

@@ -12,6 +12,7 @@ interface Publication {
   journal: string;
   year: number;
   doi: string;
+  url?: string;
   abstract: string;
   citationKey: string;
   itemType: string;
@@ -110,14 +111,14 @@ const publicationsByYear = publications.reduce((acc, pub) => {
 
                     {/* Links */}
                     <div class="flex flex-wrap gap-2">
-                      {pub.doi && (
+                      {(pub.doi || pub.url) && (
                         <a
-                          href={`https://doi.org/${pub.doi}`}
+                          href={pub.doi ? `https://doi.org/${pub.doi}` : pub.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-colors"
                         >
-                          DOI
+                          {pub.doi ? 'DOI' : 'Link'}
                         </a>
                       )}
                       <button

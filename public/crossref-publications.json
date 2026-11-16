@@ -1,5 +1,5 @@
 {
-  "timestamp": 1794839598170,
+  "timestamp": 1794853410520,
   "publications": [
     {
       "title": "Representation of meteotsunamis in km-scale regional simulations coupled at high frequency",
@@ -14,6 +14,7 @@
       "volume": "26",
       "issue": "7",
       "pages": "3185-3211",
+      "url": "https://doi.org/10.5194/nhess-26-3185-2026",
       "bibtex": "@article{Makrygianni_2026,\n  title = {Representation of meteotsunamis in km-scale regional simulations coupled at high frequency},\n  author = {Nefeli Makrygianni, Ségolène Berthou, David L. A. Flack, Cindy Lebeaupin Brossier, Jonathan Beuvier, Juan Manuel Castillo, Emiliano Renzi, Clare O'Neill, Daniel Peláez-Zapata, Frederic Dias, Huw Lewis, Diego Bruciaferri},\n  journal = {Natural Hazards and Earth System Sciences},\n  year = {2026},\n  volume = {26},\n  number = {7},\n  pages = {3185-3211},\n  doi = {10.5194/nhess-26-3185-2026},\n}"
     },
     {
@@ -28,6 +29,7 @@
       "citationCount": 0,
       "volume": "12",
       "issue": "1",
+      "url": "https://doi.org/10.1038/s41597-025-06268-y",
       "bibtex": "@article{Peláez-Zapata_2025,\n  title = {Sea Surface Temperature and Directional Wave Spectra During the 2023 Marine Heatwave in the North Atlantic},\n  author = {Daniel Peláez-Zapata, Brian Ward, Frédéric Dias},\n  journal = {Scientific Data},\n  year = {2025},\n  volume = {12},\n  number = {1},\n  doi = {10.1038/s41597-025-06268-y},\n}"
     },
     {
@@ -42,6 +44,7 @@
       "citationCount": 13,
       "volume": "219",
       "pages": "115828",
+      "url": "https://doi.org/10.1016/j.rser.2025.115828",
       "bibtex": "@article{Peláez-Zapata_2025,\n  title = {Ocean wave measurements for marine renewable energy applications},\n  author = {Daniel Peláez-Zapata, Vikram Pakrashi, Frédéric Dias},\n  journal = {Renewable and Sustainable Energy Reviews},\n  year = {2025},\n  volume = {219},\n  pages = {115828},\n  doi = {10.1016/j.rser.2025.115828},\n}"
     },
     {
@@ -57,6 +60,7 @@
       "volume": "10",
       "issue": "109",
       "pages": "7942",
+      "url": "https://doi.org/10.21105/joss.07942",
       "bibtex": "@article{Peláez-Zapata_2025,\n  title = {EWDM: A wavelet-based method for estimating directional spectra of ocean waves},\n  author = {Daniel Peláez-Zapata, Frédéric Dias},\n  journal = {Journal of Open Source Software},\n  year = {2025},\n  volume = {10},\n  number = {109},\n  pages = {7942},\n  doi = {10.21105/joss.07942},\n}"
     },
     {
@@ -72,6 +76,7 @@
       "volume": "54",
       "issue": "10",
       "pages": "2059-2071",
+      "url": "https://doi.org/10.1175/jpo-d-23-0261.1",
       "bibtex": "@article{Peláez-Zapata_2024,\n  title = {Dynamics of Bubble Plumes Produced by Breaking Waves},\n  author = {Daniel Peláez-Zapata, Vikram Pakrashi, Frédéric Dias},\n  journal = {Journal of Physical Oceanography},\n  year = {2024},\n  volume = {54},\n  number = {10},\n  pages = {2059-2071},\n  doi = {10.1175/jpo-d-23-0261.1},\n}"
     },
     {
@@ -84,6 +89,7 @@
       "citationKey": "Renzi_2024",
       "itemType": "posted-content",
       "citationCount": 0,
+      "url": "https://doi.org/10.5194/ems2024-184",
       "bibtex": "@misc{Renzi_2024,\n  title = {Recent meteorological tsunamis and other anomalous tidal surge events in western Europe},\n  author = {Emiliano Renzi, Claire Bergin, Tatjana Kokina, Daniel S. Pelaez-Zapata, Daniel Giles, Frederic Dias},\n  journal = {Conference abstract},\n  year = {2024},\n  doi = {10.5194/ems2024-184},\n}"
     },
     {
@@ -99,7 +105,21 @@
       "volume": "41",
       "issue": "8",
       "pages": "749-765",
+      "url": "https://doi.org/10.1175/jtech-d-23-0058.1",
       "bibtex": "@article{Peláez-Zapata_2024,\n  title = {Ocean Wave Directional Distribution from GPS Buoy Observations off the West Coast of Ireland: Assessment of a Wavelet-Based Method},\n  author = {Daniel Peláez-Zapata, Vikram Pakrashi, Frédéric Dias},\n  journal = {Journal of Atmospheric and Oceanic Technology},\n  year = {2024},\n  volume = {41},\n  number = {8},\n  pages = {749-765},\n  doi = {10.1175/jtech-d-23-0058.1},\n}"
+    },
+    {
+      "title": "Beyond the Sea Surface : Exploring Ocean Wave Measurements From Multiple Perspectives",
+      "authors": "Daniel Santiago Pelaez Zapata",
+      "journal": "PhD thesis, Université Paris-Saclay",
+      "year": 2024,
+      "doi": "10.70675/873de038z4494z4b1czb5aaz9603617755ee",
+      "abstract": "Au-delà de la surface de la mer : Exploration des mesures de vagues océaniques sous différentes perspectives\n                Cette thèse explore les mesures de vagues océaniques sous plusieurs perspectives, étendant l'analyse au-delà de leur manifestation visuelle à la surface de la mer. Les limitations existantes dans les technologies de mesure entravent une compréhension complète d'aspects tels que le spectre directionnel des vagues, les processus de déferlement et les essaims de bulles générées par les vagues. Cette étude intègre des données provenant de différentes plates-formes, y compris de capteurs installés au fond, de bouées de surface et de satellites, abordant les limitations de couverture spatiale et temporelle. Une nouvelle technique basée sur la transformation en ondelettes pour l'estimation du spectre directionnel de vagues est présentée, montrant des performances cohérentes et des avantages par rapport aux méthodes conventionnelles. L'analyse de la propagation directionnelle des vagues révèle des distributions étroites au pic spectral et un élargissement asymétrique aux fréquences plus basses et plus élevées. La thèse compare également les données des bouées GPS avec les observations satellitaires de la mission CFOSAT/SWIM. Les propriétés acoustiques des vagues océaniques sont examinées à travers des mesures d'essaims de bulles, révélant une relation entre la vitesse du vent, la profondeur de l'essaim de bulles et la couverture d'écume. Le rôle de la circulation de Langmuir dans le transport des essaims de bulles est mis en évidence. Le bruit sous-marin et sa corrélation avec les variables environnementales sont étudiés à l'aide d'un hydrophone monté sur le fond. Dans l'ensemble, la thèse fournit une description complète des vagues océaniques, offrant des perspectives précieuses sur les interactions complexes entre l'air et la mer.",
+      "citationKey": "Santiago Pelaez Zapata_2024",
+      "itemType": "dissertation",
+      "citationCount": 0,
+      "url": "https://doi.org/10.70675/873de038z4494z4b1czb5aaz9603617755ee",
+      "bibtex": "@phdthesis{Santiago Pelaez Zapata_2024,\n  title = {Beyond the Sea Surface : Exploring Ocean Wave Measurements From Multiple Perspectives},\n  author = {Daniel Santiago Pelaez Zapata},\n  school = {Université Paris-Saclay},\n  year = {2024},\n  doi = {10.70675/873de038z4494z4b1czb5aaz9603617755ee},\n}"
     },
     {
       "title": "Observations of the ocean waves directional spreading during the HIGHWAVE project and SUMOS campaign.",
@@ -111,6 +131,7 @@
       "citationKey": "Peláez Zapata_2023",
       "itemType": "posted-content",
       "citationCount": 1,
+      "url": "https://doi.org/10.5194/egusphere-egu23-6067",
       "bibtex": "@misc{Peláez Zapata_2023,\n  title = {Observations of the ocean waves directional spreading during the HIGHWAVE project and SUMOS campaign.},\n  author = {Daniel Santiago Peláez Zapata, Vikram Pakrashi, Frederic Dias},\n  journal = {Conference abstract},\n  year = {2023},\n  doi = {10.5194/egusphere-egu23-6067},\n}"
     },
     {
@@ -125,19 +146,80 @@
       "citationCount": 9,
       "volume": "35",
       "issue": "4",
+      "url": "https://doi.org/10.1063/5.0139220",
       "bibtex": "@article{Renzi_2023,\n  title = {Meteotsunamis and other anomalous “tidal surge” events in Western Europe in Summer 2022},\n  author = {E. Renzi, C. Bergin, T. Kokina, D. S. Pelaez-Zapata, D. Giles, F. Dias},\n  journal = {Physics of Fluids},\n  year = {2023},\n  volume = {35},\n  number = {4},\n  doi = {10.1063/5.0139220},\n}"
     },
     {
-      "title": "Beyond the Sea Surface : Exploring Ocean Wave Measurements From Multiple Perspectives",
-      "authors": "Daniel Santiago Pelaez Zapata",
-      "journal": "Agence Bibliographique de l'Enseignement Supérieur",
-      "year": 2026,
-      "doi": "10.70675/873de038z4494z4b1czb5aaz9603617755ee",
-      "abstract": "Au-delà de la surface de la mer : Exploration des mesures de vagues océaniques sous différentes perspectives\n                Cette thèse explore les mesures de vagues océaniques sous plusieurs perspectives, étendant l'analyse au-delà de leur manifestation visuelle à la surface de la mer. Les limitations existantes dans les technologies de mesure entravent une compréhension complète d'aspects tels que le spectre directionnel des vagues, les processus de déferlement et les essaims de bulles générées par les vagues. Cette étude intègre des données provenant de différentes plates-formes, y compris de capteurs installés au fond, de bouées de surface et de satellites, abordant les limitations de couverture spatiale et temporelle. Une nouvelle technique basée sur la transformation en ondelettes pour l'estimation du spectre directionnel de vagues est présentée, montrant des performances cohérentes et des avantages par rapport aux méthodes conventionnelles. L'analyse de la propagation directionnelle des vagues révèle des distributions étroites au pic spectral et un élargissement asymétrique aux fréquences plus basses et plus élevées. La thèse compare également les données des bouées GPS avec les observations satellitaires de la mission CFOSAT/SWIM. Les propriétés acoustiques des vagues océaniques sont examinées à travers des mesures d'essaims de bulles, révélant une relation entre la vitesse du vent, la profondeur de l'essaim de bulles et la couverture d'écume. Le rôle de la circulation de Langmuir dans le transport des essaims de bulles est mis en évidence. Le bruit sous-marin et sa corrélation avec les variables environnementales sont étudiés à l'aide d'un hydrophone monté sur le fond. Dans l'ensemble, la thèse fournit une description complète des vagues océaniques, offrant des perspectives précieuses sur les interactions complexes entre l'air et la mer.",
-      "citationKey": "Santiago Pelaez Zapata_2026",
-      "itemType": "dissertation",
-      "citationCount": 0,
-      "bibtex": "@misc{Santiago Pelaez Zapata_2026,\n  title = {Beyond the Sea Surface : Exploring Ocean Wave Measurements From Multiple Perspectives},\n  author = {Daniel Santiago Pelaez Zapata},\n  journal = {Agence Bibliographique de l'Enseignement Supérieur},\n  year = {2026},\n  doi = {10.70675/873de038z4494z4b1czb5aaz9603617755ee},\n}"
+      "title": "Ecosystem management tools to study natural habitats as wave damping structures and coastal protection mechanisms",
+      "authors": "J.D. Osorio-Cano, A.F. Osorio, D.S. Peláez-Zapata",
+      "journal": "Ecological Engineering",
+      "year": 2019,
+      "doi": "10.1016/j.ecoleng.2017.07.015",
+      "abstract": "",
+      "citationKey": "Osorio-Cano_2019",
+      "itemType": "journal-article",
+      "citationCount": 40,
+      "volume": "130",
+      "pages": "282-295",
+      "url": "https://doi.org/10.1016/j.ecoleng.2017.07.015",
+      "bibtex": "@article{Osorio-Cano_2019,\n  title = {Ecosystem management tools to study natural habitats as wave damping structures and coastal protection mechanisms},\n  author = {J.D. Osorio-Cano, A.F. Osorio, D.S. Peláez-Zapata},\n  journal = {Ecological Engineering},\n  year = {2019},\n  volume = {130},\n  pages = {282-295},\n  doi = {10.1016/j.ecoleng.2017.07.015},\n}"
+    },
+    {
+      "title": "Numerical Study of Run-up Oscillations over Fringing Reefs",
+      "authors": "D.S. Peláez-Zapata, Rubén D. Montoya, Andrés F. Osorio",
+      "journal": "Journal of Coastal Research",
+      "year": 2018,
+      "doi": "10.2112/jcoastres-d-17-00057.1",
+      "abstract": "",
+      "citationKey": "Peláez-Zapata_2018",
+      "itemType": "journal-article",
+      "citationCount": 8,
+      "volume": "345",
+      "pages": "1065-1079",
+      "url": "https://doi.org/10.2112/jcoastres-d-17-00057.1",
+      "bibtex": "@article{Peláez-Zapata_2018,\n  title = {Numerical Study of Run-up Oscillations over Fringing Reefs},\n  author = {D.S. Peláez-Zapata, Rubén D. Montoya, Andrés F. Osorio},\n  journal = {Journal of Coastal Research},\n  year = {2018},\n  volume = {345},\n  pages = {1065-1079},\n  doi = {10.2112/jcoastres-d-17-00057.1},\n}"
+    },
+    {
+      "title": "Occurrence of energetic extreme oceanic events in the Colombian Caribbean coasts and some approaches to assess their impact on ecosystems",
+      "authors": "G. Bernal, A.F. Osorio, L. Urrego, D. Peláez, E. Molina, S. Zea, R.D. Montoya, N. Villegas",
+      "journal": "Journal of Marine Systems",
+      "year": 2016,
+      "doi": "10.1016/j.jmarsys.2016.08.007",
+      "abstract": "",
+      "citationKey": "Bernal_2016",
+      "itemType": "journal-article",
+      "citationCount": 34,
+      "volume": "164",
+      "pages": "85-100",
+      "url": "https://doi.org/10.1016/j.jmarsys.2016.08.007",
+      "bibtex": "@article{Bernal_2016,\n  title = {Occurrence of energetic extreme oceanic events in the Colombian Caribbean coasts and some approaches to assess their impact on ecosystems},\n  author = {G. Bernal, A.F. Osorio, L. Urrego, D. Peláez, E. Molina, S. Zea, R.D. Montoya, N. Villegas},\n  journal = {Journal of Marine Systems},\n  year = {2016},\n  volume = {164},\n  pages = {85-100},\n  doi = {10.1016/j.jmarsys.2016.08.007},\n}"
+    },
+    {
+      "title": "Construction of synthetic ocean wave series along the Colombian Caribbean Coast: A wave climate analysis",
+      "authors": "Andrés F. Osorio, Rubén D. Montoya, Juan Carlos Ortiz, Daniel Peláez",
+      "journal": "Applied Ocean Research",
+      "year": 2016,
+      "doi": "10.1016/j.apor.2016.01.004",
+      "abstract": "",
+      "citationKey": "Osorio_2016",
+      "itemType": "journal-article",
+      "citationCount": 39,
+      "volume": "56",
+      "pages": "119-131",
+      "url": "https://doi.org/10.1016/j.apor.2016.01.004",
+      "bibtex": "@article{Osorio_2016,\n  title = {Construction of synthetic ocean wave series along the Colombian Caribbean Coast: A wave climate analysis},\n  author = {Andrés F. Osorio, Rubén D. Montoya, Juan Carlos Ortiz, Daniel Peláez},\n  journal = {Applied Ocean Research},\n  year = {2016},\n  volume = {56},\n  pages = {119-131},\n  doi = {10.1016/j.apor.2016.01.004},\n}"
+    },
+    {
+      "title": "Estimación de la cota de inundación como herramienta para la conservación de tortugas marinas en el Pacífico Colombiano",
+      "authors": "Daniel Peláez-Zapata, Andrés Osorio, Oscar Álvarez-Silva, Juan David Osorio-Cano, Luis Payán",
+      "journal": "XXV Congreso Latinoamericano de Hidraulica",
+      "year": 2012,
+      "doi": "",
+      "abstract": "",
+      "citationKey": "Peláez-Zapata_2012",
+      "itemType": "conference-paper",
+      "url": "https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97",
+      "bibtex": "@inproceedings{Peláez-Zapata_2012,\n  title = {Estimación de la cota de inundación como herramienta para la conservación de tortugas marinas en el Pacífico Colombiano},\n  author = {Daniel Peláez-Zapata, Andrés Osorio, Oscar Álvarez-Silva, Juan David Osorio-Cano, Luis Payán},\n  booktitle = {XXV Congreso Latinoamericano de Hidraulica},\n  year = {2012},\n  url = {https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97},\n}"
     }
   ]
 }

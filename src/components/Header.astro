@@ -83,8 +83,12 @@ const navItems = [
   const header = document.getElementById('main-header');
   const headerTexts = document.querySelectorAll('.header-text');
 
+  // Pages without the video hero have a light background from the top,
+  // so the header needs its solid style straight away
+  const hasHero = Boolean(document.getElementById('hero'));
+
   function updateHeader() {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 50 || !hasHero) {
       header?.classList.add('bg-white/95', 'backdrop-blur-sm', 'border-b', 'border-slate-200', 'shadow-sm');
       // Change text colors to dark when header has background
       headerTexts.forEach(el => {
