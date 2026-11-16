@@ -38,6 +38,7 @@ interface CrossrefWork {
   volume?: string;
   issue?: string;
   page?: string;
+  relation?: Record<string, unknown[]>;
 }
 
 /**
@@ -65,7 +66,12 @@ export async function fetchPublicationsFromCrossref(
 
     console.log(`Found ${items.length} publications from CrossRef`);
 
-    return items.map(transformWork).filter(Boolean) as CrossrefPublication[];
+    // Skip preprints that already have a published version
+    const published = items.filter(
+      (work: CrossrefWork) => !work.relation?.['is-preprint-of']?.length
+    );
+
+    return published.map(transformWork).filter(Boolean) as CrossrefPublication[];
   } catch (error) {
     console.error('Failed to fetch from CrossRef:', error);
     throw error;
@@ -93,8 +99,10 @@ function transformWork(work: CrossrefWork): CrossrefPublication | null {
       work.issued?.['date-parts']?.[0]?.[0] ||
       new Date().getFullYear();
 
-    // Extract journal name
+    // Extract journal name (posted-content left after the preprint filter
+    // are conference abstracts, e.g. EGU/EMS, published by Copernicus)
     const journal =
+      (work.type === 'posted-content' ? 'Conference abstract' : '') ||
       work['container-title']?.[0] ||
       work['short-container-title']?.[0] ||
       work.publisher ||
