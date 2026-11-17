@@ -10,6 +10,8 @@ tags:
   - "Riesgos costeros"
 image: "/images/covers/meteotsunami-summer-2022.jpg"
 featured: true
+papers:
+  - "10.1063/5.0139220"
 ---
 
 *El puerto de Solva, en Gales. Foto "[Solva Harbour - geograph.org.uk - 5403819](https://commons.wikimedia.org/wiki/File:Solva_Harbour_-_geograph.org.uk_-_5403819.jpg)" de Alan Hughes, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), vía Wikimedia Commons (redimensionada).*
@@ -60,8 +62,3 @@ Usamos simulaciones numéricas con el modelo Volna-OP2 para reproducir el evento
 3. **Modelos más avanzados**: sistemas acoplados océano-oleaje-atmósfera capaces de predecir estos eventos raros pero peligrosos
 
 A medida que el clima siga cambiando, los meteotsunamis podrían visitarnos con más frecuencia. Entenderlos hoy podría salvar vidas e infraestructuras mañana.
-
----
-
-**Referencias:**
-- Renzi, E., Bergin, C., Kokina, T., **Peláez-Zapata, D.**, Giles, D., & Dias, F. (2023). Meteotsunamis and other anomalous 'tidal surge' events in Western Europe in Summer 2022. *Physics of Fluids*, 35(4). [https://doi.org/10.1063/5.0139220](https://doi.org/10.1063/5.0139220)

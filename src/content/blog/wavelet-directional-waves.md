@@ -13,6 +13,9 @@ tags:
   - "Open Source"
 image: "/images/covers/wavelet-directional-waves.jpg"
 featured: true
+papers:
+  - "10.1175/JTECH-D-23-0058.1"
+  - "10.21105/joss.07942"
 ---
 
 *A large low-pressure system over the North Atlantic, seen by the GOES-East satellite in March 2020. Photo "[Large Low Pressure System Swirls in the North Atlantic (49782650482)](https://commons.wikimedia.org/wiki/File:Large_Low_Pressure_System_Swirls_in_the_North_Atlantic_(49782650482).jpg)" by NOAA Satellites, public domain, via Wikimedia Commons.*
@@ -89,11 +92,3 @@ The [GitHub repository](https://github.com/dspelaez/extended-wdm) includes docum
 Sometimes the best scientific progress comes from combining existing mathematical tools (wavelets have been around for decades) with domain expertise (understanding ocean waves) and a commitment to making the results accessible. That's what this project represents.
 
 And if you're ever on the Irish coast watching massive swells roll in during a winter storm, you can appreciate the mathematical sophistication required to properly measure where all that wave energy is actually coming from—and know that there's now a free tool available to do exactly that!
-
----
-
-**References:**
-
-- Peláez-Zapata, D.S., et al. (2024). Ocean Wave Directional Distribution from GPS Buoy Observations off the West Coast of Ireland: Assessment of a Wavelet-Based Method. *J. Atmos. Ocean. Technol.* [doi: 10.1175/JTECH-D-23-0058.1](https://doi.org/10.1175/JTECH-D-23-0058.1)
-
-- Peláez-Zapata, D.S., & Dias, F. (2025). EWDM: A wavelet-based method for estimating directional spectra of ocean waves. *J. Open Source Softw.*, 10(109), 7942. [doi: 10.21105/joss.07942](https://doi.org/10.21105/joss.07942)

@@ -14,6 +14,8 @@ tags:
 image: "/images/tortuga-golfina-escobilla-oaxaca.jpg"
 paperUrl: "https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97"
 featured: true
+papers:
+  - "https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97"
 ---
 
 *Tortue olivâtre sur la plage d'Escobilla, Oaxaca (Mexique). Photo « [Turtle golfina escobilla Oaxaca Mexico Claudio Giovenzana 2010](https://commons.wikimedia.org/wiki/File:Turtle_golfina_escobilla_Oaxaca_Mexico_Claudio_Giovenzana_2010.jpg) » de Claudio Giovenzana, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons (redimensionnée).*
@@ -39,7 +41,3 @@ Avec ces cartes, la décision ne se prenait plus au jugé. La partie centrale et
 *Jeunes tortues olivâtres en route vers la mer à Nuquí, Chocó, dans le Pacifique colombien. Photo « [Release of Lepidochelys olivacea, Nuquí, Chocó, Colombia](https://commons.wikimedia.org/wiki/File:Release_of_Lepidochelys_olivacea_-_Nuqu%C3%AD,_Choc%C3%B3,_Colombia_-_23_Oct_2025_-_Diferoch_-_2.jpg) » de Diferoch, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons (redimensionnée).*
 
 Les plages changent, et ce genre de cartes doit être refait de temps en temps. Mais l'idée reste valable. Quinze ans plus tard, c'est toujours l'un de mes exemples préférés pour montrer à quoi sert la mesure des vagues. Parfois, comprendre comment l'eau se déplace, c'est ce qui permet à une tortue de naître au bon endroit.
-
----
-
-*Référence (en espagnol).* Peláez-Zapata, D. S., Osorio, A. F., Álvarez-Silva, O., Osorio-Cano, J. D. et Payán, L. (2012). [Estimación de la cota de inundación como herramienta para la conservación de las tortugas marinas en el Pacífico colombiano](https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97). XXV Congreso Latinoamericano de Hidráulica, San José, Costa Rica.

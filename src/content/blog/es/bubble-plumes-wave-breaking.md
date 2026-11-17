@@ -12,6 +12,8 @@ tags:
   - "ADCP"
 image: "/images/covers/bubble-plumes-wave-breaking.jpg"
 featured: true
+papers:
+  - "10.1175/JPO-D-23-0261.1"
 ---
 
 *Una ola rompiendo frente a Santa Cruz, California. Foto "[Surfer in Santa cruz 11-8-9 -1](https://commons.wikimedia.org/wiki/File:Surfer_in_Santa_cruz_11-8-9_-1.jpg)" de Brocken Inaglory, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), vía Wikimedia Commons (redimensionada).*
@@ -73,9 +75,3 @@ Este trabajo añade una pieza más al rompecabezas de cómo las olas, al romper,
 Cada vez que miras las olas romper en una playa, bajo la superficie ocurre una cascada invisible: millones de burbujas que se forman, se desplazan, se disuelven y suben. Entender este proceso, cuantificarlo e incorporarlo a nuestros modelos nos acerca a comprender la compleja relación entre el océano y la atmósfera que da forma a nuestro clima.
 
 Y a veces basta con un sensor acústico bien colocado, escuchando con paciencia la sinfonía de las burbujas bajo las olas.
-
----
-
-**Referencia:**
-
-- Peláez-Zapata, D.S., Pakrashi, V, Dias, F. (2024). Dynamics of Bubble Plumes Produced by Breaking Waves. *J. Phys. Oceanogr.*, 54(10), 2059–2071. [doi: 10.1175/JPO-D-23-0261.1](https://doi.org/10.1175/JPO-D-23-0261.1)

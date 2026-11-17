@@ -238,8 +238,6 @@ Use MEM-I only when you have a specific reason: real-time constraints, known-sim
 
 The full implementation with all test cases is available in the [Jupyter notebook](https://github.com/dspelaez/dspelaez.github.io/blob/main/public/notebooks/2025-12-05-mem_tutorial.ipynb) if you want to experiment with your own data.
 
----
-
 ## References
 
 - Lygre, A., & Krogstad, H. E. (1986). Maximum Entropy Estimation of the Directional Distribution in Ocean Wave Spectra. *J. Phys. Oceanogr.*, 16(12), 2052–2060. [doi: 10.1175/1520-0485(1986)016<2052:MEEOTD>2.0.CO;2](https://doi.org/10.1175/1520-0485(1986)016<2052:MEEOTD>2.0.CO;2)

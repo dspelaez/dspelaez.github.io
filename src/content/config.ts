@@ -60,6 +60,9 @@ const blog = defineCollection({
     featured: z.boolean().default(false),
     // DOI link of the paper a post is about
     paperUrl: z.string().optional(),
+    // My own papers related to the post (DOI, or URL for works without DOI);
+    // shown as publication cards at the end of the post
+    papers: z.array(z.string()).default([]),
   }),
 });
 

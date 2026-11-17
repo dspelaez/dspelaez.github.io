@@ -14,6 +14,8 @@ tags:
 image: "/images/tortuga-golfina-escobilla-oaxaca.jpg"
 paperUrl: "https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97"
 featured: true
+papers:
+  - "https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97"
 ---
 
 *Tortuga golfina en la playa de Escobilla, Oaxaca (México). Foto "[Turtle golfina escobilla Oaxaca Mexico Claudio Giovenzana 2010](https://commons.wikimedia.org/wiki/File:Turtle_golfina_escobilla_Oaxaca_Mexico_Claudio_Giovenzana_2010.jpg)" de Claudio Giovenzana, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), vía Wikimedia Commons (redimensionada).*
@@ -39,7 +41,3 @@ Con esos mapas, la decisión dejaba de tomarse a ojo. La parte media y norte de 
 *Crías de tortuga golfina rumbo al mar en Nuquí, Chocó, en el Pacífico colombiano. Foto "[Release of Lepidochelys olivacea, Nuquí, Chocó, Colombia](https://commons.wikimedia.org/wiki/File:Release_of_Lepidochelys_olivacea_-_Nuqu%C3%AD,_Choc%C3%B3,_Colombia_-_23_Oct_2025_-_Diferoch_-_2.jpg)" de Diferoch, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), vía Wikimedia Commons (redimensionada).*
 
 Las playas cambian, y unos mapas así hay que rehacerlos cada cierto tiempo. Pero la idea sigue en pie. Quince años después, este sigue siendo uno de mis ejemplos favoritos de para qué sirve medir las olas. A veces, entender cómo se mueve el agua es lo que permite que una tortuga nazca en el lugar correcto.
-
----
-
-*Referencia.* Peláez-Zapata, D. S., Osorio, A. F., Álvarez-Silva, O., Osorio-Cano, J. D. y Payán, L. (2012). [Estimación de la cota de inundación como herramienta para la conservación de las tortugas marinas en el Pacífico colombiano](https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97). XXV Congreso Latinoamericano de Hidráulica, San José, Costa Rica.

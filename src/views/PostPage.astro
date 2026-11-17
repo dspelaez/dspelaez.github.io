@@ -3,6 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { blogPostingSchema } from '../lib/seo';
+import { findMyPapers } from '../lib/publications';
+import PublicationCard from '../components/PublicationCard.astro';
 import { postLang, postUrl, postVersions, type Post } from '../lib/blog';
 import { useTranslations, localizePath, locales, languages, type Lang } from '../i18n/ui';
 
@@ -19,6 +21,9 @@ const blogHome = localizePath('/blog/', lang);
 // Other language versions of this post (for the notice, the switcher and hreflang)
 const versions = await postVersions(post);
 const otherVersions = (Object.entries(versions) as [Lang, string][]).filter(([l]) => l !== lang);
+
+// My papers behind this post, as publication cards
+const myPapers = await findMyPapers(post.data.papers);
 
 const categoryColors = {
   'research-update': 'bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300',
@@ -245,6 +250,17 @@ const categoryColors = {
                     prose-pre:bg-slate-900 dark:prose-pre:bg-slate-950 prose-pre:text-slate-100">
           <Content />
         </div>
+
+        {myPapers.length > 0 && (
+          <section class="mt-12">
+            <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6">
+              {t(myPapers.length > 1 ? 'blog.papers' : 'blog.paper')}
+            </h2>
+            <div class="grid gap-6">
+              {myPapers.map((pub) => <PublicationCard pub={pub} lang={lang} />)}
+            </div>
+          </section>
+        )}
 
         <!-- Navigation -->
         <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">

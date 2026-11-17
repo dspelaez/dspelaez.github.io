@@ -1,0 +1,120 @@
+---
+/**
+ * One publication as a card (year badge, title, authors, venue, citations,
+ * DOI/link and "Copy BibTeX"). Used in the homepage Publications section and
+ * at the end of blog posts about my own papers.
+ */
+import { useTranslations, venueLabel, type Lang } from '../i18n/ui';
+import { generateBibtex } from '../lib/crossref';
+
+export interface Publication {
+  title: string;
+  authors: string;
+  journal: string;
+  year: number;
+  doi: string;
+  url?: string;
+  abstract: string;
+  citationKey: string;
+  itemType: string;
+  citationCount?: number;
+  bibtex?: string;
+}
+
+interface Props {
+  pub: Publication;
+  lang: Lang;
+  /** Classes for the homepage entrance animation */
+  animateClass?: string;
+  animationDelay?: string;
+}
+
+const { pub, lang, animateClass = '', animationDelay } = Astro.props;
+const t = useTranslations(lang);
+const bibtex = pub.bibtex || generateBibtex(pub);
+---
+
+<article
+  class={`bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-slate-200 dark:border-slate-700 ${animateClass}`}
+  style={animationDelay ? `animation-delay: ${animationDelay}` : undefined}
+>
+  <div class="flex flex-col md:flex-row gap-4">
+    <!-- Year Badge -->
+    <div class="flex-shrink-0">
+      <div class="w-16 h-16 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+        {pub.year}
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="flex-grow">
+      <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
+        {pub.title}
+      </h3>
+
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">
+        {pub.authors}
+      </p>
+
+      <div class="flex items-center gap-3 mb-3">
+        <p class="text-sm font-medium text-blue-600 dark:text-blue-400">
+          {venueLabel(pub.journal, lang)}, {pub.year}
+        </p>
+        {pub.citationCount !== undefined && pub.citationCount > 0 && (
+          <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">
+            {pub.citationCount} {pub.citationCount === 1 ? t('pubs.citation') : t('pubs.citations')}
+          </span>
+        )}
+      </div>
+
+      <div class="flex flex-wrap gap-2">
+        {(pub.doi || pub.url) && (
+          <a
+            href={pub.doi ? `https://doi.org/${pub.doi}` : pub.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-all hover-scale hover-glow"
+          >
+            {pub.doi ? 'DOI' : t('pubs.link')}
+          </a>
+        )}
+        <button
+          type="button"
+          class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-all hover-scale copy-bibtex"
+          data-bibtex={bibtex}
+          data-copied={t('pubs.copied')}
+          data-failed={t('pubs.copyFailed')}
+        >
+          {t('pubs.copy')}
+        </button>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script>
+  // Copy BibTeX buttons (Astro bundles this once, however many cards there are)
+  document.querySelectorAll<HTMLButtonElement>('.copy-bibtex').forEach((button) => {
+    if (button.dataset.bound) return;
+    button.dataset.bound = 'true';
+    button.addEventListener('click', async () => {
+      const bibtex = button.getAttribute('data-bibtex');
+      if (!bibtex) return;
+      try {
+        await navigator.clipboard.writeText(bibtex);
+        const originalText = button.textContent;
+        button.textContent = button.getAttribute('data-copied') || '✓ Copied!';
+        button.classList.add('bg-green-600');
+        button.classList.remove('bg-slate-600');
+        setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('bg-green-600');
+          button.classList.add('bg-slate-600');
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy BibTeX:', err);
+        alert(button.getAttribute('data-failed') || 'Failed to copy BibTeX to clipboard');
+      }
+    });
+  });
+</script>

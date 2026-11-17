@@ -1,4 +1,5 @@
 ---
+import PublicationCard from '../PublicationCard.astro';
 import { getLang, useTranslations, localizePath, locales, colon, projectText, venueLabel } from '../../i18n/ui';
 const lang = getLang(Astro.url);
 const t = useTranslations(lang);
@@ -99,63 +100,7 @@ const recentPublications = publications.slice(0, 4);
       {recentPublications.length > 0 ? (
         <div class="grid gap-6 mb-10">
           {recentPublications.map((pub: Publication, index: number) => (
-            <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-slate-200 dark:border-slate-700 scroll-animate hover-lift" style={`animation-delay: ${index * 0.15}s`}>
-              <div class="flex flex-col md:flex-row gap-4">
-                <!-- Year Badge -->
-                <div class="flex-shrink-0">
-                  <div class="w-16 h-16 bg-blue-600 text-white rounded-lg flex items-center justify-center font-bold text-lg">
-                    {pub.year}
-                  </div>
-                </div>
-
-                <!-- Content -->
-                <div class="flex-grow">
-                  <!-- Title -->
-                  <h3 class="text-xl font-semibold text-slate-900 dark:text-white mb-2">
-                    {pub.title}
-                  </h3>
-
-                  <!-- Authors -->
-                  <p class="text-sm text-slate-600 dark:text-slate-400 mb-2">
-                    {pub.authors}
-                  </p>
-
-                  <!-- Journal and Citation Count -->
-                  <div class="flex items-center gap-3 mb-3">
-                    <p class="text-sm font-medium text-blue-600 dark:text-blue-400">
-                      {venueLabel(pub.journal, lang)}, {pub.year}
-                    </p>
-                    {pub.citationCount !== undefined && pub.citationCount > 0 && (
-                      <span class="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded">
-                        {pub.citationCount} {pub.citationCount === 1 ? t('pubs.citation') : t('pubs.citations')}
-                      </span>
-                    )}
-                  </div>
-
-                  <!-- Links -->
-                  <div class="flex flex-wrap gap-2">
-                    {(pub.doi || pub.url) && (
-                      <a
-                        href={pub.doi ? `https://doi.org/${pub.doi}` : pub.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="px-3 py-1 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded transition-all hover-scale hover-glow"
-                      >
-                        {pub.doi ? 'DOI' : t('pubs.link')}
-                      </a>
-                    )}
-                    <button
-                      class="px-3 py-1 bg-slate-600 hover:bg-slate-700 text-white text-sm rounded transition-all hover-scale copy-bibtex"
-                      data-bibtex={pub.bibtex}
-                      data-copied={t('pubs.copied')}
-                      data-failed={t('pubs.copyFailed')}
-                    >
-                      {t('pubs.copy')}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <PublicationCard pub={pub} lang={lang} animateClass="scroll-animate hover-lift" animationDelay={`${index * 0.15}s`} />
           ))}
         </div>
 
@@ -177,36 +122,3 @@ const recentPublications = publications.slice(0, 4);
   </div>
 </section>
 
-<script>
-  // Handle BibTeX copy button clicks
-  document.addEventListener('DOMContentLoaded', () => {
-    const copyButtons = document.querySelectorAll('.copy-bibtex');
-
-    copyButtons.forEach(button => {
-      button.addEventListener('click', async () => {
-        const bibtex = button.getAttribute('data-bibtex');
-
-        if (bibtex) {
-          try {
-            await navigator.clipboard.writeText(bibtex);
-
-            // Visual feedback
-            const originalText = button.textContent;
-            button.textContent = button.getAttribute('data-copied') || '✓ Copied!';
-            button.classList.add('bg-green-600');
-            button.classList.remove('bg-slate-600');
-
-            setTimeout(() => {
-              button.textContent = originalText;
-              button.classList.remove('bg-green-600');
-              button.classList.add('bg-slate-600');
-            }, 2000);
-          } catch (err) {
-            console.error('Failed to copy BibTeX:', err);
-            alert(button.getAttribute('data-failed') || 'Failed to copy BibTeX to clipboard');
-          }
-        }
-      });
-    });
-  });
-</script>

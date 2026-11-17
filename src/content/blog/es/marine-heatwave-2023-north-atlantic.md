@@ -1,6 +1,6 @@
 ---
 title: "El viaje de una boya a la deriva a través de un evento extremo: la ola de calor marina de 2023"
-description: "Nuestro nuevo artículo en Scientific Data presenta un conjunto de datos único y de alta resolución, registrado por una boya que, por casualidad, quedó a la deriva durante la ola de calor marina de 2023 en el Atlántico Norte."
+description: "Nuestro nuevo artículo en Scientific Data presenta un conjunto de datos único y de alta resolución, registrado por una boya que, por pura casualidad, quedó a la deriva durante la ola de calor marina de 2023 en el Atlántico Norte."
 pubDate: 2025-12-12
 category: "research-update"
 tags:
@@ -12,6 +12,8 @@ tags:
 image: "/images/covers/marine-heatwave-2023-north-atlantic.jpg"
 featured: true
 paperUrl: "https://doi.org/10.1038/s41597-025-06268-y"
+papers:
+  - "10.1038/s41597-025-06268-y"
 ---
 
 *Inis Mór, en las islas Aran, con la costa de Connemara al fondo. Foto "[Aran Islands - White painted house on Inishmore, Co. Galway (2014)](https://commons.wikimedia.org/wiki/File:Aran_Islands_-_White_painted_house_on_Inishmore,_Co._Galway_(2014).jpg)" de JoachimKohler-HB, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), vía Wikimedia Commons (redimensionada).*

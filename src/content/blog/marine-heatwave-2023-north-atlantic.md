@@ -15,6 +15,8 @@ tags:
 image: "/images/covers/marine-heatwave-2023-north-atlantic.jpg"
 featured: true
 paperUrl: "https://doi.org/10.1038/s41597-025-06268-y"
+papers:
+  - "10.1038/s41597-025-06268-y"
 ---
 
 *Inishmore, in the Aran Islands, with the Connemara coast in the background. Photo "[Aran Islands - White painted house on Inishmore, Co. Galway (2014)](https://commons.wikimedia.org/wiki/File:Aran_Islands_-_White_painted_house_on_Inishmore,_Co._Galway_(2014).jpg)" by JoachimKohler-HB, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons (resized).*

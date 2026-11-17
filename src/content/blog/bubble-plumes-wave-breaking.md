@@ -14,6 +14,8 @@ tags:
   - "ADCP"
 image: "/images/covers/bubble-plumes-wave-breaking.jpg"
 featured: true
+papers:
+  - "10.1175/JPO-D-23-0261.1"
 ---
 
 *A wave breaking off Santa Cruz, California. Photo "[Surfer in Santa cruz 11-8-9 -1](https://commons.wikimedia.org/wiki/File:Surfer_in_Santa_cruz_11-8-9_-1.jpg)" by Brocken Inaglory, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons (resized).*
@@ -75,9 +77,3 @@ This research adds another piece to the puzzle of how breaking waves inject ener
 Every time you watch waves breaking on a beach, there's an invisible cascade happening beneath the surface, millions of bubbles being created, transported, dissolved, and rising. Understanding this process, quantifying it, and incorporating it into our models brings us closer to understanding the intricate relationship between the ocean and the atmosphere that shapes our climate.
 
 And sometimes, all you need is a well-placed acoustic sensor listening patiently to the symphony of bubbles beneath the waves.
-
----
-
-**Reference:**
-
-- Peláez-Zapata, D.S., Pakrashi, V, Dias, F. (2024). Dynamics of Bubble Plumes Produced by Breaking Waves. *J. Phys. Oceanogr.*, 54(10), 2059–2071. [doi: 10.1175/JPO-D-23-0261.1](https://doi.org/10.1175/JPO-D-23-0261.1)

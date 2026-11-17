@@ -12,6 +12,8 @@ tags:
   - "Coastal Hazards"
 image: "/images/covers/meteotsunami-summer-2022.jpg"
 featured: true
+papers:
+  - "10.1063/5.0139220"
 ---
 
 *Solva Harbour, in Wales. Photo "[Solva Harbour - geograph.org.uk - 5403819](https://commons.wikimedia.org/wiki/File:Solva_Harbour_-_geograph.org.uk_-_5403819.jpg)" by Alan Hughes, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), via Wikimedia Commons (resized).*
@@ -62,8 +64,3 @@ The key message? We need:
 3. **Advanced models**: Coupled ocean-waves-atmosphere systems that can predict these rare but dangerous events
 
 As our climate continues to change, meteotsunamis may become more frequent visitors. Understanding them now could save lives and infrastructure in the future.
-
----
-
-**References:** 
-- Renzi, E., Bergin, C., Kokina, T., **Peláez-Zapata, D.**, Giles, D., & Dias, F. (2023). Meteotsunamis and other anomalous 'tidal surge' events in Western Europe in Summer 2022. *Physics of Fluids*, 35(4). [https://doi.org/10.1063/5.0139220](https://doi.org/10.1063/5.0139220)
