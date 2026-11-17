@@ -48,7 +48,7 @@ const alternates = translations
     <link rel="canonical" href={canonicalURL} />
     {alternates.map((a) => <link rel="alternate" hreflang={a.lang} href={a.href} />)}
     {alternates.length > 0 && (
-      <link rel="alternate" hreflang="x-default" href={alternates.find((a) => a.lang === defaultLang)?.href} />
+      <link rel="alternate" hreflang="x-default" href={(alternates.find((a) => a.lang === defaultLang) ?? alternates.find((a) => a.lang === 'es') ?? alternates[0]).href} />
     )}
 
     <!-- Open Graph / Facebook -->

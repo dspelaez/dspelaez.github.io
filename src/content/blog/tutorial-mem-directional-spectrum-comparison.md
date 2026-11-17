@@ -10,8 +10,11 @@ tags:
   - "Maximum Entropy Method"
   - "Wave Buoys"
   - "Python"
+image: "/images/covers/tutorial-mem-directional-spectrum-comparison.jpg"
 featured: false
 ---
+
+*A Directional Waverider DWR-G4 wave buoy. Photo "[Directional Waverider DWR-G4 wave buoy](https://commons.wikimedia.org/wiki/File:Directional_Waverider_DWR-G4_wave_buoy.jpg)" by Antti Leppänen, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons (resized).*
 
 ## Introduction
 

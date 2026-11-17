@@ -9,8 +9,11 @@ tags:
   - "Boyas de oleaje"
   - "Python"
   - "Código abierto"
+image: "/images/covers/wavelet-directional-waves.jpg"
 featured: true
 ---
+
+*Un gran sistema de bajas presiones sobre el Atlántico Norte, visto por el satélite GOES-East en marzo de 2020. Foto "[Large Low Pressure System Swirls in the North Atlantic (49782650482)](https://commons.wikimedia.org/wiki/File:Large_Low_Pressure_System_Swirls_in_the_North_Atlantic_(49782650482).jpg)" de NOAA Satellites, dominio público, vía Wikimedia Commons.*
 
 ## El problema de medir la dirección del oleaje
 

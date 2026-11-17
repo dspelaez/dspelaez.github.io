@@ -11,7 +11,7 @@ import type { Lang } from '../i18n/ui';
 export type Post = CollectionEntry<'blog'>;
 
 /** Languages that have translated posts (subfolder name). */
-const translatedLangs = ['es'] as const;
+const translatedLangs = ['es', 'fr'] as const;
 
 export function postLang(post: Post): Lang {
   const prefix = post.slug.split('/')[0];
@@ -71,9 +71,11 @@ export async function listPosts(lang: Lang, { allVersions = false } = {}): Promi
 
   const entries: ListedPost[] = [];
   for (const versions of articles.values()) {
-    const preferred = (versions[lang] ?? versions.en ?? Object.values(versions)[0]) as Post;
+    // Page language first, then English, then Spanish, then French
+    const preferred = (versions[lang] ?? versions.en ?? versions.es ?? versions.fr) as Post;
     const shown = allVersions ? (Object.values(versions) as Post[]) : [preferred];
-    const topics = (versions.en ?? preferred).data.topics;
+    // Topics come from the original (English, or Spanish for posts written in Spanish)
+    const topics = (versions.en ?? versions.es ?? preferred).data.topics;
     for (const post of shown) {
       const shownLang = postLang(post);
       entries.push({

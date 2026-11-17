@@ -43,6 +43,7 @@ html {
    <div class="no-justify"> stay left-aligned, without hyphenation */
 .prose li,
 .prose li p,
+.prose p:has(> em:only-child),
 .prose .no-justify,
 .prose .no-justify p {
   text-align: left;

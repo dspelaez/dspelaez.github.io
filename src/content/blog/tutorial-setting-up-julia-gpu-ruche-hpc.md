@@ -11,8 +11,11 @@ tags:
   - "HPC"
   - "CUDA"
   - "Oceananigans"
+image: "/images/covers/tutorial-setting-up-julia-gpu-ruche-hpc.jpg"
 featured: false
 ---
+
+*The Kraken supercomputer (Cray XT5) at Oak Ridge National Laboratory. Photo "[Kraken Supercomputer (3592578852)](https://commons.wikimedia.org/wiki/File:Kraken_Supercomputer_(3592578852).jpg)" by Oak Ridge National Laboratory, [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/), via Wikimedia Commons (resized).*
 
 ## Introduction
 

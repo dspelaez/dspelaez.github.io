@@ -9,9 +9,12 @@ tags:
   - "Temperatura superficial del mar"
   - "Atlántico Norte"
   - "Boyas de oleaje"
+image: "/images/covers/marine-heatwave-2023-north-atlantic.jpg"
 featured: true
 paperUrl: "https://doi.org/10.1038/s41597-025-06268-y"
 ---
+
+*Inis Mór, en las islas Aran, con la costa de Connemara al fondo. Foto "[Aran Islands - White painted house on Inishmore, Co. Galway (2014)](https://commons.wikimedia.org/wiki/File:Aran_Islands_-_White_painted_house_on_Inishmore,_Co._Galway_(2014).jpg)" de JoachimKohler-HB, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), vía Wikimedia Commons (redimensionada).*
 
 En junio de 2023 ocurrió algo extraordinario frente a la costa oeste de Irlanda: la temperatura superficial del mar subió hasta 4 °C por encima de su promedio histórico. No se trataba de una anomalía local ni de un error de medición, sino de parte de una ola de calor marina que abarcó todo el Atlántico Norte. Según [los primeros estudios](https://doi.org/10.1002/wea.4498), fue uno de los calentamientos más rápidos observados en los últimos 40 años.
 

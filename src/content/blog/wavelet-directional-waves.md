@@ -11,8 +11,11 @@ tags:
   - "Wave Buoys"
   - "Python"
   - "Open Source"
+image: "/images/covers/wavelet-directional-waves.jpg"
 featured: true
 ---
+
+*A large low-pressure system over the North Atlantic, seen by the GOES-East satellite in March 2020. Photo "[Large Low Pressure System Swirls in the North Atlantic (49782650482)](https://commons.wikimedia.org/wiki/File:Large_Low_Pressure_System_Swirls_in_the_North_Atlantic_(49782650482).jpg)" by NOAA Satellites, public domain, via Wikimedia Commons.*
 
 ## The Problem with Measuring Wave Directions
 

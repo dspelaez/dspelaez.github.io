@@ -12,8 +12,11 @@ tags:
   - "Langmuir Circulation"
   - "Acoustics"
   - "ADCP"
+image: "/images/covers/bubble-plumes-wave-breaking.jpg"
 featured: true
 ---
+
+*A wave breaking off Santa Cruz, California. Photo "[Surfer in Santa cruz 11-8-9 -1](https://commons.wikimedia.org/wiki/File:Surfer_in_Santa_cruz_11-8-9_-1.jpg)" by Brocken Inaglory, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons (resized).*
 
 ## The Invisible Orchestra of the Ocean Surface
 

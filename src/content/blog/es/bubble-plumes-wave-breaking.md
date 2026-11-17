@@ -10,8 +10,11 @@ tags:
   - "Circulación de Langmuir"
   - "Acústica"
   - "ADCP"
+image: "/images/covers/bubble-plumes-wave-breaking.jpg"
 featured: true
 ---
+
+*Una ola rompiendo frente a Santa Cruz, California. Foto "[Surfer in Santa cruz 11-8-9 -1](https://commons.wikimedia.org/wiki/File:Surfer_in_Santa_cruz_11-8-9_-1.jpg)" de Brocken Inaglory, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), vía Wikimedia Commons (redimensionada).*
 
 ## La orquesta invisible de la superficie del mar
 

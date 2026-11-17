@@ -12,9 +12,12 @@ tags:
   - "Sea Surface Temperature"
   - "North Atlantic"
   - "Wave Buoys"
+image: "/images/covers/marine-heatwave-2023-north-atlantic.jpg"
 featured: true
 paperUrl: "https://doi.org/10.1038/s41597-025-06268-y"
 ---
+
+*Inishmore, in the Aran Islands, with the Connemara coast in the background. Photo "[Aran Islands - White painted house on Inishmore, Co. Galway (2014)](https://commons.wikimedia.org/wiki/File:Aran_Islands_-_White_painted_house_on_Inishmore,_Co._Galway_(2014).jpg)" by JoachimKohler-HB, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons (resized).*
 
 In June 2023, something extraordinary happened off the west coast of Ireland: sea surface temperatures climbed to an astonishing 4°C above their historical average. This wasn't a localised anomaly or a measurement error, but part of a marine heatwave that engulfed the entire North Atlantic. According to [preliminary research](https://doi.org/10.1002/wea.4498), it was one of the fastest warming trends observed in the past 40 years.
 

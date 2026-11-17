@@ -8,8 +8,11 @@ tags:
   - "Nivel del mar"
   - "Ondas atmosféricas"
   - "Riesgos costeros"
+image: "/images/covers/meteotsunami-summer-2022.jpg"
 featured: true
 ---
+
+*El puerto de Solva, en Gales. Foto "[Solva Harbour - geograph.org.uk - 5403819](https://commons.wikimedia.org/wiki/File:Solva_Harbour_-_geograph.org.uk_-_5403819.jpg)" de Alan Hughes, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), vía Wikimedia Commons (redimensionada).*
 
 ## Un verano de mareas extrañas
 

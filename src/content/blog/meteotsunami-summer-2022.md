@@ -10,8 +10,11 @@ tags:
   - "Sea Level"
   - "Atmospheric Waves"
   - "Coastal Hazards"
+image: "/images/covers/meteotsunami-summer-2022.jpg"
 featured: true
 ---
+
+*Solva Harbour, in Wales. Photo "[Solva Harbour - geograph.org.uk - 5403819](https://commons.wikimedia.org/wiki/File:Solva_Harbour_-_geograph.org.uk_-_5403819.jpg)" by Alan Hughes, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), via Wikimedia Commons (resized).*
 
 ## A Summer of Strange Tides
 
