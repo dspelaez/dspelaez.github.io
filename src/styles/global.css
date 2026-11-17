@@ -113,6 +113,13 @@ html {
   color: #cbd5e1;
 }
 
+/* Code blocks keep their own background (the inline-code style above must not
+   paint each line of a block) */
+.dark .prose pre code {
+  background-color: transparent;
+  color: inherit;
+}
+
 .dark .prose pre {
   background-color: #0f172a;
   color: #e2e8f0;
