@@ -114,6 +114,33 @@ html {
   color: #cbd5e1;
 }
 
+/* Figure captions (a paragraph that is all italics), paper style:
+   smaller, muted and right below the image */
+.prose p:has(> em:only-child) {
+  font-size: 0.875rem;
+  line-height: 1.45;
+  color: #64748b;
+}
+
+.dark .prose p:has(> em:only-child) {
+  color: #94a3b8;
+}
+
+/* Caption of the cover image (first thing in the post, after a mb-10 image) */
+.prose > p:first-child:has(> em:only-child) {
+  margin-top: -1.75rem;
+  margin-bottom: 2rem !important;
+}
+
+/* Caption right after an image inside the text */
+.prose p:has(> img) {
+  margin-bottom: 0.5rem !important;
+}
+
+.prose p:has(> img) + p:has(> em:only-child) {
+  margin-bottom: 1.5rem !important;
+}
+
 /* Code blocks keep their own background (the inline-code style above must not
    paint each line of a block) */
 .dark .prose pre code {
