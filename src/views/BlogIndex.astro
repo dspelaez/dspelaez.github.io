@@ -163,25 +163,28 @@ const categoryColors = {
                     {post.data.description}
                   </p>
 
-                  {post.data.tags && post.data.tags.length > 0 && (
-                    <div class="flex flex-wrap gap-2 mb-4">
-                      {post.data.tags.slice(0, 3).map((tag) => (
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 text-xs rounded">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
+                  <!-- Tags and Read more stay together at the bottom of the card -->
+                  <div class="mt-auto flex flex-col">
+                    {post.data.tags && post.data.tags.length > 0 && (
+                      <div class="flex flex-wrap gap-2 mb-4">
+                        {post.data.tags.slice(0, 3).map((tag) => (
+                          <span class="px-2 py-1 bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 text-xs rounded">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
 
-                  <a
-                    href={url}
-                    class="mt-auto self-start inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm"
-                  >
-                    {t('blog.readMore')}
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
+                    <a
+                      href={url}
+                      class="self-start inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm"
+                    >
+                      {t('blog.readMore')}
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </article>
             ))}
