@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { getLang, isTranslatedPage, localizePath, langs, locales, defaultLang } from '../i18n/ui';
+import { getLang, isTranslatedPage, localizePath, langs, locales, defaultLang, type Lang } from '../i18n/ui';
 
 interface Props {
   title: string;
@@ -11,9 +11,11 @@ interface Props {
   type?: 'website' | 'article';
   /** schema.org structured data (one object or several) */
   jsonLd?: object | object[];
+  /** URLs of this page in each language, for pages outside the translated set (blog posts) */
+  translations?: Partial<Record<Lang, string>>;
 }
 
-const { title, description, image, pubDate, type = 'website', jsonLd } = Astro.props;
+const { title, description, image, pubDate, type = 'website', jsonLd, translations } = Astro.props;
 const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 // Escape "<" so the JSON can't close the script tag
 const toJson = (o: object) => JSON.stringify(o).replace(/</g, '\\u003c');
@@ -22,9 +24,13 @@ const socialImage = image ? new URL(image, Astro.site) : new URL('/og-image.jpg'
 
 // Language and, for pages that exist in every language, their alternates
 const lang = getLang(Astro.url);
-const alternates = isTranslatedPage(Astro.url.pathname)
-  ? langs.map((l) => ({ lang: l, href: new URL(localizePath(Astro.url.pathname, l), Astro.site) }))
-  : [];
+const alternates = translations
+  ? Object.keys(translations).length > 1
+    ? (Object.entries(translations) as [Lang, string][]).map(([l, href]) => ({ lang: l, href: new URL(href, Astro.site) }))
+    : []
+  : isTranslatedPage(Astro.url.pathname)
+    ? langs.map((l) => ({ lang: l, href: new URL(localizePath(Astro.url.pathname, l), Astro.site) }))
+    : [];
 ---
 
 <!doctype html>

@@ -1,0 +1,17 @@
+---
+import { getCollection } from 'astro:content';
+import PostPage from '../../../views/PostPage.astro';
+import { postLang, postName } from '../../../lib/blog';
+
+// Translated posts at /<lang>/blog/<name>/ (files in src/content/blog/<lang>/)
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts
+    .filter((post) => postLang(post) !== 'en')
+    .map((post) => ({ params: { lang: postLang(post), slug: postName(post) }, props: { post } }));
+}
+
+const { post } = Astro.props;
+---
+
+<PostPage post={post} />

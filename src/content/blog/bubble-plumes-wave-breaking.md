@@ -3,13 +3,15 @@ title: "The Hidden World of Ocean Bubbles: Measuring What Lies Beneath Breaking 
 description: "How acoustic sensors are helping us understand the complex dynamics of bubble plumes created by breaking waves, and why these tiny bubbles matter for our climate."
 pubDate: 2024-10-15
 category: "research-update"
+topics:
+  - "air-sea-climate"
 tags:
-  - "Ocean Waves"
   - "Wave Breaking"
+  - "Bubbles"
+  - "Air-Sea Interactions"
+  - "Langmuir Circulation"
   - "Acoustics"
   - "ADCP"
-  - "Air-Sea Interactions"
-  - "Climate"
 featured: true
 ---
 
@@ -40,6 +42,10 @@ The data revealed fascinating patterns in bubble plume behaviour:
 **The shape of randomness changes.** During low winds, bubble depths vary erratically: some shallow, some surprisingly deep, with a highly skewed distribution. But as wind speeds increase, the distribution becomes more organised and symmetrical. This transition suggests that different physical mechanisms dominate at different wind speeds.
 
 **Langmuir circulation transports bubbles deeper.** Perhaps the most interesting finding is the role of Langmuir circulation: those beautiful rows of surface convergence zones you sometimes see aligned with the wind. When conditions favour these organised vortices (characterised by a turbulent Langmuir number around 0.3), bubbles penetrate much deeper. The Langmuir cells essentially act as conveyor belts, transporting bubbles downwards more efficiently than turbulence alone.
+
+![Foam streaks aligned with the wind on Rodeo Lagoon, California, marking the convergence zones between Langmuir circulation cells.](/images/langmuir-rodeo-lagoon.jpg)
+
+*Windrows on Rodeo Lagoon (California): the foam streaks line up with the wind and mark where neighbouring Langmuir cells converge. Photo: "[Rodeo Lagoon From Trail](https://commons.wikimedia.org/wiki/File:Rodeo_Lagoon_From_Trail.JPG)" by Mmelugin, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons (resized).*
 
 ## Why This Matters
 

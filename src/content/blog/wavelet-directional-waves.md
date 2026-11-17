@@ -3,12 +3,14 @@ title: "A Better Way to Measure Ocean Wave Directions: From Research to Software
 description: "How wavelets help us understand where ocean waves come from, and why we built a Python toolkit to make this accessible to everyone."
 pubDate: 2025-05-05
 category: "research-update"
+topics:
+  - "wave-measurements"
 tags:
-  - "Ocean Waves"
-  - "Python"
+  - "Directional Wave Spectrum"
   - "Wavelets"
+  - "Wave Buoys"
+  - "Python"
   - "Open Source"
-  - "Research"
 featured: true
 ---
 

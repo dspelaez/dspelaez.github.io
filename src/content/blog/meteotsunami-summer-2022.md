@@ -3,12 +3,13 @@ title: "When the Ocean Breathes: Meteotsunamis in Western Europe"
 description: "Mysterious tidal surges struck the coasts of UK, Ireland, France, and Spain in Summer 2022. Our investigation reveals these rare events were meteotsunamis: ocean waves triggered by atmospheric pressure disturbances."
 pubDate: 2023-04-15
 category: "research-update"
+topics:
+  - "coastal-hazards"
 tags:
-  - "meteotsunamis"
-  - "sea level"
-  - "atmospheric waves"
-  - "coastal dynamics"
-  - "ocean waves"
+  - "Meteotsunamis"
+  - "Sea Level"
+  - "Atmospheric Waves"
+  - "Coastal Hazards"
 featured: true
 ---
 

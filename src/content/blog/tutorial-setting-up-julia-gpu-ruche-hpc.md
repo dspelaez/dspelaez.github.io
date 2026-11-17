@@ -3,6 +3,8 @@ title: "Setting Up Julia with GPU Support on Ruche HPC"
 description: "A practical guide to installing Julia with CUDA support on the Ruche HPC cluster and running GPU-accelerated Oceananigans simulations."
 pubDate: 2025-11-06
 category: "tutorial"
+topics:
+  - "modelling"
 tags:
   - "Julia"
   - "GPU"

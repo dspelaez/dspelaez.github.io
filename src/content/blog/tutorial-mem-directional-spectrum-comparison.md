@@ -3,11 +3,13 @@ title: "Battle of the MEMs: Burg vs. Shannon for Directional Wave Spectrum Recon
 description: "A practical comparison of Burg's and Shannon's Maximum Entropy Methods for reconstructing directional wave spectra from buoy measurements"
 pubDate: 2025-12-08
 category: "tutorial"
+topics:
+  - "wave-measurements"
 tags:
-  - "Ocean Waves"
-  - "Wave Analysis"
-  - "Python"
   - "Directional Wave Spectrum"
+  - "Maximum Entropy Method"
+  - "Wave Buoys"
+  - "Python"
 featured: false
 ---
 
@@ -152,7 +154,7 @@ This method is a bit slower because it requires iterative solving, but as we'll 
 
 ## Performance Comparison
 
-To rigorously test these methods, I generated a library of synthetic directional distributions using the [Donelan et al. (1985)](https://doi.org/10.1016/0141-1187(85)90097-3) $\operatorname{sech}^2$ spreading function, defined as:
+To rigorously test these methods, I generated a library of synthetic directional distributions using the [Donelan et al. (1985)](https://doi.org/10.1098/rsta.1985.0054) $\operatorname{sech}^2$ spreading function, defined as:
 
 $$D(\theta) = \dfrac{1}{2}\beta\, \operatorname{sech}^2\!\big(\beta(\theta - \theta_m)\big)$$
 

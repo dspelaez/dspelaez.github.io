@@ -3,12 +3,15 @@ title: "A Drifting Buoy's Journey Through an Extreme Event: Recording the 2023 M
 description: "Our new paper in Scientific Data presents a unique high-resolution dataset captured by a serendipitously drifting buoy during the 2023 North Atlantic marine heatwave."
 pubDate: 2025-12-12
 category: "research-update"
+topics:
+  - "air-sea-climate"
+  - "wave-measurements"
 tags:
   - "Marine Heatwaves"
   - "Climate Change"
-  - "Ocean Temperature"
+  - "Sea Surface Temperature"
   - "North Atlantic"
-  - "Ocean Waves"
+  - "Wave Buoys"
 featured: true
 paperUrl: "https://doi.org/10.1038/s41597-025-06268-y"
 ---

@@ -1,5 +1,11 @@
 ---
-import { getLang, useTranslations, localizePath, stripLang, isTranslatedPage, languages, langs } from '../i18n/ui';
+import { getLang, useTranslations, localizePath, stripLang, isTranslatedPage, languages, langs, type Lang } from '../i18n/ui';
+
+interface Props {
+  /** URLs of this page in other languages (blog posts with translations) */
+  alternates?: Partial<Record<Lang, string>>;
+}
+const { alternates } = Astro.props;
 
 const lang = getLang(Astro.url);
 const t = useTranslations(lang);
@@ -17,9 +23,10 @@ const navItems = [
 // (blog posts for now) point to that language's blog or home page
 const base = stripLang(Astro.url.pathname);
 const switchTo = (l: typeof lang) =>
-  isTranslatedPage(Astro.url.pathname)
+  alternates?.[l] ??
+  (isTranslatedPage(Astro.url.pathname)
     ? localizePath(base, l)
-    : localizePath(base.startsWith('/blog/') ? '/blog/' : '/', l);
+    : localizePath(base.startsWith('/blog/') ? '/blog/' : '/', l));
 const languageLinks = langs.map((l) => ({ code: l, name: languages[l], href: switchTo(l) }));
 ---
 

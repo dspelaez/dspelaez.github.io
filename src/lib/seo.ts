@@ -75,6 +75,7 @@ export function websiteSchema(lang: Lang) {
 }
 
 export function blogPostingSchema(post: {
+  lang: Lang;
   title: string;
   description: string;
   url: string;
@@ -91,7 +92,7 @@ export function blogPostingSchema(post: {
     url: post.url,
     mainEntityOfPage: post.url,
     datePublished: post.pubDate.toISOString(),
-    inLanguage: 'en',
+    inLanguage: post.lang,
     author: { '@type': 'Person', '@id': PERSON_ID, name: 'Daniel Peláez-Zapata', url: `${SITE}/` },
     ...(post.image && { image: new URL(post.image, SITE).href }),
     ...(post.tags?.length && { keywords: post.tags.join(', ') }),

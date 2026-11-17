@@ -2,20 +2,35 @@
 import { getLang, useTranslations, localizePath, locales, colon, projectText, venueLabel } from '../i18n/ui';
 const lang = getLang(Astro.url);
 const t = useTranslations(lang);
-import { getCollection } from 'astro:content';
+import { listPosts } from '../lib/blog';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const posts = await getCollection('blog');
-const sortedPosts = posts.sort((a, b) =>
-  b.data.pubDate.getTime() - a.data.pubDate.getTime()
+// Every language version of every article; one per article is "primary" (shown by default)
+const allEntries = await listPosts(lang, { allVersions: true });
+const sortedPosts = allEntries.filter((p) => p.primary);
+
+// Filters: by category, and (on pages with translations) only posts in this language
+const categories = ['research-update', 'tutorial'] as const;
+const counts = Object.fromEntries(
+  categories.map((c) => [c, sortedPosts.filter((p) => p.post.data.category === c).length])
 );
+// Topics with at least one post, most used first
+const topicCounts = new Map<string, number>();
+sortedPosts.forEach((p) => p.topics.forEach((tp) => topicCounts.set(tp, (topicCounts.get(tp) ?? 0) + 1)));
+const topics = [...topicCounts.entries()].sort((a, b) => b[1] - a[1]);
+// Language buttons when posts exist in more than one language; each counts every
+// post written in that language. The page's language goes first.
+const shownLangs = [...new Set(allEntries.map((p) => p.shownLang))].sort((a, b) =>
+  a === lang ? -1 : b === lang ? 1 : a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b)
+);
+const langCounts = Object.fromEntries(
+  shownLangs.map((l) => [l, allEntries.filter((p) => p.shownLang === l).length])
+);
+const showLangFilter = shownLangs.length > 1;
 
 const categoryColors = {
-  python: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300',
-  modelling: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300',
-  'data-analysis': 'bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300',
   'research-update': 'bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300',
   tutorial: 'bg-cyan-100 text-cyan-700 dark:bg-cyan-900 dark:text-cyan-300',
 };
@@ -43,11 +58,69 @@ const categoryColors = {
           )}
         </div>
 
+        <!-- Filters -->
+        <div class="mb-8 flex flex-wrap items-center gap-3" id="blog-filters">
+          <div class="flex flex-wrap gap-3" role="group" aria-label={t('blog.filter.label')}>
+          {[{ key: 'all', label: t('blog.filter.all'), n: sortedPosts.length },
+            ...categories.map((c) => ({ key: c, label: t(`blog.filter.${c}`), n: counts[c] }))].map((f) => (
+            <button
+              type="button"
+              data-filter={f.key}
+              aria-pressed={f.key === 'all' ? 'true' : 'false'}
+              class="blog-filter px-4 py-2 rounded-full text-sm font-medium border transition-colors border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 aria-pressed:bg-blue-600 aria-pressed:border-blue-600 aria-pressed:text-white dark:aria-pressed:bg-blue-500 dark:aria-pressed:border-blue-500"
+            >
+              {f.label} <span class="opacity-70">{f.n}</span>
+            </button>
+          ))}
+          </div>
+          {topics.length > 1 && (
+            <label class="relative inline-flex items-center">
+              <span class="sr-only">{t('blog.filter.topicLabel')}</span>
+              <select
+                id="blog-topic-filter"
+                class="appearance-none pl-4 pr-9 py-2 rounded-full text-sm font-medium border transition-colors cursor-pointer bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 data-[active=true]:bg-blue-600 data-[active=true]:border-blue-600 data-[active=true]:text-white dark:data-[active=true]:bg-blue-500 dark:data-[active=true]:border-blue-500"
+              >
+                <option value="all">{t('blog.filter.topicLabel')}{colon(lang)} {t('blog.filter.all')}</option>
+                {topics.map(([key, n]) => (
+                  <option value={key}>{t(`blog.topic.${key}`)} ({n})</option>
+                ))}
+              </select>
+              <svg class="pointer-events-none absolute right-3 w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6" />
+              </svg>
+            </label>
+          )}
+          {showLangFilter && (
+            <div class="md:ml-auto flex flex-wrap gap-3" role="group" aria-label={t('blog.filter.langLabel')}>
+              {[{ key: 'all', label: t('blog.filter.lang.all'), n: undefined as number | undefined },
+                ...shownLangs.map((l) => ({ key: l, label: t(`blog.filter.lang.${l}`), n: langCounts[l] }))].map((f) => (
+                <button
+                  type="button"
+                  data-lang-filter={f.key}
+                  aria-pressed={f.key === 'all' ? 'true' : 'false'}
+                  class="blog-lang-filter px-4 py-2 rounded-full text-sm font-medium border transition-colors border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 aria-pressed:bg-blue-600 aria-pressed:border-blue-600 aria-pressed:text-white dark:aria-pressed:bg-blue-500 dark:aria-pressed:border-blue-500"
+                >
+                  {f.label} {f.n !== undefined && <span class="opacity-70">{f.n}</span>}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        <p id="blog-empty" hidden class="mb-8 text-slate-600 dark:text-slate-400">{t('blog.filter.empty')}</p>
+
         <!-- Posts Grid -->
-        {sortedPosts.length > 0 ? (
+        {allEntries.length > 0 ? (
           <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sortedPosts.map((post) => (
-              <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1 overflow-hidden border border-slate-200 dark:border-slate-700 flex flex-col">
+            {allEntries.map(({ post, url, shownLang, fallback, hasSpanish, primary, topics }) => (
+              <article
+                data-category={post.data.category}
+                data-lang={shownLang}
+                data-primary={primary ? 'true' : 'false'}
+                data-topics={topics.join(' ')}
+                hidden={!primary}
+                class="blog-card bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-1 overflow-hidden border border-slate-200 dark:border-slate-700 flex flex-col"
+              >
                 {post.data.image && (
                   <img
                     src={post.data.image}
@@ -57,12 +130,20 @@ const categoryColors = {
                 )}
 
                 <div class="p-6 flex flex-col flex-1">
-                  <span class={`self-start px-3 py-1 rounded-full text-xs font-semibold uppercase ${categoryColors[post.data.category]}`}>
+                  <div class="flex flex-wrap items-center gap-2">
+                  <span class={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${categoryColors[post.data.category]}`}>
                     {t(`blog.cat.${post.data.category}`)}
                   </span>
+                  {fallback && (
+                    <span class="px-2 py-1 rounded-full text-xs font-semibold border border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400" lang={shownLang} title={t(`blog.only.${shownLang}`)}>{shownLang.toUpperCase()}</span>
+                  )}
+                  {hasSpanish && (
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300" lang="es">{t('blog.alsoSpanish')}</span>
+                  )}
+                  </div>
 
                   <h2 class="text-xl font-semibold text-slate-900 dark:text-white mt-3 mb-2">
-                    <a href={`/blog/${post.slug}/`} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <a href={url} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                       {post.data.title}
                     </a>
                   </h2>
@@ -90,7 +171,7 @@ const categoryColors = {
                   )}
 
                   <a
-                    href={`/blog/${post.slug}/`}
+                    href={url}
                     class="mt-auto self-start inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium text-sm"
                   >
                     {t('blog.readMore')}
@@ -113,3 +194,51 @@ const categoryColors = {
 
   <Footer />
 </BaseLayout>
+
+<script>
+  // Client-side filters; the state lives in the URL (?category=tutorial&lang=es&topic=modelling)
+  // so a filtered view can be shared. Without JavaScript all posts are shown.
+  const catButtons = document.querySelectorAll<HTMLButtonElement>('.blog-filter');
+  const langButtons = document.querySelectorAll<HTMLButtonElement>('.blog-lang-filter');
+  const topicSelect = document.getElementById('blog-topic-filter') as HTMLSelectElement | null;
+  const cards = document.querySelectorAll<HTMLElement>('.blog-card');
+  const empty = document.getElementById('blog-empty');
+
+  const params = new URLSearchParams(window.location.search);
+  const pick = (buttons: NodeListOf<HTMLButtonElement>, attr: string, value: string | null) =>
+    [...buttons].some((b) => b.getAttribute(attr) === value) ? (value as string) : 'all';
+  let category = pick(catButtons, 'data-filter', params.get('category'));
+  let language = pick(langButtons, 'data-lang-filter', params.get('lang'));
+  const topicValues = topicSelect ? [...topicSelect.options].map((o) => o.value) : [];
+  let topic = topicValues.includes(params.get('topic') ?? '') ? params.get('topic')! : 'all';
+
+  function apply() {
+    let visible = 0;
+    cards.forEach((card) => {
+      const show =
+        (category === 'all' || card.dataset.category === category) &&
+        (language === 'all' ? card.dataset.primary === 'true' : card.dataset.lang === language) &&
+        (topic === 'all' || (card.dataset.topics ?? '').split(' ').includes(topic));
+      card.hidden = !show;
+      if (show) visible++;
+    });
+    catButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === category)));
+    langButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.langFilter === language)));
+    if (topicSelect) {
+      topicSelect.value = topic;
+      topicSelect.dataset.active = String(topic !== 'all');
+    }
+    if (empty) empty.hidden = visible > 0;
+
+    const url = new URL(window.location.href);
+    category === 'all' ? url.searchParams.delete('category') : url.searchParams.set('category', category);
+    language === 'all' ? url.searchParams.delete('lang') : url.searchParams.set('lang', language);
+    topic === 'all' ? url.searchParams.delete('topic') : url.searchParams.set('topic', topic);
+    history.replaceState(null, '', url);
+  }
+
+  catButtons.forEach((b) => b.addEventListener('click', () => { category = b.dataset.filter ?? 'all'; apply(); }));
+  langButtons.forEach((b) => b.addEventListener('click', () => { language = b.dataset.langFilter ?? 'all'; apply(); }));
+  topicSelect?.addEventListener('change', () => { topic = topicSelect.value; apply(); });
+  apply();
+</script>

@@ -48,7 +48,13 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
-    category: z.enum(['python', 'modelling', 'data-analysis', 'research-update', 'tutorial']),
+    // research-update: posts about my research; tutorial: technical guides
+    category: z.enum(['research-update', 'tutorial']),
+    // Topics for the blog filter (a short fixed list). Translations inherit them
+    // from the English original, so they only need to be set there.
+    topics: z
+      .array(z.enum(['wave-measurements', 'air-sea-climate', 'coastal-hazards', 'marine-energy', 'modelling']))
+      .default([]),
     tags: z.array(z.string()),
     image: z.string().optional(),
     featured: z.boolean().default(false),

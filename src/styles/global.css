@@ -27,9 +27,28 @@ html {
   --color-text: #e2e8f0;
 }
 
-/* Typography for academic content */
+/* Typography for academic content: same width as the post header (title, description) */
 .prose {
-  max-width: 65ch;
+  max-width: none;
+}
+
+/* Justified paragraphs; hyphenation (uses the page's lang) avoids wide gaps */
+.prose p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* Lists (e.g. references with long names and DOIs) and any block wrapped in
+   <div class="no-justify"> stay left-aligned, without hyphenation */
+.prose li,
+.prose li p,
+.prose .no-justify,
+.prose .no-justify p {
+  text-align: left;
+  -webkit-hyphens: manual;
+  hyphens: manual;
+  overflow-wrap: anywhere;
 }
 
 .prose h2 {

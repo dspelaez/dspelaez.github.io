@@ -2,12 +2,14 @@
 title: "Setting Up SWAN for Coastal Wave Modeling"
 description: "Step-by-step guide to installing and configuring the SWAN wave model for coastal applications. Includes practical tips for grid generation and boundary conditions."
 pubDate: 2024-10-20
-category: "modelling"
+category: "tutorial"
+topics:
+  - "modelling"
 tags:
   - "SWAN"
-  - "wave modeling"
-  - "coastal engineering"
-  - "numerical methods"
+  - "Wave Modelling"
+  - "Coastal Engineering"
+  - "Numerical Methods"
 featured: true
 ---
 
