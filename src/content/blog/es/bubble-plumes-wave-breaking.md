@@ -16,7 +16,11 @@ papers:
   - "10.1175/JPO-D-23-0261.1"
 ---
 
+<div class="caption">
+
 *Una ola rompiendo frente a Santa Cruz, California. Foto "[Surfer in Santa cruz 11-8-9 -1](https://commons.wikimedia.org/wiki/File:Surfer_in_Santa_cruz_11-8-9_-1.jpg)" de Brocken Inaglory, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), vía Wikimedia Commons (redimensionada).*
+
+</div>
 
 ## La orquesta invisible de la superficie del mar
 
@@ -30,7 +34,11 @@ En nuestro trabajo publicado en el *Journal of Physical Oceanography* ([Peláez-
 
 ![Plumas de burbujas generadas por la rotura de las olas en el Atlántico, frente a la costa irlandesa, un ejemplo del intenso intercambio de gases entre el aire y el mar.](/images/bubble-plumes-example.jpg)
 
+<div class="caption">
+
 *Foto de [Jeremy Lanfranchi](https://unsplash.com/@ridershow) en Unsplash*
+
+</div>
 
 Instalamos un ADCP en el fondo, mirando hacia arriba, frente a la costa oeste de Irlanda, un lugar especialmente adecuado para estudiar olas que rompen con mucha energía. Este punto está cerca de donde recientemente registramos [datos de alta resolución durante la ola de calor marina de 2023](/es/blog/marine-heatwave-2023-north-atlantic/). Durante meses, el instrumento envió pulsos acústicos hacia la superficie a través de la columna de agua y registró no solo las corrientes, sino también el eco de las nubes de burbujas que generaban las olas al romper.
 
@@ -48,7 +56,11 @@ Los datos revelaron patrones fascinantes en el comportamiento de las plumas de b
 
 ![Franjas de espuma alineadas con el viento en la laguna Rodeo, California, que marcan las zonas de convergencia entre celdas de circulación de Langmuir.](/images/langmuir-rodeo-lagoon.jpg)
 
+<div class="caption">
+
 *Franjas de espuma en la laguna Rodeo (California): se alinean con el viento y marcan dónde convergen las celdas de Langmuir vecinas. Foto: "[Rodeo Lagoon From Trail](https://commons.wikimedia.org/wiki/File:Rodeo_Lagoon_From_Trail.JPG)" de Mmelugin, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), vía Wikimedia Commons (redimensionada).*
+
+</div>
 
 ## Por qué importa
 

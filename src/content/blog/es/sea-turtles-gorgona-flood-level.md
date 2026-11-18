@@ -18,7 +18,11 @@ papers:
   - "https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97"
 ---
 
+<div class="caption">
+
 *Tortuga golfina en la playa de Escobilla, Oaxaca (México). Foto "[Turtle golfina escobilla Oaxaca Mexico Claudio Giovenzana 2010](https://commons.wikimedia.org/wiki/File:Turtle_golfina_escobilla_Oaxaca_Mexico_Claudio_Giovenzana_2010.jpg)" de Claudio Giovenzana, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), vía Wikimedia Commons (redimensionada).*
+
+</div>
 
 En la isla Gorgona, a 36 kilómetros de la costa del Pacífico colombiano, hay una playa de poco más de un kilómetro llamada Playa Palmeras. Allí llegan a desovar tres especies de tortugas marinas, la carey ([*Eretmochelys imbricata*](https://es.wikipedia.org/wiki/Eretmochelys_imbricata)), la verde ([*Chelonia mydas*](https://es.wikipedia.org/wiki/Chelonia_mydas)) y la golfina ([*Lepidochelys olivacea*](https://es.wikipedia.org/wiki/Lepidochelys_olivacea)). Es uno de los sitios de anidación más importantes de la región.
 
@@ -38,6 +42,10 @@ Con esos mapas, la decisión dejaba de tomarse a ojo. La parte media y norte de 
 
 ![Crías de tortuga golfina caminando por la arena hacia el mar en Nuquí, Chocó, en el Pacífico colombiano.](/images/crias-golfina-nuqui-choco.jpg)
 
+<div class="caption">
+
 *Crías de tortuga golfina rumbo al mar en Nuquí, Chocó, en el Pacífico colombiano. Foto "[Release of Lepidochelys olivacea, Nuquí, Chocó, Colombia](https://commons.wikimedia.org/wiki/File:Release_of_Lepidochelys_olivacea_-_Nuqu%C3%AD,_Choc%C3%B3,_Colombia_-_23_Oct_2025_-_Diferoch_-_2.jpg)" de Diferoch, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), vía Wikimedia Commons (redimensionada).*
+
+</div>
 
 Las playas cambian, y unos mapas así hay que rehacerlos cada cierto tiempo. Pero la idea sigue en pie. Quince años después, este sigue siendo uno de mis ejemplos favoritos de para qué sirve medir las olas. A veces, entender cómo se mueve el agua es lo que permite que una tortuga nazca en el lugar correcto.

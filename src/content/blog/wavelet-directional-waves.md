@@ -18,7 +18,11 @@ papers:
   - "10.21105/joss.07942"
 ---
 
+<div class="caption">
+
 *A large low-pressure system over the North Atlantic, seen by the GOES-East satellite in March 2020. Photo "[Large Low Pressure System Swirls in the North Atlantic (49782650482)](https://commons.wikimedia.org/wiki/File:Large_Low_Pressure_System_Swirls_in_the_North_Atlantic_(49782650482).jpg)" by NOAA Satellites, public domain, via Wikimedia Commons.*
+
+</div>
 
 ## The Problem with Measuring Wave Directions
 
@@ -40,7 +44,11 @@ We validated the method against conventional approaches and numerical models, an
 
 ![Comparison of directional wave spectra estimated using different methods. The wavelet approach (panel a) produces smoother, more realistic distributions compared to traditional methods (panels b-e), and compares well with the WaveWatch III model (panel f).](/images/directional-spectrum-example.jpg)
 
+<div class="caption">
+
 *Figure: Example of directional wave spectra estimated using different methods. The radial axis shows frequency (Hz), whilst the angular direction shows where waves are going to (N, E, S, W). Colours indicate wave energy density at each frequency-direction combination.*
+
+</div>
 
 ## From Paper to Practice: The EWDM Toolkit
 

@@ -14,7 +14,11 @@ image: "/images/covers/tutorial-swan-model-setup.jpg"
 featured: true
 ---
 
+<div class="caption">
+
 *Waves refracting in the lee of Newcastle Harbour. Photo "[Refracted waves to the lee of Newcastle Harbour - geograph.org.uk - 6931809](https://commons.wikimedia.org/wiki/File:Refracted_waves_to_the_lee_of_Newcastle_Harbour_-_geograph.org.uk_-_6931809.jpg)" by Eric Jones, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), via Wikimedia Commons (resized).*
+
+</div>
 
 ## Introduction to SWAN
 

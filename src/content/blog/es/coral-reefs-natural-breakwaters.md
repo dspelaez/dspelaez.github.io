@@ -19,7 +19,11 @@ papers:
   - "10.1016/j.ecoleng.2017.07.015"
 ---
 
+<div class="caption">
+
 *Una ola rompiendo sobre un arrecife de coral en el atolón de Kwajalein, islas Marshall. Foto "[Breaking Wave](https://commons.wikimedia.org/wiki/File:Breaking_Wave_(20260886321).jpg)" del U.S. Geological Survey, dominio público, vía Wikimedia Commons.*
+
+</div>
 
 En el Caribe colombiano, muchas playas tienen delante un arrecife de coral. Desde la orilla parece solo una mancha más oscura en el agua, pero hace un trabajo importante. Las olas rompen sobre él antes de llegar a la arena, y buena parte de su energía es disipada ahí, entre los corales. Hace casi una década, en el grupo OCEÁNICOS de la Universidad Nacional, trabajamos en dos estudios que intentaban ponerle números a esa idea.
 

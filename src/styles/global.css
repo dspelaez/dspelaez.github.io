@@ -43,7 +43,7 @@ html {
    <div class="no-justify"> stay left-aligned, without hyphenation */
 .prose li,
 .prose li p,
-.prose p:has(> em:only-child),
+.prose .caption p,
 .prose .no-justify,
 .prose .no-justify p {
   text-align: left;
@@ -114,31 +114,38 @@ html {
   color: #cbd5e1;
 }
 
-/* Figure captions (a paragraph that is all italics), paper style:
-   smaller, muted and right below the image */
-.prose p:has(> em:only-child) {
+/* Figure captions, paper style: smaller, muted and right below the image.
+   A caption is always written in markdown as
+     <div class="caption">
+     (blank line)
+     *Caption text, with [links](...)*
+     (blank line)
+     </div>
+   (the blank lines let markdown inside the div be processed) */
+.prose .caption {
   font-size: 0.875rem;
   line-height: 1.45;
+  margin: 0 0 1.5rem;
+}
+
+.prose .caption p {
+  margin: 0;
   color: #64748b;
 }
 
-.dark .prose p:has(> em:only-child) {
+.dark .prose .caption p {
   color: #94a3b8;
 }
 
 /* Caption of the cover image (first thing in the post, after a mb-10 image) */
-.prose > p:first-child:has(> em:only-child) {
+.prose > .caption:first-child {
   margin-top: -1.75rem;
-  margin-bottom: 2rem !important;
+  margin-bottom: 2rem;
 }
 
-/* Caption right after an image inside the text */
+/* Image inside the text, with its caption right below */
 .prose p:has(> img) {
   margin-bottom: 0.5rem !important;
-}
-
-.prose p:has(> img) + p:has(> em:only-child) {
-  margin-bottom: 1.5rem !important;
 }
 
 /* Code blocks keep their own background (the inline-code style above must not

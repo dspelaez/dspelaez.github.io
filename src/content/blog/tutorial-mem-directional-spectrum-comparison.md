@@ -14,7 +14,11 @@ image: "/images/covers/tutorial-mem-directional-spectrum-comparison.jpg"
 featured: false
 ---
 
+<div class="caption">
+
 *A Directional Waverider DWR-G4 wave buoy. Photo "[Directional Waverider DWR-G4 wave buoy](https://commons.wikimedia.org/wiki/File:Directional_Waverider_DWR-G4_wave_buoy.jpg)" by Antti Leppänen, [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons (resized).*
+
+</div>
 
 ## Introduction
 
@@ -178,7 +182,11 @@ Here's what the comparison looks like:
 
 ![Comparison of MEM-I and MEM-II across six test cases](/images/mem-comparison-six-panel.png)
 
+<div class="caption">
+
 *Six-panel comparison showing true directional distributions (black filled) versus reconstructions using MEM-I (blue dotted) and MEM-II (red dashed).*
+
+</div>
 
 The visual differences are striking. **MEM-I performs reasonably well on simple unimodal distributions but fails catastrophically on bimodal cases**, often creating spurious peaks or missing peaks entirely. **MEM-II generally reproduces the true distribution with high accuracy** across most cases, but it does have limitations: **when the two peaks in a bimodal distribution are very close together, MEM-II tends to merge them into a single broader peak and cannot fully resolve both modes**. In all other cases, MEM-II closely matches the true distribution.
 
@@ -208,7 +216,11 @@ To quantify this, I ran both methods on 100 randomly generated distributions (mi
 
 ![Performance metrics comparison between MEM-I and MEM-II](/images/mem-performance-metrics.png)
 
+<div class="caption">
+
 *Average error metrics from 100 random test cases. MEM-II (red) consistently outperforms MEM-I (blue) across all metrics.*
+
+</div>
 
 The numbers speak for themselves:
 

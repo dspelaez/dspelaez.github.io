@@ -14,7 +14,11 @@ papers:
   - "10.1063/5.0139220"
 ---
 
+<div class="caption">
+
 *El puerto de Solva, en Gales. Foto "[Solva Harbour - geograph.org.uk - 5403819](https://commons.wikimedia.org/wiki/File:Solva_Harbour_-_geograph.org.uk_-_5403819.jpg)" de Alan Hughes, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), vía Wikimedia Commons (redimensionada).*
+
+</div>
 
 ## Un verano de mareas extrañas
 
@@ -23,7 +27,11 @@ El 18 de junio de 2022, los habitantes del puerto de Solva, en Gales, presenciar
 No eran mareas normales. Era un **meteotsunami**, un fenómeno raro y fascinante del que casi nadie ha oído hablar.
 
 ![Meteotsunamis observados en Europa occidental en el verano de 2022](/images/meteotsunami-ireland.jpg)
+<div class="caption">
+
 *Mapa de los lugares donde se observaron subidas anómalas del nivel del mar el 18 de junio (amarillo) y el 19 de julio (rojo) de 2022. Las imágenes muestran los espectaculares remolinos que se formaron en el puerto de Solva, en Gales.*
+
+</div>
 
 ## ¿Qué son los meteotsunamis?
 

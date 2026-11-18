@@ -16,7 +16,11 @@ papers:
   - "10.1038/s41597-025-06268-y"
 ---
 
+<div class="caption">
+
 *Inis Mór, en las islas Aran, con la costa de Connemara al fondo. Foto "[Aran Islands - White painted house on Inishmore, Co. Galway (2014)](https://commons.wikimedia.org/wiki/File:Aran_Islands_-_White_painted_house_on_Inishmore,_Co._Galway_(2014).jpg)" de JoachimKohler-HB, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), vía Wikimedia Commons (redimensionada).*
+
+</div>
 
 En junio de 2023 ocurrió algo extraordinario frente a la costa oeste de Irlanda: la temperatura superficial del mar subió hasta 4 °C por encima de su promedio histórico. No se trataba de una anomalía local ni de un error de medición, sino de parte de una ola de calor marina que abarcó todo el Atlántico Norte. Según [los primeros estudios](https://doi.org/10.1002/wea.4498), fue uno de los calentamientos más rápidos observados en los últimos 40 años.
 
@@ -29,7 +33,11 @@ Nuestro nuevo artículo, [publicado recientemente en *Scientific Data*](https://
   Evolución de la temperatura superficial del mar alrededor de Irlanda durante la ola de calor marina de junio de 2023, con una anomalía de 4 °C y la trayectoria de la boya.
 </video>
 
+<div class="caption">
+
 *Evolución de la temperatura superficial del mar alrededor de Irlanda durante la ola de calor marina de 2023. La animación muestra el fuerte calentamiento frente a la costa oeste irlandesa; la línea amarilla indica la trayectoria de la boya a la deriva, que registró datos de alta resolución durante todo el evento.*
+
+</div>
 
 ## ¿Qué son las olas de calor marinas?
 
@@ -61,7 +69,11 @@ Ahí es donde el conjunto de datos de 2023 resulta especialmente valioso. Una [b
 
 ![Comparación de la temperatura superficial del mar y la velocidad del viento](/images/sst_and_wind_comparison.png)
 
+<div class="caption">
+
 *Series temporales de la temperatura superficial del mar y de la velocidad del viento registradas por la boya Spotter durante el pico de la ola de calor marina de 2023 en el Atlántico Norte.*
+
+</div>
 
 ## Mirando al futuro
 
@@ -87,4 +99,8 @@ Aun así, la suerte no es una estrategia. Necesitamos sistemas de observación d
 
 ---
 
+<div class="caption">
+
 *Este artículo presenta los datos publicados en "[Sea Surface Temperature and Directional Wave Spectra During the 2023 Marine Heatwave in the North Atlantic](https://doi.org/10.1038/s41597-025-06268-y)", en Scientific Data.*
+
+</div>

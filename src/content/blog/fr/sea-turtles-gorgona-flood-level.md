@@ -18,7 +18,11 @@ papers:
   - "https://repositorio.unal.edu.co/items/c43235b7-9765-4d05-85fe-446380245a97"
 ---
 
+<div class="caption">
+
 *Tortue olivâtre sur la plage d'Escobilla, Oaxaca (Mexique). Photo « [Turtle golfina escobilla Oaxaca Mexico Claudio Giovenzana 2010](https://commons.wikimedia.org/wiki/File:Turtle_golfina_escobilla_Oaxaca_Mexico_Claudio_Giovenzana_2010.jpg) » de Claudio Giovenzana, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons (redimensionnée).*
+
+</div>
 
 Sur l'île Gorgona, à 36 kilomètres de la côte du Pacifique colombien, il y a une plage d'un peu plus d'un kilomètre appelée Playa Palmeras. Trois espèces de tortues marines viennent y pondre, la tortue imbriquée ([*Eretmochelys imbricata*](https://fr.wikipedia.org/wiki/Tortue_imbriqu%C3%A9e)), la tortue verte ([*Chelonia mydas*](https://fr.wikipedia.org/wiki/Tortue_verte)) et la tortue olivâtre ([*Lepidochelys olivacea*](https://fr.wikipedia.org/wiki/Tortue_oliv%C3%A2tre)). C'est l'un des sites de ponte les plus importants de la région.
 
@@ -38,6 +42,10 @@ Avec ces cartes, la décision ne se prenait plus au jugé. La partie centrale et
 
 ![Jeunes tortues olivâtres marchant sur le sable vers la mer à Nuquí, Chocó, dans le Pacifique colombien.](/images/crias-golfina-nuqui-choco.jpg)
 
+<div class="caption">
+
 *Jeunes tortues olivâtres en route vers la mer à Nuquí, Chocó, dans le Pacifique colombien. Photo « [Release of Lepidochelys olivacea, Nuquí, Chocó, Colombia](https://commons.wikimedia.org/wiki/File:Release_of_Lepidochelys_olivacea_-_Nuqu%C3%AD,_Choc%C3%B3,_Colombia_-_23_Oct_2025_-_Diferoch_-_2.jpg) » de Diferoch, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons (redimensionnée).*
+
+</div>
 
 Les plages changent, et ce genre de cartes doit être refait de temps en temps. Mais l'idée reste valable. Quinze ans plus tard, c'est toujours l'un de mes exemples préférés pour montrer à quoi sert la mesure des vagues. Parfois, comprendre comment l'eau se déplace, c'est ce qui permet à une tortue de naître au bon endroit.

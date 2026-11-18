@@ -19,7 +19,11 @@ papers:
   - "10.1016/j.ecoleng.2017.07.015"
 ---
 
+<div class="caption">
+
 *Une vague déferlant sur un récif corallien de l'atoll de Kwajalein, aux îles Marshall. Photo « [Breaking Wave](https://commons.wikimedia.org/wiki/File:Breaking_Wave_(20260886321).jpg) » de l'U.S. Geological Survey, domaine public, via Wikimedia Commons.*
+
+</div>
 
 Dans la Caraïbe colombienne, de nombreuses plages ont devant elles un récif corallien. Depuis le rivage, il ne ressemble qu'à une tache plus sombre dans l'eau, mais il fait un travail important. Les vagues déferlent sur lui avant d'atteindre le sable, et une bonne partie de leur énergie y est dissipée, parmi les coraux. Il y a presque une décennie, au sein du groupe OCEÁNICOS de l'Université nationale de Colombie, nous avons travaillé sur deux études qui cherchaient à mettre des chiffres sur cette idée.
 

@@ -16,7 +16,11 @@ papers:
   - "10.21105/joss.07942"
 ---
 
+<div class="caption">
+
 *Un gran sistema de bajas presiones sobre el Atlántico Norte, visto por el satélite GOES-East en marzo de 2020. Foto "[Large Low Pressure System Swirls in the North Atlantic (49782650482)](https://commons.wikimedia.org/wiki/File:Large_Low_Pressure_System_Swirls_in_the_North_Atlantic_(49782650482).jpg)" de NOAA Satellites, dominio público, vía Wikimedia Commons.*
+
+</div>
 
 ## El problema de medir la dirección del oleaje
 
@@ -38,7 +42,11 @@ Validamos el método frente a los enfoques convencionales y a modelos numéricos
 
 ![Comparación de espectros direccionales del oleaje estimados con distintos métodos. El método de wavelets (panel a) produce distribuciones más suaves y realistas que los métodos clásicos (paneles b a e), y se parece mucho al modelo WaveWatch III (panel f).](/images/directional-spectrum-example.jpg)
 
+<div class="caption">
+
 *Figura: ejemplo de espectros direccionales del oleaje estimados con distintos métodos. El eje radial muestra la frecuencia (Hz) y la dirección angular indica hacia dónde se propaga el oleaje (N, E, S, W). Los colores indican la densidad de energía del oleaje para cada combinación de frecuencia y dirección.*
+
+</div>
 
 ## Del artículo a la práctica: la herramienta EWDM
 

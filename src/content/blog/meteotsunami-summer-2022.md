@@ -16,7 +16,11 @@ papers:
   - "10.1063/5.0139220"
 ---
 
+<div class="caption">
+
 *Solva Harbour, in Wales. Photo "[Solva Harbour - geograph.org.uk - 5403819](https://commons.wikimedia.org/wiki/File:Solva_Harbour_-_geograph.org.uk_-_5403819.jpg)" by Alan Hughes, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), via Wikimedia Commons (resized).*
+
+</div>
 
 ## A Summer of Strange Tides
 
@@ -25,7 +29,11 @@ On June 18, 2022, residents of Solva Harbour in Wales witnessed something extrao
 These weren't ordinary tides. It was a **meteotsunamis**, a rare and fascinating phenomenon that most people have never heard of.
 
 ![Meteotsunami events observed across Western Europe in Summer 2022](/images/meteotsunami-ireland.jpg)
+<div class="caption">
+
 *Map showing locations where anomalous tidal surges were observed on June 18 (yellow) and July 19 (red), 2022. Images show the dramatic whirlpool formation at Solva Harbour, Wales.*
+
+</div>
 
 ## What Are Meteotsunamis?
 

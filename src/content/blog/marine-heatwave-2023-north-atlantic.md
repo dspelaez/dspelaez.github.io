@@ -19,7 +19,11 @@ papers:
   - "10.1038/s41597-025-06268-y"
 ---
 
+<div class="caption">
+
 *Inishmore, in the Aran Islands, with the Connemara coast in the background. Photo "[Aran Islands - White painted house on Inishmore, Co. Galway (2014)](https://commons.wikimedia.org/wiki/File:Aran_Islands_-_White_painted_house_on_Inishmore,_Co._Galway_(2014).jpg)" by JoachimKohler-HB, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), via Wikimedia Commons (resized).*
+
+</div>
 
 In June 2023, something extraordinary happened off the west coast of Ireland: sea surface temperatures climbed to an astonishing 4°C above their historical average. This wasn't a localised anomaly or a measurement error, but part of a marine heatwave that engulfed the entire North Atlantic. According to [preliminary research](https://doi.org/10.1002/wea.4498), it was one of the fastest warming trends observed in the past 40 years.
 
@@ -32,7 +36,11 @@ Our new paper, [recently published in *Scientific Data*](https://doi.org/10.1038
   Sea surface temperature evolution around Ireland during the June 2023 marine heatwave showing a 4°C anomaly and buoy trajectory.
 </video>
 
+<div class="caption">
+
 *Sea surface temperature evolution around Ireland during the 2023 marine heatwave. The animation shows the dramatic warming that occurred off the Irish west coast, with the yellow track indicating the drifting buoy trajectory capturing high-resolution data throughout the event.*
+
+</div>
 
 ## What Are Marine Heatwaves?
 
@@ -64,7 +72,11 @@ This is where the 2023 dataset becomes uniquely valuable. A [Spotter buoy](https
 
 ![Sea Surface Temperature and Wind Speed Comparison](/images/sst_and_wind_comparison.png)
 
+<div class="caption">
+
 *Time series showing the recorded sea surface temperature and wind speed estimates captured by the Spotter buoy during the peak of the 2023 North Atlantic marine heatwave.*
+
+</div>
 
 
 ## Looking Forward
@@ -91,4 +103,8 @@ Luck is not a strategy though. We need coordinated, long-term ocean observing sy
 
 ---
 
+<div class="caption">
+
 *This post discusses data presented in "[Sea Surface Temperature and Directional Wave Spectra During the 2023 Marine Heatwave in the North Atlantic](https://doi.org/10.1038/s41597-025-06268-y)" published in Scientific Data.*
+
+</div>

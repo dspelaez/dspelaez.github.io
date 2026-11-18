@@ -18,7 +18,11 @@ papers:
   - "10.1175/JPO-D-23-0261.1"
 ---
 
+<div class="caption">
+
 *A wave breaking off Santa Cruz, California. Photo "[Surfer in Santa cruz 11-8-9 -1](https://commons.wikimedia.org/wiki/File:Surfer_in_Santa_cruz_11-8-9_-1.jpg)" by Brocken Inaglory, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons (resized).*
+
+</div>
 
 ## The Invisible Orchestra of the Ocean Surface
 
@@ -32,7 +36,11 @@ In our recent research, published in the *Journal of Physical Oceanography* ([Pe
 
 ![Bubble plumes created by breaking waves in the Atlantic Ocean off the Irish coast, illustrating energetic air-sea gas exchange.](/images/bubble-plumes-example.jpg)
 
+<div class="caption">
+
 *Photo by [Jeremy Lanfranchi](https://unsplash.com/@ridershow) on Unsplash*
+
+</div>
 
 We deployed a bottom-mounted, upward-looking ADCP off the west coast of Ireland, a particularly well-suited location to study energetic breaking waves. This site is close to where we recently captured [high-resolution data during the 2023 marine heatwave](/blog/marine-heatwave-2023-north-atlantic). For months, this instrument sent acoustic pings upwards through the water column, recording not just currents but also the acoustic backscatter from bubble clouds created by breaking waves up there.
 
@@ -50,7 +58,11 @@ The data revealed fascinating patterns in bubble plume behaviour:
 
 ![Foam streaks aligned with the wind on Rodeo Lagoon, California, marking the convergence zones between Langmuir circulation cells.](/images/langmuir-rodeo-lagoon.jpg)
 
+<div class="caption">
+
 *Windrows on Rodeo Lagoon (California): the foam streaks line up with the wind and mark where neighbouring Langmuir cells converge. Photo: "[Rodeo Lagoon From Trail](https://commons.wikimedia.org/wiki/File:Rodeo_Lagoon_From_Trail.JPG)" by Mmelugin, [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), via Wikimedia Commons (resized).*
+
+</div>
 
 ## Why This Matters
 
