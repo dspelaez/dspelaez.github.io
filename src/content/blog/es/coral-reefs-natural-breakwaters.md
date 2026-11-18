@@ -1,5 +1,5 @@
 ---
-title: "Rompeolas vivos"
+title: "Rompeolas vivos: arrecifes de coral como estructuras naturales de protección costera"
 description: "Un arrecife de coral sano frena buena parte del oleaje antes de que llegue a la playa. Hace unos años intentamos ponerle números a esa idea."
 pubDate: 2026-11-17
 category: "research-update"

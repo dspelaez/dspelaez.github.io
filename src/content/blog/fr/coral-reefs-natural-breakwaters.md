@@ -1,5 +1,5 @@
 ---
-title: "Des brise-lames vivants"
+title: "Des brise-lames vivants : les récifs coralliens, des structures naturelles de protection côtière"
 description: "Un récif corallien en bonne santé freine une bonne partie des vagues avant qu'elles n'atteignent la plage. Il y a quelques années, nous avons essayé de mettre des chiffres sur cette idée."
 pubDate: 2026-11-17
 category: "research-update"
