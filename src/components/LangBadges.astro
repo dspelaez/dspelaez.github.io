@@ -1,0 +1,30 @@
+---
+/**
+ * EN · ES · FR badges on a blog card: one per language the article exists in,
+ * always in that order and the same on every page. The card's own version is
+ * filled; the others link to the other versions.
+ */
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  versions: Partial<Record<Lang, string>>;
+  current: Lang;
+}
+
+const { versions, current } = Astro.props;
+const order: Lang[] = ['en', 'es', 'fr'];
+const base = 'px-2 py-1 rounded-full text-xs font-semibold border transition-colors';
+---
+
+{order.filter((l) => versions[l]).map((l) => (
+  <a
+    href={versions[l]}
+    lang={l}
+    hreflang={l}
+    title={useTranslations(l)('blog.readIn')}
+    aria-current={l === current ? 'true' : undefined}
+    class={l === current
+      ? `${base} bg-slate-700 border-slate-700 text-white dark:bg-slate-200 dark:border-slate-200 dark:text-slate-900`
+      : `${base} border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400 hover:border-blue-500 hover:text-blue-600 dark:hover:border-blue-400 dark:hover:text-blue-400`}
+  >{l.toUpperCase()}</a>
+))}

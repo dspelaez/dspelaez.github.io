@@ -42,10 +42,8 @@ export interface ListedPost {
   url: string;
   /** Language the shown version is written in */
   shownLang: Lang;
-  /** Shown in a language other than the page's (gets an EN/ES badge) */
-  fallback: boolean;
-  /** English post that also has a Spanish version */
-  hasSpanish: boolean;
+  /** URL of every language version of the article (for the EN/ES/FR badges) */
+  versions: Partial<Record<Lang, string>>;
   /** The version picked for this page (one per article); the others are alternatives */
   primary: boolean;
   /** Topics of the article (set on the English original, shared by its translations) */
@@ -76,14 +74,16 @@ export async function listPosts(lang: Lang, { allVersions = false } = {}): Promi
     const shown = allVersions ? (Object.values(versions) as Post[]) : [preferred];
     // Topics come from the original (English, or Spanish for posts written in Spanish)
     const topics = (versions.en ?? versions.es ?? preferred).data.topics;
+    const urls = Object.fromEntries(
+      Object.entries(versions).map(([l, p]) => [l, postUrl(p as Post)])
+    ) as Partial<Record<Lang, string>>;
     for (const post of shown) {
       const shownLang = postLang(post);
       entries.push({
         post,
         url: postUrl(post),
         shownLang,
-        fallback: shownLang !== lang,
-        hasSpanish: lang === 'en' && shownLang === 'en' && Boolean(versions.es),
+        versions: urls,
         primary: post === preferred,
         topics,
       });

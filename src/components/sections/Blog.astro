@@ -1,4 +1,5 @@
 ---
+import LangBadges from '../LangBadges.astro';
 import CoverFallback from '../CoverFallback.astro';
 import { getLang, useTranslations, localizePath, locales, colon, projectText, venueLabel } from '../../i18n/ui';
 const lang = getLang(Astro.url);
@@ -33,7 +34,7 @@ const categoryColors = {
           <!-- Carousel Container -->
           <div class="overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-6 blog-carousel-container" id="blog-carousel" style="overflow-y: visible;">
             <div class="flex gap-6 py-4" style="width: max-content;">
-              {posts.map(({ post, url, shownLang, fallback, hasSpanish }, index) => (
+              {posts.map(({ post, url, shownLang, versions }, index) => (
                 <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-2 overflow-hidden border border-slate-200 dark:border-slate-700 snap-center blog-carousel-item flex flex-col" style="width: 380px; max-width: 90vw;" data-index={index}>
               <!-- Image -->
               {post.data.image ? (
@@ -52,12 +53,7 @@ const categoryColors = {
                   <span class={`px-3 py-1 rounded-full text-xs font-semibold uppercase ${categoryColors[post.data.category]}`}>
                     {t(`blog.cat.${post.data.category}`)}
                   </span>
-                  {fallback && (
-                    <span class="px-2 py-1 rounded-full text-xs font-semibold border border-slate-300 dark:border-slate-600 text-slate-500 dark:text-slate-400" lang={shownLang} title={t(`blog.only.${shownLang}`)}>{shownLang.toUpperCase()}</span>
-                  )}
-                  {hasSpanish && (
-                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-amber-100 text-amber-800 dark:bg-amber-900/50 dark:text-amber-300" lang="es">{t('blog.alsoSpanish')}</span>
-                  )}
+                  <LangBadges versions={versions} current={shownLang} />
                 </div>
 
                 <!-- Title -->
