@@ -32,10 +32,10 @@ const categoryColors = {
       {posts.length > 0 ? (
         <div class="relative mb-10">
           <!-- Carousel Container -->
-          <div class="overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-6 blog-carousel-container" id="blog-carousel" style="overflow-y: visible;">
+          <div class="@container overflow-x-auto snap-x snap-mandatory scroll-smooth hide-scrollbar pb-6 px-2 scroll-px-2 blog-carousel-container" id="blog-carousel" style="overflow-y: visible;">
             <div class="flex gap-6 py-4" style="width: max-content;">
               {posts.map(({ post, url, shownLang, versions }, index) => (
-                <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-2 overflow-hidden border border-slate-200 dark:border-slate-700 snap-center blog-carousel-item flex flex-col" style="width: 380px; max-width: 90vw;" data-index={index}>
+                <article class="bg-white dark:bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-all hover:-translate-y-2 overflow-hidden border border-slate-200 dark:border-slate-700 snap-start blog-carousel-item flex-shrink-0 w-[100cqw] md:w-[calc((100cqw-1.5rem)/2)] lg:w-[calc((100cqw-3rem)/3)] flex flex-col"  data-index={index}>
               <!-- Image -->
               {post.data.image ? (
                 <img
