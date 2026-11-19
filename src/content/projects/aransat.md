@@ -21,3 +21,4 @@ i18n:
     title: "ARANSAT : analyse du spectre directionnel à partir de CFOSAT"
     description: "Analyse des données du satellite CFOSAT colocalisées avec des bouées Spotter et NDBC pour étudier la forme du spectre directionnel. Le projet associe télédétection satellitaire et observations in situ afin de mieux comprendre la directionnalité des vagues."
 ---
+

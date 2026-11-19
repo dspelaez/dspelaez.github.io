@@ -36,7 +36,7 @@ In this post, I've tested both MEM approaches hands-on, and I'll share not only 
 MEM-I, developed by [Lygre and Krogstad (1986)](https://doi.org/10.1175/1520-0485(1986)016<2052:MEEOTD>2.0.CO;2), is based on maximizing **Burg's entropy**, defined as:
 
 $$
-S_\mathrm{Burg} = -\int_0^{2\pi} \ln D(\theta)\, \frac{d\theta}{2\pi}
+S_\mathrm{Burg} = \frac{1}{2\pi} -\int_0^{2\pi} \ln D(\theta)\, d\theta
 $$
 
 This approach treats the directional distribution as an autoregressive (AR) process. It solves the Yule-Walker equations to find coefficients $\phi_1$ and $\phi_2$, then constructs the directional distribution using this formula:
