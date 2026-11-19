@@ -11,7 +11,10 @@ tags:
   - "Wave Buoys"
   - "Python"
 image: "/images/covers/tutorial-mem-directional-spectrum-comparison.jpg"
-featured: false
+featured: true
+papers:
+  - "10.1175/JTECH-D-23-0058.1"
+  - "10.21105/joss.07942"
 ---
 
 <div class="caption">
