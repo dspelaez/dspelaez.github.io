@@ -27,6 +27,3 @@ i18n:
     description: "Comprendre le rôle du déferlement des vagues dans le système climatique. Ce projet financé par ARIA étudie comment le déferlement influence les interactions océan-atmosphère et contribue à la dynamique du climat."
 ---
 
-## Project Overview
-
-This ongoing research project, funded by ARIA, focuses on understanding the role of wave breaking in climate systems. Wave breaking is a crucial process that mediates energy, momentum, and mass transfer between the ocean and atmosphere, but its representation in climate models remains challenging.
